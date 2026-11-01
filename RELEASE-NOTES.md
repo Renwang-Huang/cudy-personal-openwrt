@@ -18,6 +18,8 @@
 
 已检查固件元数据、内核设备树、UBI 起点与长度、个性化文件、中文及 HTTPS 软件包，
 并确认未嵌入 root 密码。重复构建和使用归档 APK 缓存的离线重建均生成相同 SHA-256。
+已通过[独立 GitHub Actions 环境复现](https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/actions/runs/41333664663)，
+云端产物下载后与本机镜像逐字节比较一致。
 未刷入路由器，未验证实机运行、Wi-Fi、WAN 或从现有 Kwrt 的迁移。
 
 ## 刷写前尚待解决

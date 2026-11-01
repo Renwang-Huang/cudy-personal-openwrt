@@ -9,7 +9,10 @@
     "sha256": "c02e0d22ed2bdb6f1a1b1e47fce7f702f27e638d2d41a2de66aab089eeac32c2",
     "offline_package_cache_rebuild_identical": true,
     "matches_original_cloud_output": true,
-    "independent_host_validation_run_pending": true
+    "independent_host_reproduction_tested": true,
+    "independent_host_reproduction_identical": true,
+    "cloud_artifact_downloaded_and_compared": true,
+    "github_actions_url": "https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/actions/runs/41333664663"
   },
   "offline_enforcement": "Temporary host-side ImageBuilder Makefile amendment adds apk --no-network; restored after build",
   "runtime_tested": false,

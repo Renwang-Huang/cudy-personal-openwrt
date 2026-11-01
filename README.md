@@ -78,6 +78,9 @@ python3 scripts/reproduce-release.py
 SHA-256：`c02e0d22ed2bdb6f1a1b1e47fce7f702f27e638d2d41a2de66aab089eeac32c2`。
 它仍是未完成实机迁移验证的候选版本，不应仅凭构建成功而刷写。
 
+已通过[独立 GitHub Actions 环境的离线复现](https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/actions/runs/41333664663)，
+并下载云端产物与本机镜像逐字节比较，结果一致。
+
 `v0.1.0-candidate` 保留早期本机构建记录；其本机默认目录权限与 GitHub 环境不同。
 `v0.1.1-candidate` 统一 umask、个性化目录权限与构建语言环境，解决跨主机哈希差异。
 两版共用同一份官方 ImageBuilder 和 APK 缓存，输入附件继续保存在 v0.1.0 Release，
