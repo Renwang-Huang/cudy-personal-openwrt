@@ -15,12 +15,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y build-essential file libncurses-dev zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip python3 zstd squashfs-tools
-      - name: Fetch and verify locked ImageBuilder
-        run: python3 scripts/prepare.py
-      - name: Build candidate image
-        run: bash scripts/build.sh
-      - name: Inspect generated image
-        run: python3 scripts/verify-image.py
+      - name: Reproduce candidate from verified release assets
+        run: python3 scripts/reproduce-release.py
       - uses: actions/upload-artifact@v4
         with:
           name: tr3000-personal-candidate

@@ -4,5 +4,7 @@
   "second_sha256": "1b24d3bfcc0379e90cfa52151d5b920e6e2b222556bbf6286383720b1786677b",
   "identical": true,
   "independent_host_reproduction_tested": false,
-  "offline_package_cache_rebuild_identical": true
+  "offline_package_cache_rebuild_identical": true,
+  "fresh_imagebuilder_package_cache_rebuild_identical": true,
+  "offline_enforcement": "Temporary host-side ImageBuilder Makefile amendment adds apk --no-network; restored after build"
 }

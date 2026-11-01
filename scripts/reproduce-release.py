@@ -29,16 +29,30 @@ subprocess.run(['python3', str(project / 'scripts/prepare.py')], check=True)
 build_lock = json.loads((project / 'build.lock.json').read_text())
 builder = project / 'work' / build_lock['imagebuilder']['filename'].removesuffix('.tar.zst')
 cache = assets / release['package_cache']
-# Preserve OpenWrt package signature checking and the original repository URLs.
-# APK resolves the signed indexes and packages from the archived cache.
-apk = ('APK=$(STAGING_DIR_HOST)/bin/apk --root $(TARGET_DIR) '
-       '--keys-dir $(TOPDIR)/keys --repositories-file $(TOPDIR)/repositories '
-       '--repository $(PACKAGE_DIR)/packages.adb --cache-dir $(DL_DIR) --no-network')
-with tempfile.TemporaryDirectory(prefix='tr3000-apk-cache-', dir=project / 'work') as temporary:
-    temp = Path(temporary)
-    subprocess.run(['tar', '--zstd', '-xf', str(cache), '-C', str(temp)], check=True)
-    subprocess.run(['bash', str(project / 'scripts/build.sh'),
-                    f'DL_DIR={temp / "dl"}', apk], check=True)
+# Replace the package cache with the exact release cache. OpenWrt's recursive
+# make clears MAKEFLAGS, so an APK= command-line override is insufficient.
+# Temporarily amend only the host-side APK invocation in its Makefile instead.
+cache_dir = builder / 'dl'
+makefile = builder / 'Makefile'
+original = makefile.read_bytes()
+needle = b'--cache-dir $(DL_DIR)\n'
+if original.count(needle) != 1:
+    raise SystemExit('Unexpected ImageBuilder Makefile; refusing to patch')
+with tempfile.TemporaryDirectory(prefix='tr3000-cache-', dir=project / 'work') as temporary:
+    saved = Path(temporary)
+    cache_backup = saved / 'original-dl'
+    if cache_dir.exists():
+        cache_dir.rename(cache_backup)
+    try:
+        subprocess.run(['tar', '--zstd', '-xf', str(cache), '-C', str(builder)], check=True)
+        makefile.write_bytes(original.replace(needle, b'--cache-dir $(DL_DIR) --no-network\n'))
+        subprocess.run(['bash', str(project / 'scripts/build.sh')], check=True)
+    finally:
+        makefile.write_bytes(original)
+        if cache_dir.exists():
+            cache_dir.rename(saved / 'reproduced-dl')
+        if cache_backup.exists():
+            cache_backup.rename(cache_dir)
 subprocess.run(['python3', str(project / 'scripts/verify-image.py')], check=True)
 report = json.loads((project / 'output/verification.json').read_text())
 if report['sha256'] != release['expected_image_sha256']:
