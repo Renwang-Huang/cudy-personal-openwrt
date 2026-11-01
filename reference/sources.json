@@ -1,0 +1,76 @@
+{
+  "sources": [
+    {
+      "name": "openwrt",
+      "repository": "openwrt/openwrt",
+      "commit": "f5dae5ece4805730c5e2850f8aa84765af2f6b32",
+      "role": "Official build revision from version.buildinfo"
+    },
+    {
+      "name": "packages",
+      "repository": "openwrt/packages",
+      "commit": "5caa62e0bc9f7fb9b0c12a23267bceb7724214dd",
+      "role": "Official packages feed"
+    },
+    {
+      "name": "luci",
+      "repository": "openwrt/luci",
+      "commit": "128a7812f4be233c5dd7f7466f534fd888785caf",
+      "role": "Official LuCI feed"
+    },
+    {
+      "name": "routing",
+      "repository": "openwrt/routing",
+      "commit": "3d7d0dc7fa43d3eb09498417407e95a6552e5312",
+      "role": "Official routing feed"
+    },
+    {
+      "name": "telephony",
+      "repository": "openwrt/telephony",
+      "commit": "2618106d5846a4a542fdf5809f0d3ed228ce439b",
+      "role": "Official telephony feed"
+    },
+    {
+      "name": "video",
+      "repository": "openwrt/video",
+      "commit": "094bf58da6682f895255a35a84349a79dab4bf95",
+      "role": "Official video feed"
+    },
+    {
+      "name": "kwrt-legacy-reference",
+      "repository": "kiddin9/Kwrt",
+      "commit": "033598f429ab294208888dd0b1651e21e720fe30",
+      "role": "Historical TR3000 v2-mod board support; reference only, not applied to the official candidate"
+    },
+    {
+      "name": "packages-build-date-reference",
+      "repository": "openwrt/packages",
+      "commit": "630cd7a8155db7be16abd00a2f41330f2d016add",
+      "role": "Feed source snapshot at candidate build date; complements original release feed snapshot, exact per-package build provenance not asserted"
+    },
+    {
+      "name": "luci-build-date-reference",
+      "repository": "openwrt/luci",
+      "commit": "e969939b49167516e219d465df8030d98d443d67",
+      "role": "Feed source snapshot at candidate build date; complements original release feed snapshot, exact per-package build provenance not asserted"
+    },
+    {
+      "name": "routing-build-date-reference",
+      "repository": "openwrt/routing",
+      "commit": "48c808034414a2112cf9d5261a20a320e8d0d170",
+      "role": "Feed source snapshot at candidate build date; complements original release feed snapshot, exact per-package build provenance not asserted"
+    },
+    {
+      "name": "telephony-build-date-reference",
+      "repository": "openwrt/telephony",
+      "commit": "c58ec5a6703966dcccb53d0919698c8aba3a9ef5",
+      "role": "Feed source snapshot at candidate build date; complements original release feed snapshot, exact per-package build provenance not asserted"
+    },
+    {
+      "name": "video-build-date-reference",
+      "repository": "openwrt/video",
+      "commit": "094bf58da6682f895255a35a84349a79dab4bf95",
+      "role": "Feed source snapshot at candidate build date; complements original release feed snapshot, exact per-package build provenance not asserted"
+    }
+  ]
+}

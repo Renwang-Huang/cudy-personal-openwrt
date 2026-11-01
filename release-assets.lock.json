@@ -1,0 +1,21 @@
+{
+  "tag": "v0.1.0-candidate",
+  "package_cache": "openwrt-25.12.5-tr3000-package-cache.tar.zst",
+  "assets": [
+    {
+      "role": "imagebuilder",
+      "filename": "openwrt-imagebuilder-25.12.5-mediatek-filogic.Linux-x86_64.tar.zst",
+      "bytes": 537399007,
+      "sha256": "7fb6cf626582ebcbfb46974da48c1eae577213f38879eaf6b1d982041e843461",
+      "url": "https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/releases/download/v0.1.0-candidate/openwrt-imagebuilder-25.12.5-mediatek-filogic.Linux-x86_64.tar.zst"
+    },
+    {
+      "role": "package-cache",
+      "filename": "openwrt-25.12.5-tr3000-package-cache.tar.zst",
+      "bytes": 7856815,
+      "sha256": "91b9392e837be65112ac2052bc237c74cb56a015bc4aad78481e992637ca658b",
+      "url": "https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/releases/download/v0.1.0-candidate/openwrt-25.12.5-tr3000-package-cache.tar.zst"
+    }
+  ],
+  "expected_image_sha256": "1b24d3bfcc0379e90cfa52151d5b920e6e2b222556bbf6286383720b1786677b"
+}

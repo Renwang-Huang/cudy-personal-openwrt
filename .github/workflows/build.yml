@@ -1,0 +1,28 @@
+name: Build TR3000 candidate
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ImageBuilder host dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential file libncurses-dev zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip python3 zstd squashfs-tools
+      - name: Fetch and verify locked ImageBuilder
+        run: python3 scripts/prepare.py
+      - name: Build candidate image
+        run: bash scripts/build.sh
+      - name: Inspect generated image
+        run: python3 scripts/verify-image.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tr3000-personal-candidate
+          path: output/
+          if-no-files-found: error

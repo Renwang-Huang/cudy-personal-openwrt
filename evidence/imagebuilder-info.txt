@@ -1,0 +1,858 @@
+make: 进入目录“/home/renwang/data_storage/router-firmware/tr3000-personal/work/openwrt-imagebuilder-25.12.5-mediatek-filogic.Linux-x86_64”
+Current Target: "mediatek/filogic"
+Current Architecture: "aarch64"
+Current Revision: "r33051-f5dae5ece4"
+Default Packages: base-files ca-bundle dropbear fstools libc libgcc libustream-mbedtls logd mtd netifd uci uclient-fetch urandom-seed urngd kmod-leds-gpio kmod-gpio-button-hotplug fitblk kmod-crypto-hw-safexcel wpad-basic-mbedtls uboot-envtools procd-ujail dnsmasq firewall4 nftables kmod-nft-offload odhcp6c odhcpd-ipv6only ppp ppp-mod-pppoe apk-mbedtls
+Available Profiles:
+
+abt_asr3000:
+    ABT ASR3000
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: abt,asr3000
+acelink_ew-7886cax:
+    Acelink EW-7886CAX
+    Packages: kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: acelink,ew-7886cax
+acer_predator-w6:
+    Acer Predator Connect W6
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7916-firmware kmod-mt7986-firmware mt7986-wo-firmware e2fsprogs f2fsck mkf2fs
+    hasImageMetadata: 1
+    SupportedDevices: acer,predator-w6
+acer_predator-w6d:
+    Acer Predator Connect W6d
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7916-firmware kmod-mt7986-firmware mt7986-wo-firmware e2fsprogs f2fsck mkf2fs
+    hasImageMetadata: 1
+    SupportedDevices: acer,predator-w6d
+acer_predator-w6x-stock:
+    Acer Predator Connect W6x (Stock Layout)
+    Packages: kmod-usb3 kmod-leds-ws2812b kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: acer,predator-w6x-stock acer,predator-w6x
+acer_predator-w6x-ubootmod:
+    Acer Predator Connect W6x (OpenWrt U-Boot Layout)
+    Packages: kmod-usb3 kmod-leds-ws2812b kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: acer,predator-w6x-ubootmod
+acer_vero-w6m:
+    Acer Connect Vero W6m
+    Packages: kmod-leds-ktd202x kmod-mt7915e kmod-mt7916-firmware kmod-mt7986-firmware mt7986-wo-firmware e2fsprogs f2fsck mkf2fs
+    hasImageMetadata: 1
+    SupportedDevices: acer,vero-w6m
+asiarf_ap7986-003:
+    AsiaRF AP7986 003
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: asiarf,ap7986-003
+smartrg_sdg-8612:
+    Adtran SDG-8612
+    Packages: e2fsprogs f2fsck mkf2fs kmod-hwmon-pwmfan kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: smartrg,sdg-8612
+smartrg_sdg-8614:
+    Adtran SDG-8614
+    Packages: e2fsprogs f2fsck mkf2fs kmod-hwmon-pwmfan kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: smartrg,sdg-8614
+smartrg_sdg-8622:
+    Adtran SDG-8622
+    Packages: e2fsprogs f2fsck mkf2fs kmod-hwmon-pwmfan kmod-mt7915e kmod-mt7915-firmware kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: smartrg,sdg-8622
+smartrg_sdg-8632:
+    Adtran SDG-8632
+    Packages: e2fsprogs f2fsck mkf2fs kmod-hwmon-pwmfan kmod-mt7915e kmod-mt7915-firmware kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: smartrg,sdg-8632
+smartrg_sdg-8733:
+    Adtran SDG-8733
+    Packages: e2fsprogs f2fsck mkf2fs kmod-hwmon-pwmfan kmod-mt7996-firmware kmod-phy-aquantia kmod-usb3 mt7988-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: smartrg,sdg-8733
+smartrg_sdg-8733a:
+    Adtran SDG-8733A
+    Packages: e2fsprogs f2fsck mkf2fs kmod-hwmon-pwmfan mt7988-2p5g-phy-firmware kmod-mt7996-233-firmware kmod-phy-aquantia mt7988-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: smartrg,sdg-8733a
+smartrg_sdg-8734:
+    Adtran SDG-8734
+    Packages: e2fsprogs f2fsck mkf2fs kmod-hwmon-pwmfan kmod-mt7996-firmware kmod-phy-aquantia kmod-sfp kmod-usb3 mt7988-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: smartrg,sdg-8734
+airpi_ap3000m:
+    Airpi AP3000M
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-hwmon-pwmfan kmod-usb3 f2fsck mkf2fs
+    hasImageMetadata: 1
+    SupportedDevices: airpi,ap3000m
+arcadyan_mozart:
+    Arcadyan Mozart
+    Packages: kmod-hwmon-pwmfan e2fsprogs f2fsck mkf2fs kmod-mt7996-firmware
+    hasImageMetadata: 1
+    SupportedDevices: arcadyan,mozart arcadyan,mozart
+asus_rt-ax52:
+    ASUS RT-AX52
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: asus,rt-ax52
+asus_rt-ax57m:
+    ASUS RT-AX57M
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: asus,rt-ax57m
+asus_rt-ax59u:
+    ASUS RT-AX59U
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: asus,rt-ax59u
+asus_tuf-ax4200:
+    ASUS TUF-AX4200
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: asus,tuf-ax4200
+asus_tuf-ax4200q:
+    ASUS TUF-AX4200Q
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: asus,tuf-ax4200q
+asus_tuf-ax6000:
+    ASUS TUF-AX6000
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: asus,tuf-ax6000
+asus_zenwifi-bt8:
+    ASUS ZenWiFi BT8
+    Packages: kmod-usb3 mt7988-2p5g-phy-firmware kmod-mt7996-firmware mt7988-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: asus,zenwifi-bt8
+asus_zenwifi-bt8-ubootmod:
+    ASUS ZenWiFi BT8 U-Boot mod
+    Packages: kmod-usb3 mt7988-2p5g-phy-firmware kmod-mt7996-firmware mt7988-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: asus,zenwifi-bt8-ubootmod
+bananapi_bpi-r3:
+    Bananapi BPi-R3
+    Packages: kmod-hwmon-pwmfan kmod-i2c-gpio kmod-mt7915e kmod-mt7986-firmware kmod-sfp kmod-usb3 e2fsprogs f2fsck mkf2fs mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: bananapi,bpi-r3
+bananapi_bpi-r3-mini:
+    Bananapi BPi-R3 Mini
+    Packages: kmod-eeprom-at24 kmod-hwmon-pwmfan kmod-mt7915e kmod-mt7986-firmware kmod-phy-airoha-en8811h kmod-usb3 e2fsprogs f2fsck mkf2fs mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: bananapi,bpi-r3-mini
+bananapi_bpi-r4:
+    Bananapi BPi-R4
+    Packages: kmod-hwmon-pwmfan kmod-i2c-mux-pca954x kmod-eeprom-at24 kmod-mt7996-firmware kmod-mt7996-233-firmware kmod-rtc-pcf8563 kmod-sfp kmod-phy-aquantia kmod-usb3 e2fsprogs f2fsck mkf2fs mt7988-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: bananapi,bpi-r4
+bananapi_bpi-r4-poe:
+    Bananapi BPi-R4 2.5GE
+    Packages: kmod-hwmon-pwmfan kmod-i2c-mux-pca954x kmod-eeprom-at24 kmod-mt7996-firmware kmod-mt7996-233-firmware kmod-rtc-pcf8563 kmod-sfp kmod-phy-aquantia kmod-usb3 e2fsprogs f2fsck mkf2fs mt7988-wo-firmware mt7988-2p5g-phy-firmware
+    hasImageMetadata: 1
+    SupportedDevices: bananapi,bpi-r4-poe bananapi,bpi-r4-2g5
+bananapi_bpi-r4-lite:
+    Bananapi BPi-R4 Lite
+    Packages: kmod-eeprom-at24 kmod-gpio-pca953x kmod-i2c-mux-pca954x kmod-rtc-pcf8563 kmod-sfp kmod-usb3 e2fsprogs mkf2fs mt7987-2p5g-phy-firmware
+    hasImageMetadata: 1
+    SupportedDevices: bananapi,bpi-r4-lite
+bazis_ax3000wm:
+    Bazis AX3000WM
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: bazis,ax3000wm
+buffalo_wsr-6000ax8:
+    Buffalo WSR-6000AX8
+    Packages: kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: buffalo,wsr-6000ax8
+cetron_ct3003:
+    Cetron CT3003
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cetron,ct3003 mediatek,mt7981-spim-snand-rfb
+cmcc_a10-stock:
+    CMCC A10 (stock layout)
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cmcc,a10-stock mediatek,mt7981-spim-snand-rfb
+cmcc_a10-ubootmod:
+    CMCC A10 (OpenWrt U-Boot layout)
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cmcc,a10-ubootmod cmcc,a10
+cmcc_rax3000m:
+    CMCC RAX3000M
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 e2fsprogs f2fsck mkf2fs
+    hasImageMetadata: 1
+    SupportedDevices: cmcc,rax3000m
+comfast_cf-e393ax:
+    COMFAST CF-E393AX
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: comfast,cf-e393ax
+comfast_cf-wr632ax:
+    COMFAST CF-WR632AX
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-hwmon-pwmfan kmod-usb3
+    hasImageMetadata: 1
+    SupportedDevices: comfast,cf-wr632ax cf-wr632ax
+comfast_cf-wr632ax-ubootmod:
+    COMFAST CF-WR632AX (OpenWrt U-Boot layout)
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-hwmon-pwmfan kmod-usb3
+    hasImageMetadata: 1
+    SupportedDevices: comfast,cf-wr632ax-ubootmod
+confiabits_mt7981:
+    Confiabits MT7981
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: confiabits,mt7981 mediatek,mt7981-spim-snand-2500wan-gmac2-rfb
+creatlentem_clt-r30b1-112m:
+    CreatLentem CLT-R30B1 112M
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: creatlentem,clt-r30b1-112m clt,r30b1 clt,r30b1-112m
+creatlentem_clt-r30b1:
+    CreatLentem CLT-R30B1
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: creatlentem,clt-r30b1 mediatek,mt7981-spim-snand-rfb
+creatlentem_clt-r30b1-ubi:
+    CreatLentem CLT-R30B1 (UBI)
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: creatlentem,clt-r30b1-ubi
+cudy_ap3000outdoor-v1:
+    Cudy AP3000 Outdoor v1
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cudy,ap3000outdoor-v1 R51
+cudy_ap3000wall-v1:
+    Cudy AP3000 Wall v1
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cudy,ap3000wall-v1 R68
+cudy_ap3000-v1:
+    Cudy AP3000 v1
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-phy-motorcomm
+    hasImageMetadata: 1
+    SupportedDevices: cudy,ap3000-v1 R49
+cudy_m3000-v1:
+    Cudy M3000 v1/v2
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cudy,m3000-v1 R37
+cudy_m3000-v2-yt8821:
+    Cudy M3000 v2 with Motorcomm YT8821
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-phy-motorcomm
+    hasImageMetadata: 1
+    SupportedDevices: cudy,m3000-v2-yt8821 R37
+cudy_re3000-v1:
+    Cudy RE3000 v1
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cudy,re3000-v1 R36
+cudy_tr3000-256mb-v1:
+    Cudy TR3000 256mb v1
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cudy,tr3000-256mb-v1 R103
+cudy_tr3000-v1:
+    Cudy TR3000 v1
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cudy,tr3000-v1 R47
+cudy_tr3000-v1-ubootmod:
+    Cudy TR3000 v1 (OpenWrt U-Boot layout)
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cudy,tr3000-v1-ubootmod
+cudy_wr3000-v1:
+    Cudy WR3000 v1
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cudy,wr3000-v1 R31
+cudy_wr3000e-v1:
+    Cudy WR3000E v1
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cudy,wr3000e-v1 R53
+cudy_wr3000e-v1-ubootmod:
+    Cudy WR3000E v1 (OpenWrt U-Boot layout)
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cudy,wr3000e-v1-ubootmod
+cudy_wr3000s-v1:
+    Cudy WR3000S v1
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cudy,wr3000s-v1 R59
+cudy_wr3000s-v1-ubootmod:
+    Cudy WR3000S v1 (OpenWrt U-Boot layout)
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cudy,wr3000s-v1-ubootmod
+cudy_wr3000h-v1:
+    Cudy WR3000H v1
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-phy-motorcomm
+    hasImageMetadata: 1
+    SupportedDevices: cudy,wr3000h-v1 R63
+cudy_wr3000h-v1-ubootmod:
+    Cudy WR3000H v1 (OpenWrt U-Boot layout)
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-phy-motorcomm
+    hasImageMetadata: 1
+    SupportedDevices: cudy,wr3000h-v1-ubootmod
+cudy_wr3000p-v1:
+    Cudy WR3000P v1
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cudy,wr3000p-v1 R57
+cudy_wr3000p-v1-ubootmod:
+    Cudy WR3000P v1 (OpenWrt U-Boot layout)
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cudy,wr3000p-v1-ubootmod
+cudy_wbr3000uax-v1:
+    Cudy WBR3000UAX v1
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cudy,wbr3000uax-v1 R120
+cudy_wbr3000uax-v1-ubootmod:
+    Cudy WBR3000UAX v1 (OpenWrt U-Boot layout)
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: cudy,wbr3000uax-v1-ubootmod
+dlink_aquila-pro-ai-e30-a1:
+    D-Link AQUILA PRO AI E30 A1
+    Packages: kmod-leds-gca230718 kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: dlink,aquila-pro-ai-e30-a1
+dlink_aquila-pro-ai-m30-a1:
+    D-Link AQUILA PRO AI M30 A1
+    Packages: kmod-leds-gca230718 kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: dlink,aquila-pro-ai-m30-a1
+dlink_aquila-pro-ai-m60-a1:
+    D-Link AQUILA PRO AI M60 A1
+    Packages: kmod-leds-gca230718 kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: dlink,aquila-pro-ai-m60-a1
+edgecore_eap111:
+    Edgecore EAP111
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: edgecore,eap111
+elecom_wrc-x3000gs3:
+    ELECOM WRC-X3000GS3
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: elecom,wrc-x3000gs3
+gatonetworks_gdsp:
+    GatoNetworks gdsp
+    Packages: e2fsprogs f2fsck mkf2fs fitblk kmod-mt7915e kmod-mt7981-firmware kmod-usb-net-qmi-wwan kmod-usb-serial-option kmod-usb3 mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: gatonetworks,gdsp
+glinet_gl-mt2500:
+    GL.iNet GL-MT2500 MaxLinear PHY
+    Packages: -wpad-basic-mbedtls e2fsprogs f2fsck mkf2fs kmod-usb3
+    hasImageMetadata: 1
+    SupportedDevices: glinet,gl-mt2500 glinet,mt2500-emmc
+glinet_gl-mt2500-airoha:
+    GL.iNet GL-MT2500 Airoha PHY
+    Packages: -wpad-basic-mbedtls e2fsprogs f2fsck mkf2fs kmod-usb3 kmod-phy-airoha-en8811h airoha-en8811h-firmware
+    hasImageMetadata: 0
+    SupportedDevices: glinet,gl-mt2500-airoha glinet,mt2500-emmc
+glinet_gl-mt3000:
+    GL.iNet GL-MT3000
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-hwmon-pwmfan kmod-usb3
+    hasImageMetadata: 0
+    SupportedDevices: glinet,gl-mt3000 glinet,mt3000-snand
+glinet_gl-mt3600be:
+    GL.iNet GL-MT3600BE
+    Packages: mt7987-2p5g-phy-firmware kmod-mt7990-firmware kmod-hwmon-pwmfan kmod-usb3
+    hasImageMetadata: 1
+    SupportedDevices: glinet,gl-mt3600be
+glinet_gl-mt6000:
+    GL.iNet GL-MT6000
+    Packages: e2fsprogs f2fsck mkf2fs kmod-usb3 kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: glinet,gl-mt6000
+glinet_gl-x3000:
+    GL.iNet GL-X3000
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware mkf2fs kmod-fs-f2fs kmod-hwmon-pwmfan kmod-usb3 kmod-usb-serial-option kmod-usb-storage kmod-usb-net-qmi-wwan uqmi
+    hasImageMetadata: 1
+    SupportedDevices: glinet,gl-x3000
+glinet_gl-xe3000:
+    GL.iNet GL-XE3000
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware mkf2fs kmod-fs-f2fs kmod-hwmon-pwmfan kmod-usb3 kmod-usb-serial-option kmod-usb-storage kmod-usb-net-qmi-wwan uqmi
+    hasImageMetadata: 1
+    SupportedDevices: glinet,gl-xe3000
+h3c_magic-nx30-pro:
+    H3C Magic NX30 Pro
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: h3c,magic-nx30-pro
+huasifei_wh3000:
+    Huasifei WH3000
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 f2fsck mkf2fs
+    hasImageMetadata: 1
+    SupportedDevices: huasifei,wh3000 huasifei,wh3000-emmc
+huasifei_wh3000-pro-emmc:
+    Huasifei WH3000 Pro eMMC
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-hwmon-pwmfan kmod-usb3 f2fsck mkf2fs
+    hasImageMetadata: 1
+    SupportedDevices: huasifei,wh3000-pro-emmc huasifei,wh3000-pro
+huasifei_wh3000-pro-nand:
+    Huasifei WH3000 Pro NAND
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 kmod-hwmon-pwmfan
+    hasImageMetadata: 1
+    SupportedDevices: huasifei,wh3000-pro-nand
+huasifei_wh3000r-nand:
+    Huasifei WH3000R NAND
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3
+    hasImageMetadata: 1
+    SupportedDevices: huasifei,wh3000r-nand
+imou_hx21:
+    Imou HX21
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: imou,hx21
+iptime_ax3000q:
+    ipTIME AX3000Q
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: iptime,ax3000q mediatek,mt7981-spim-snand-rfb
+iptime_ax3000se:
+    ipTIME AX3000SE
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: iptime,ax3000se mediatek,mt7981-spim-snand-rfb
+iptime_ax3000sm:
+    ipTIME AX3000SM
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: iptime,ax3000sm mediatek,mt7981-spim-snand-rfb
+iptime_ax3000m:
+    ipTIME AX3000M
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: iptime,ax3000m mediatek,mt7981-spim-snand-rfb
+iptime_ax7800m-6e:
+    ipTIME AX7800M-6E
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7916-firmware kmod-mt7986-firmware mt7986-wo-firmware kmod-hwmon-gpiofan
+    hasImageMetadata: 1
+    SupportedDevices: iptime,ax7800m-6e
+jcg_q30-pro:
+    JCG Q30 PRO
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: jcg,q30-pro
+jdcloud_re-cp-03:
+    JDCloud RE-CP-03
+    Packages: kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware e2fsprogs f2fsck mkf2fs
+    hasImageMetadata: 1
+    SupportedDevices: jdcloud,re-cp-03
+jiorouter_ax6000-jidu6101:
+    JioRouter AX6000 JIDU6101
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7916-firmware kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: jiorouter,ax6000-jidu6101
+kebidumei_ax3000-u22:
+    Kebidumei AX3000-U22
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: kebidumei,ax3000-u22 mediatek,mt7981-spim-nor-rfb
+keenetic_kap-630:
+    Keenetic KAP-630
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-phy-airoha-en8811h
+    hasImageMetadata: 1
+    SupportedDevices: keenetic,kap-630
+keenetic_kn-1812:
+    Keenetic KN-1812
+    Packages: kmod-mt7992-firmware kmod-usb3 mt7988-2p5g-phy-firmware mt7988-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: keenetic,kn-1812
+keenetic_kn-3711:
+    Keenetic KN-3711
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: keenetic,kn-3711
+keenetic_kn-3811:
+    Keenetic KN-3811
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3
+    hasImageMetadata: 1
+    SupportedDevices: keenetic,kn-3811
+keenetic_kn-3911:
+    Keenetic KN-3911
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-phy-airoha-en8811h
+    hasImageMetadata: 1
+    SupportedDevices: keenetic,kn-3911
+konka_komi-a31:
+    Konka KOMI A31
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: konka,komi-a31
+mediatek_mt7981-rfb:
+    MediaTek MT7981 rfb
+    Packages: kmod-mt7915e kmod-mt7981-firmware kmod-usb3 e2fsprogs f2fsck mkf2fs mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: mediatek,mt7981-rfb
+mediatek_mt7986a-rfb-nand:
+    MediaTek MT7986 rfba AP (NAND)
+    Packages: kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: mediatek,mt7986a-rfb-snand
+mediatek_mt7986b-rfb:
+    MediaTek MTK7986 rfbb AP
+    Packages: kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: mediatek,mt7986b-rfb
+mediatek_mt7987a-rfb:
+    MediaTek MT7987A rfb
+    Packages: mt7987-2p5g-phy-firmware kmod-sfp
+    hasImageMetadata: 1
+    SupportedDevices: mediatek,mt7987a-rfb
+mediatek_mt7988a-rfb:
+    MediaTek MT7988A rfb
+    Packages: mt7988-2p5g-phy-firmware kmod-sfp kmod-phy-aquantia
+    hasImageMetadata: 1
+    SupportedDevices: mediatek,mt7988a-rfb
+mercusys_mr80x-v3:
+    MERCUSYS MR80X v3
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: mercusys,mr80x-v3
+mercusys_mr85x:
+    MERCUSYS MR85X
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-phy-airoha-en8811h swconfig kmod-switch-rtl8367s
+    hasImageMetadata: 1
+    SupportedDevices: mercusys,mr85x
+mercusys_mr90x-v1:
+    MERCUSYS MR90X v1
+    Packages: kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: mercusys,mr90x-v1
+mercusys_mr90x-v1-ubi:
+    MERCUSYS MR90X v1 (UBI)
+    Packages: kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: mercusys,mr90x-v1-ubi
+netcore_n60:
+    Netcore N60
+    Packages: kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: netcore,n60
+netcore_n60-pro:
+    Netcore N60 Pro
+    Packages: kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware kmod-usb3
+    hasImageMetadata: 1
+    SupportedDevices: netcore,n60-pro
+netcraze_nap-630:
+    Netcraze NAP-630
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-phy-airoha-en8811h
+    hasImageMetadata: 1
+    SupportedDevices: netcraze,nap-630
+netcraze_nc-1812:
+    Netcraze NC-1812
+    Packages: kmod-mt7992-firmware kmod-usb3 mt7988-2p5g-phy-firmware mt7988-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: netcraze,nc-1812
+netgear_eax17:
+    NETGEAR EAX17
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: netgear,eax17 mediatek,mt7981-spim-snand-rfb
+netgear_wax220:
+    NETGEAR WAX220
+    Packages: kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: netgear,wax220
+netis_eap930-v1:
+    netis EAP930 V1
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: netis,eap930-v1
+netis_nx30v2:
+    netis NX30 V2
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: netis,nx30v2
+netis_nx31:
+    netis NX31
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: netis,nx31
+netis_nx32u:
+    netis NX32U
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 kmod-usb-ledtrig-usbport
+    hasImageMetadata: 1
+    SupportedDevices: netis,nx32u
+nokia_ea0326gmp:
+    Nokia EA0326GMP
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: nokia,ea0326gmp
+nradio_c8-668gl:
+    NRadio C8-668GL
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb-serial-option kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan kmod-usb3
+    hasImageMetadata: 1
+    SupportedDevices: nradio,c8-668gl
+openembed_som7981:
+    OpenEmbed SOM7981
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-crypto-hw-atmel kmod-eeprom-at24 kmod-gpio-beeper kmod-rtc-pcf8563 kmod-usb-net-cdc-mbim kmod-usb-net-qmi-wwan kmod-usb-serial-option kmod-usb3 uqmi
+    hasImageMetadata: 1
+    SupportedDevices: openembed,som7981
+openfi_6c:
+    OpenFi 6C
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3
+    hasImageMetadata: 1
+    SupportedDevices: openfi,6c
+openwrt_one:
+    OpenWrt One
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-rtc-pcf8563 kmod-usb3 kmod-phy-airoha-en8811h
+    hasImageMetadata: 1
+    SupportedDevices: openwrt,one
+qihoo_360t7:
+    Qihoo 360T7
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: qihoo,360t7
+qihoo_360t7-ubi:
+    Qihoo 360T7 (UBI)
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: qihoo,360t7-ubi
+routerich_ax3000:
+    Routerich AX3000
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3
+    hasImageMetadata: 1
+    SupportedDevices: routerich,ax3000 mediatek,mt7981-spim-snand-rfb
+routerich_ax3000-ubootmod:
+    Routerich AX3000 (OpenWrt U-Boot layout)
+    Packages: kmod-mt7915e kmod-mt7981-firmware kmod-usb3 mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: routerich,ax3000-ubootmod
+routerich_ax3000-v1:
+    Routerich AX3000 v1
+    Packages: kmod-mt7915e kmod-mt7981-firmware kmod-usb3 mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: routerich,ax3000-v1 mediatek,mt7981-spim-snand-rfb
+routerich_be7200:
+    Routerich BE7200
+    Packages: mt7987-2p5g-phy-firmware kmod-mt7992-firmware kmod-regulator-userspace-consumer kmod-usb3
+    hasImageMetadata: 1
+    SupportedDevices: routerich,be7200
+ruijie_rg-x60-pro:
+    Ruijie RG-X60 Pro
+    Packages: kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: ruijie,rg-x60-pro
+snr_snr-cpe-ax2:
+    SNR SNR-CPE-AX2
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: snr,snr-cpe-ax2
+teltonika_rutc50:
+    Teltonika RUTC50
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 kmod-usb-net-qmi-wwan kmod-usb-serial-option kmod-gpio-nxp-74hc164 uqmi
+    hasImageMetadata: 1
+    SupportedDevices: teltonika,rutc50
+tenbay_wr3000k:
+    Tenbay WR3000K
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: tenbay,wr3000k
+totolink_x6000r:
+    TOTOLINK X6000R
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: totolink,x6000r
+tplink_archer-ax80-v1:
+    TP-Link Archer AX80 v1
+    Packages: kmod-leds-lp5523 kmod-usb3 kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: tplink,archer-ax80-v1
+tplink_archer-ax80-v1-eu:
+    TP-Link Archer AX80 v1 (EU)
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: tplink,archer-ax80-v1-eu
+tplink_be450:
+    TP-Link BE450
+    Packages: kmod-mt7992-firmware kmod-usb3 mt7988-2p5g-phy-firmware mt7988-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: tplink,be450
+tplink_eap683-lr:
+    TP-Link EAP683-LR
+    Packages: kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: tplink,eap683-lr
+tplink_re6000xd:
+    TP-Link RE6000XD
+    Packages: kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: tplink,re6000xd
+tplink_f65-v1:
+    TP-Link F65 v1
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: tplink,f65-v1
+tplink_fr365-v1:
+    TP-Link FR365 v1
+    Packages: fitblk kmod-sfp kmod-usb3 kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: tplink,fr365-v1
+tplink_tl-xdr4288:
+    TP-Link TL-XDR4288
+    Packages: fitblk kmod-usb3 kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: tplink,tl-xdr4288
+tplink_tl-xdr6086:
+    TP-Link TL-XDR6086
+    Packages: fitblk kmod-usb3 kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: tplink,tl-xdr6086
+tplink_tl-xdr6088:
+    TP-Link TL-XDR6088
+    Packages: fitblk kmod-usb3 kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: tplink,tl-xdr6088
+tplink_tl-xtr8488:
+    TP-Link TL-XTR8488
+    Packages: fitblk kmod-usb3 kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware kmod-mt7915-firmware
+    hasImageMetadata: 1
+    SupportedDevices: tplink,tl-xtr8488
+ubnt_unifi-6-plus:
+    Ubiquiti UniFi U6+
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware e2fsprogs f2fsck mkf2fs fdisk partx-utils
+    hasImageMetadata: 1
+    SupportedDevices: ubnt,unifi-6-plus
+unielec_u7981-01-emmc:
+    Unielec U7981-01 (EMMC)
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 e2fsprogs f2fsck mkf2fs fdisk partx-utils
+    hasImageMetadata: 1
+    SupportedDevices: unielec,u7981-01-emmc
+unielec_u7981-01-nand:
+    Unielec U7981-01 (NAND)
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 e2fsprogs f2fsck mkf2fs fdisk partx-utils
+    hasImageMetadata: 1
+    SupportedDevices: unielec,u7981-01-nand
+wavlink_wl-wn536ax6-a:
+    WAVLINK WL-WN536AX6 Rev a
+    Packages: kmod-ledtrig-network kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware kmod-usb3
+    hasImageMetadata: 1
+    SupportedDevices: wavlink,wl-wn536ax6-a
+wavlink_wl-wn551x3:
+    WAVLINK WL-WN551X3
+    Packages: kmod-usb3 kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: wavlink,wl-wn551x3 mediatek,mt7981-spim-snand-rfb
+wavlink_wl-wn586x3:
+    WAVLINK WL-WN586X3
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: wavlink,wl-wn586x3
+wavlink_wl-wn586x3b:
+    WAVLINK WL-WN586X3B
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: wavlink,wl-wn586x3b
+wavlink_wl-wn573hx3:
+    WAVLINK WL-WN573HX3
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: wavlink,wl-wn573hx3 mediatek,mt7981-spim-nor-rfb
+widelantech_wap430x:
+    Widelantech WAP430X
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: widelantech,wap430x UAP200 AX3000AM
+xiaomi_mi-router-ax3000t:
+    Xiaomi Mi Router AX3000T
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: xiaomi,mi-router-ax3000t
+xiaomi_mi-router-ax3000t-ubootmod:
+    Xiaomi Mi Router AX3000T (OpenWrt U-Boot layout)
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: xiaomi,mi-router-ax3000t-ubootmod
+xiaomi_mi-router-wr30u-stock:
+    Xiaomi Mi Router WR30U (stock layout)
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: xiaomi,mi-router-wr30u-stock
+xiaomi_mi-router-wr30u-ubootmod:
+    Xiaomi Mi Router WR30U (OpenWrt U-Boot layout)
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: xiaomi,mi-router-wr30u-ubootmod
+xiaomi_redmi-router-ax6000-stock:
+    Xiaomi Redmi Router AX6000 (stock layout)
+    Packages: kmod-leds-ws2812b kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: xiaomi,redmi-router-ax6000-stock
+xiaomi_redmi-router-ax6000-ubootmod:
+    Xiaomi Redmi Router AX6000 (OpenWrt U-Boot layout)
+    Packages: kmod-leds-ws2812b kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: xiaomi,redmi-router-ax6000-ubootmod
+yuncore_ax835:
+    YunCore AX835
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: yuncore,ax835 mediatek,mt7981-spim-nor-rfb
+zbtlink_zbt-z8102ax:
+    Zbtlink ZBT-Z8102AX
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 kmod-usb-net-qmi-wwan kmod-usb-serial-option
+    hasImageMetadata: 1
+    SupportedDevices: zbtlink,zbt-z8102ax
+zbtlink_zbt-z8102ax-v2:
+    Zbtlink ZBT-Z8102AX-V2
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 kmod-usb-net-qmi-wwan kmod-usb-serial-option
+    hasImageMetadata: 1
+    SupportedDevices: zbtlink,zbt-z8102ax-v2
+zbtlink_zbt-z8103ax:
+    Zbtlink ZBT-Z8103AX
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: zbtlink,zbt-z8103ax
+zbtlink_zbt-z8103ax-c:
+    Zbtlink ZBT-Z8103AX-C
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: zbtlink,zbt-z8103ax-c
+zbtlink_zbt-z8106ax-s:
+    Zbtlink ZBT-Z8106AX-S
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 kmod-usb-net-qmi-wwan kmod-usb-serial-option
+    hasImageMetadata: 1
+    SupportedDevices: zbtlink,zbt-z8106ax-s zbtlink,z8106ax-2sim
+zbtlink_zbt-z8106ax-t:
+    Zbtlink ZBT-Z8106AX-T
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 kmod-usb-net-qmi-wwan kmod-usb-serial-option
+    hasImageMetadata: 1
+    SupportedDevices: zbtlink,zbt-z8106ax-t zbtlink,z8106ax-2sim
+zyxel_ex5601-t0-stock:
+    Zyxel EX5601-T0 (stock layout)
+    Packages: kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware kmod-usb3
+    hasImageMetadata: 1
+    SupportedDevices: zyxel,ex5601-t0-stock
+zyxel_ex5601-t0-ubootmod:
+    Zyxel EX5601-T0 (OpenWrt U-Boot layout)
+    Packages: kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware kmod-usb3
+    hasImageMetadata: 1
+    SupportedDevices: zyxel,ex5601-t0-ubootmod
+zyxel_ex5700-telenor:
+    Zyxel EX5700 (Telenor)
+    Packages: kmod-ubootenv-nvram kmod-usb3 kmod-mt7915e kmod-mt7916-firmware kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: zyxel,ex5700-telenor
+zyxel_nwa50ax-pro:
+    Zyxel NWA50AX Pro
+    Packages: kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware zyxel-bootconfig
+    hasImageMetadata: 1
+    SupportedDevices: zyxel,nwa50ax-pro
+zyxel_wx5600-t0-ubootmod:
+    Zyxel WX5600-T0 (OpenWrt U-Boot layout)
+    Packages: kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+    hasImageMetadata: 1
+    SupportedDevices: zyxel,wx5600-t0-ubootmod
+make: 离开目录“/home/renwang/data_storage/router-firmware/tr3000-personal/work/openwrt-imagebuilder-25.12.5-mediatek-filogic.Linux-x86_64”

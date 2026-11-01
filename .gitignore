@@ -1,0 +1,8 @@
+downloads/
+work/
+output/
+*.log
+__pycache__/
+*.pyc
+*.part
+release-assets/

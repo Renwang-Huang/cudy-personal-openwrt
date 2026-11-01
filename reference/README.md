@@ -1,0 +1,33 @@
+# 源码参考与备份
+
+`sources/` 保存 `sources.json` 指定提交的完整仓库源码快照，不依赖未来分支的状态。
+`archives.lock.json` 和 `sources/SHA256SUMS` 记录来源、提交、文件大小及校验值。
+OpenWrt 构建版本和各 feed 提交取自官方发布的 `version.buildinfo`、
+`feeds.buildinfo`；这些发布文件的 SHA-256 已与官方清单比对。
+
+`legacy-kwrt/` 另外保留旧定制固件的设备树与适配补丁，便于比较；首版官方镜像
+不应用这些补丁，也没有把旧板型标识加入官方镜像来绕过兼容性检查。
+
+## 备份范围
+
+包含 OpenWrt 主工程、官方五个 feed 的固定提交快照，以及旧 Kwrt 构建工程。
+同时保留构建当天官方 feed 的分支快照，用于对照发布后更新的软件包；
+例如本次 LuCI 包版本中的 `e969939` 与构建当天 LuCI 快照提交前缀一致。
+官方原始 `feeds.buildinfo` 只描述最初发布时的 feeds，并不能证明后来每个 APK 的精确来源提交。
+各工程中的软件包配方、补丁、源码下载地址和哈希都随快照保留。源项目许可证
+保存在各压缩包内；本仓库的 MIT 许可证不替代上游许可证。
+
+这些仓库快照不是 Linux、GCC 及每个应用所有上游源码压缩包的合集。
+OpenWrt 的包配方负责按固定版本和校验值获取这些原始源码；无线固件等上游只提供
+二进制的组件也不能在这里变成开放源码。二次开发时须按相应包的配方下载其原始源码。
+
+本次实际镜像通过官方 ImageBuilder 组装，所使用的 ImageBuilder 和下载的软件包
+可作为 GitHub Release 的独立附件备份，不把大型构建产物混入源码树。
+
+## 使用快照
+
+在 `reference/sources/` 中运行 `sha256sum -c SHA256SUMS` 验证。
+将需要修改的快照解压到独立开发目录，再按 OpenWrt 的完整源码构建流程操作。
+重新获取相同提交的备份可运行 `python3 scripts/archive-sources.py`。
+
+官方构建说明：https://openwrt.org/docs/guide-developer/toolchain/use-buildsystem

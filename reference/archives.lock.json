@@ -1,0 +1,124 @@
+{
+  "sources": [
+    {
+      "name": "openwrt",
+      "repository": "openwrt/openwrt",
+      "commit": "f5dae5ece4805730c5e2850f8aa84765af2f6b32",
+      "role": "Official build revision from version.buildinfo",
+      "filename": "openwrt-f5dae5ece4805730c5e2850f8aa84765af2f6b32.tar.gz",
+      "url": "https://codeload.github.com/openwrt/openwrt/tar.gz/f5dae5ece4805730c5e2850f8aa84765af2f6b32",
+      "bytes": 11563267,
+      "sha256": "41cc78ada280c0b5b9aab8db5de45a969b25eb8b3f5f14c2a877d25992a45518"
+    },
+    {
+      "name": "packages",
+      "repository": "openwrt/packages",
+      "commit": "5caa62e0bc9f7fb9b0c12a23267bceb7724214dd",
+      "role": "Official packages feed",
+      "filename": "packages-5caa62e0bc9f7fb9b0c12a23267bceb7724214dd.tar.gz",
+      "url": "https://codeload.github.com/openwrt/packages/tar.gz/5caa62e0bc9f7fb9b0c12a23267bceb7724214dd",
+      "bytes": 14164979,
+      "sha256": "dcdf444a46032f84d8e949463f69996be597711e79167568a269603dae5ee654"
+    },
+    {
+      "name": "luci",
+      "repository": "openwrt/luci",
+      "commit": "128a7812f4be233c5dd7f7466f534fd888785caf",
+      "role": "Official LuCI feed",
+      "filename": "luci-128a7812f4be233c5dd7f7466f534fd888785caf.tar.gz",
+      "url": "https://codeload.github.com/openwrt/luci/tar.gz/128a7812f4be233c5dd7f7466f534fd888785caf",
+      "bytes": 14124086,
+      "sha256": "927f2518ab2f727c553b0b492041c2df31ed2aedae5ff5922ee2fbb7a23e4f2d"
+    },
+    {
+      "name": "routing",
+      "repository": "openwrt/routing",
+      "commit": "3d7d0dc7fa43d3eb09498417407e95a6552e5312",
+      "role": "Official routing feed",
+      "filename": "routing-3d7d0dc7fa43d3eb09498417407e95a6552e5312.tar.gz",
+      "url": "https://codeload.github.com/openwrt/routing/tar.gz/3d7d0dc7fa43d3eb09498417407e95a6552e5312",
+      "bytes": 81502,
+      "sha256": "2d7d2ba68f2cdcedd90031b342052c2d0bcd2168226d59381aa7b3d009d4aa32"
+    },
+    {
+      "name": "telephony",
+      "repository": "openwrt/telephony",
+      "commit": "2618106d5846a4a542fdf5809f0d3ed228ce439b",
+      "role": "Official telephony feed",
+      "filename": "telephony-2618106d5846a4a542fdf5809f0d3ed228ce439b.tar.gz",
+      "url": "https://codeload.github.com/openwrt/telephony/tar.gz/2618106d5846a4a542fdf5809f0d3ed228ce439b",
+      "bytes": 171727,
+      "sha256": "5b352dd0d7bebbcc3fd9ab360bac08796d4e631237c46884616ed3e23e78bb80"
+    },
+    {
+      "name": "video",
+      "repository": "openwrt/video",
+      "commit": "094bf58da6682f895255a35a84349a79dab4bf95",
+      "role": "Official video feed",
+      "filename": "video-094bf58da6682f895255a35a84349a79dab4bf95.tar.gz",
+      "url": "https://codeload.github.com/openwrt/video/tar.gz/094bf58da6682f895255a35a84349a79dab4bf95",
+      "bytes": 56467,
+      "sha256": "46174ff0ca251e91dcb606f44b9541fba4202a3863ccd96d80e61e93b7453daf"
+    },
+    {
+      "name": "kwrt-legacy-reference",
+      "repository": "kiddin9/Kwrt",
+      "commit": "033598f429ab294208888dd0b1651e21e720fe30",
+      "role": "Historical TR3000 v2-mod board support; reference only, not applied to the official candidate",
+      "filename": "kwrt-legacy-reference-033598f429ab294208888dd0b1651e21e720fe30.tar.gz",
+      "url": "https://codeload.github.com/kiddin9/Kwrt/tar.gz/033598f429ab294208888dd0b1651e21e720fe30",
+      "bytes": 108209,
+      "sha256": "c2cbe9d6be820509d52f06f4ac14a13970a4a2c7ab1b0dbc41b97035932f2a39"
+    },
+    {
+      "name": "packages-build-date-reference",
+      "repository": "openwrt/packages",
+      "commit": "630cd7a8155db7be16abd00a2f41330f2d016add",
+      "role": "Feed source snapshot at candidate build date; complements original release feed snapshot, exact per-package build provenance not asserted",
+      "filename": "packages-build-date-reference-630cd7a8155db7be16abd00a2f41330f2d016add.tar.gz",
+      "url": "https://codeload.github.com/openwrt/packages/tar.gz/630cd7a8155db7be16abd00a2f41330f2d016add",
+      "bytes": 14261825,
+      "sha256": "419285fa464263b88be33a91a762f7382bf1bcf67a14e63cfa4bb7267a63d5fb"
+    },
+    {
+      "name": "luci-build-date-reference",
+      "repository": "openwrt/luci",
+      "commit": "e969939b49167516e219d465df8030d98d443d67",
+      "role": "Feed source snapshot at candidate build date; complements original release feed snapshot, exact per-package build provenance not asserted",
+      "filename": "luci-build-date-reference-e969939b49167516e219d465df8030d98d443d67.tar.gz",
+      "url": "https://codeload.github.com/openwrt/luci/tar.gz/e969939b49167516e219d465df8030d98d443d67",
+      "bytes": 15114439,
+      "sha256": "c5cd21fa675c529e952ba3a7e405708296c52a57126c4cecc101d7ac2be84f3a"
+    },
+    {
+      "name": "routing-build-date-reference",
+      "repository": "openwrt/routing",
+      "commit": "48c808034414a2112cf9d5261a20a320e8d0d170",
+      "role": "Feed source snapshot at candidate build date; complements original release feed snapshot, exact per-package build provenance not asserted",
+      "filename": "routing-build-date-reference-48c808034414a2112cf9d5261a20a320e8d0d170.tar.gz",
+      "url": "https://codeload.github.com/openwrt/routing/tar.gz/48c808034414a2112cf9d5261a20a320e8d0d170",
+      "bytes": 181191,
+      "sha256": "b0985415827dd0a55f876d3218b79cc116a4111ec5b730686517ee891ed910c3"
+    },
+    {
+      "name": "telephony-build-date-reference",
+      "repository": "openwrt/telephony",
+      "commit": "c58ec5a6703966dcccb53d0919698c8aba3a9ef5",
+      "role": "Feed source snapshot at candidate build date; complements original release feed snapshot, exact per-package build provenance not asserted",
+      "filename": "telephony-build-date-reference-c58ec5a6703966dcccb53d0919698c8aba3a9ef5.tar.gz",
+      "url": "https://codeload.github.com/openwrt/telephony/tar.gz/c58ec5a6703966dcccb53d0919698c8aba3a9ef5",
+      "bytes": 171732,
+      "sha256": "a07833652f59d1b9f34257b011643f7ea9a34ce094c7bba55bcdba3098eb56b3"
+    },
+    {
+      "name": "video-build-date-reference",
+      "repository": "openwrt/video",
+      "commit": "094bf58da6682f895255a35a84349a79dab4bf95",
+      "role": "Feed source snapshot at candidate build date; complements original release feed snapshot, exact per-package build provenance not asserted",
+      "filename": "video-build-date-reference-094bf58da6682f895255a35a84349a79dab4bf95.tar.gz",
+      "url": "https://codeload.github.com/openwrt/video/tar.gz/094bf58da6682f895255a35a84349a79dab4bf95",
+      "bytes": 56467,
+      "sha256": "46174ff0ca251e91dcb606f44b9541fba4202a3863ccd96d80e61e93b7453daf"
+    }
+  ]
+}

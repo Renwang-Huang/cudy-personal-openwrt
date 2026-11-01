@@ -1,0 +1,14 @@
+{
+  "openwrt_version": "25.12.5",
+  "target": "mediatek/filogic",
+  "profile": "cudy_tr3000-256mb-v1",
+  "image_name": "personal-v0.1",
+  "packages": [
+    "luci-ssl",
+    "luci-i18n-base-zh-cn",
+    "luci-i18n-firewall-zh-cn"
+  ],
+  "hostname": "TR3000-Personal",
+  "lan_ip": "10.0.0.1",
+  "status": "candidate-requires-migration-review"
+}
