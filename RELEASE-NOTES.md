@@ -1,4 +1,4 @@
-# v0.1.0-candidate
+# v0.1.1-candidate
 
 首个基于官方 OpenWrt 25.12.5 的 Cudy TR3000 256MB 最小个性化镜像。
 
@@ -9,7 +9,10 @@
 - 完整软件包版本见 `.manifest`，软件物料清单见 `.bom.cdx.json`。
 
 镜像为 9,574,687 字节；SHA-256：
-`1b24d3bfcc0379e90cfa52151d5b920e6e2b222556bbf6286383720b1786677b`。
+`c02e0d22ed2bdb6f1a1b1e47fce7f702f27e638d2d41a2de66aab089eeac32c2`。
+
+本版统一构建 umask、个性化目录权限和语言环境，修复 v0.1.0 本机与 GitHub
+环境之间因目录权限造成的根文件系统哈希差异。内核及所用软件包保持一致。
 
 ## 验证范围
 
@@ -27,7 +30,8 @@
 ## 备份与复现
 
 - 仓库 `reference/` 保存固定提交的完整源码仓库快照及 SHA-256。
-- 附件保存官方原始 ImageBuilder、实际使用的 APK 缓存、候选镜像和校验报告。
+- 本版附件保存候选镜像和校验报告；相同的官方原始 ImageBuilder 与 APK 缓存
+  保存在 v0.1.0-candidate Release，由本版锁定文件按 URL 和 SHA-256 引用。
 - 下载仓库后运行 `python3 scripts/reproduce-release.py`，可校验输入、使用缓存重建，
   并比对镜像 SHA-256。脚本没有刷写动作。
 - 源码备份包含主工程与包配方、补丁；每个软件包的上游原始源码另由其配方按哈希下载。

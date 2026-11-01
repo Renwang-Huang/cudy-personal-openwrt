@@ -74,9 +74,14 @@ python3 scripts/reproduce-release.py
 然后检查输出镜像 SHA-256 是否与首版相同。普通 `build.sh` 可从官方源获取更新后的包；
 这两种用途应区分。
 
-首版镜像为 9,574,687 字节（约 9.13 MiB），含 161 个基础包及依赖。
-SHA-256：`1b24d3bfcc0379e90cfa52151d5b920e6e2b222556bbf6286383720b1786677b`。
+当前候选版为 `v0.1.1-candidate`，镜像为 9,574,687 字节（约 9.13 MiB），含 161 个基础包及依赖。
+SHA-256：`c02e0d22ed2bdb6f1a1b1e47fce7f702f27e638d2d41a2de66aab089eeac32c2`。
 它仍是未完成实机迁移验证的候选版本，不应仅凭构建成功而刷写。
+
+`v0.1.0-candidate` 保留早期本机构建记录；其本机默认目录权限与 GitHub 环境不同。
+`v0.1.1-candidate` 统一 umask、个性化目录权限与构建语言环境，解决跨主机哈希差异。
+两版共用同一份官方 ImageBuilder 和 APK 缓存，输入附件继续保存在 v0.1.0 Release，
+由 `release-assets.lock.json` 按 URL 与 SHA-256 精确引用。
 
 MIT 许可证仅适用于本工程原创脚本和文档；上游源码和固件组件遵循各自许可证。
 

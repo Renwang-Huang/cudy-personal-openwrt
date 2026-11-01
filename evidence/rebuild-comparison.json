@@ -1,10 +1,17 @@
 {
-  "method": "two successive local ImageBuilder builds using the same verified inputs",
-  "first_sha256": "1b24d3bfcc0379e90cfa52151d5b920e6e2b222556bbf6286383720b1786677b",
-  "second_sha256": "1b24d3bfcc0379e90cfa52151d5b920e6e2b222556bbf6286383720b1786677b",
-  "identical": true,
-  "independent_host_reproduction_tested": false,
-  "offline_package_cache_rebuild_identical": true,
-  "fresh_imagebuilder_package_cache_rebuild_identical": true,
-  "offline_enforcement": "Temporary host-side ImageBuilder Makefile amendment adds apk --no-network; restored after build"
+  "original_v0_1_0": {
+    "local_rebuilds_identical": true,
+    "sha256": "1b24d3bfcc0379e90cfa52151d5b920e6e2b222556bbf6286383720b1786677b",
+    "cross_host_identical": false,
+    "difference": "Local umask 0002 produced group-writable etc, etc/uci-defaults and tmp directories; GitHub default produced mode 0755"
+  },
+  "normalized_v0_1_1": {
+    "sha256": "c02e0d22ed2bdb6f1a1b1e47fce7f702f27e638d2d41a2de66aab089eeac32c2",
+    "offline_package_cache_rebuild_identical": true,
+    "matches_original_cloud_output": true,
+    "independent_host_validation_run_pending": true
+  },
+  "offline_enforcement": "Temporary host-side ImageBuilder Makefile amendment adds apk --no-network; restored after build",
+  "runtime_tested": false,
+  "migration_tested": false
 }

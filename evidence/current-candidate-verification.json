@@ -1,0 +1,38 @@
+{
+  "image": "openwrt-25.12.5-personal-v0.1.1-mediatek-filogic-cudy_tr3000-256mb-v1-squashfs-sysupgrade.bin",
+  "bytes": 9574687,
+  "sha256": "c02e0d22ed2bdb6f1a1b1e47fce7f702f27e638d2d41a2de66aab089eeac32c2",
+  "metadata": {
+    "metadata_version": "1.1",
+    "compat_version": "1.0",
+    "supported_devices": [
+      "cudy,tr3000-256mb-v1",
+      "R103"
+    ],
+    "version": {
+      "dist": "OpenWrt",
+      "version": "25.12.5",
+      "revision": "r33051-f5dae5ece4",
+      "target": "mediatek/filogic",
+      "board": "cudy_tr3000-256mb-v1"
+    }
+  },
+  "kernel_sha256": "17c588fba0aa804018949ea34a94fd3d6f60e68c7cb6fd95d240a2f694da09c6",
+  "rootfs_sha256": "c1a445431c6a17266003b1b3cab5d462601af7dc24d4e83a69be3dd0379a99b9",
+  "model": "Cudy TR3000 256MB v1",
+  "ubi_offset": 6029312,
+  "ubi_bytes": 241172480,
+  "requested_packages_present": [
+    "luci-ssl",
+    "luci-i18n-base-zh-cn",
+    "luci-i18n-firewall-zh-cn"
+  ],
+  "package_count": 161,
+  "personalization_file_verified": true,
+  "overlay_directory_modes_normalized": true,
+  "private_root_password_embedded": false,
+  "current_kwrt_board_accepted_by_metadata": false,
+  "runtime_tested": false,
+  "migration_tested": false,
+  "status": "candidate-requires-migration-review"
+}

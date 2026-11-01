@@ -1,5 +1,5 @@
 {
-  "tag": "v0.1.0-candidate",
+  "tag": "v0.1.1-candidate",
   "package_cache": "openwrt-25.12.5-tr3000-package-cache.tar.zst",
   "assets": [
     {
@@ -17,5 +17,5 @@
       "url": "https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/releases/download/v0.1.0-candidate/openwrt-25.12.5-tr3000-package-cache.tar.zst"
     }
   ],
-  "expected_image_sha256": "1b24d3bfcc0379e90cfa52151d5b920e6e2b222556bbf6286383720b1786677b"
+  "expected_image_sha256": "c02e0d22ed2bdb6f1a1b1e47fce7f702f27e638d2d41a2de66aab089eeac32c2"
 }

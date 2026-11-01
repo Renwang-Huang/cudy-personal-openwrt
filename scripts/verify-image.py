@@ -88,6 +88,11 @@ assert script == (project / 'files/etc/uci-defaults/99-personalize').read_bytes(
 shadow = subprocess.check_output(['unsquashfs', '-cat', str(root_path), 'etc/shadow'])
 root_entry = next(line for line in shadow.decode().splitlines() if line.startswith('root:'))
 assert root_entry.split(':')[1] in ('', '!', '*'), 'Unexpected embedded root password hash'
+listing = subprocess.check_output(['unsquashfs', '-ll', str(root_path)], text=True)
+for directory in ('etc', 'etc/uci-defaults', 'tmp'):
+    line = next(line for line in listing.splitlines()
+                if line.endswith(' squashfs-root/' + directory))
+    assert line.startswith('drwxr-xr-x'), f'Unexpected directory mode: {line}'
 manifest_path = next((project / 'output').glob('*.manifest'))
 manifest = manifest_path.read_text()
 package_names = {line.split()[0] for line in manifest.splitlines() if line.strip()}
@@ -108,6 +113,7 @@ report = {
     'requested_packages_present': cfg['packages'],
     'package_count': len(package_names),
     'personalization_file_verified': True,
+    'overlay_directory_modes_normalized': True,
     'private_root_password_embedded': False,
     'current_kwrt_board_accepted_by_metadata': False,
     'runtime_tested': False,
