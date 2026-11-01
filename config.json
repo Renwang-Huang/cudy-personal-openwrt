@@ -8,7 +8,5 @@
     "luci-i18n-base-zh-cn",
     "luci-i18n-firewall-zh-cn"
   ],
-  "hostname": "TR3000-Personal",
-  "lan_ip": "10.0.0.1",
   "status": "candidate-requires-migration-review"
 }

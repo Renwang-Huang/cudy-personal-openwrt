@@ -16,7 +16,6 @@ if len(images) != 1:
 image = images[0]
 blob = image.read_bytes()
 marker = blob.rfind(b'FWx0')
-start = blob.rfind(b'{', 0, marker)
 # The metadata object has nested objects: locate the metadata_version key instead.
 key = blob.rfind(b'"metadata_version"', 0, marker)
 start = blob.rfind(b'{', 0, key)

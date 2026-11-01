@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild a published candidate with its archived APK cache, offline."""
+"""Fetch verified release assets, then rebuild without APK network access."""
 import hashlib
 import json
 from pathlib import Path

@@ -49,6 +49,11 @@ python3 scripts/verify-image.py
 输出仅作为待评审的候选镜像。刷写前需完成配置、软件清单、关键分区备份，
 并解决 UBI 分区扩大、卷布局、配置迁移和恢复方式的核查。
 
+日后添加插件，修改 `config.json` 中的 `packages`；修改主机名、管理地址或
+默认界面语言，编辑 `files/etc/uci-defaults/99-personalize`。修改后使用
+`build.sh` 生成新的候选版本；`reproduce-release.py` 专门验证归档首版，
+个性化输入变化后其原始 SHA-256 检查会按预期失败。
+
 OpenWrt 25.12 使用 apk 软件包；不能直接复用旧 Kwrt 的 opkg/IPK 软件源和包。
 
 ## 版本与复现边界
