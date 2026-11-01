@@ -18,6 +18,7 @@ jobs:
       - name: Reproduce candidate from verified release assets
         run: python3 scripts/reproduce-release.py
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: tr3000-personal-candidate
           path: output/
