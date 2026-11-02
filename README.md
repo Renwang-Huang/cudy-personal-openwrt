@@ -2,6 +2,9 @@
 
 公开仓库：https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt
 
+另有 [Cudy TR3600 v1（BE3600）实验适配](devices/tr3600/README.md)，使用独立的源码
+构建、硬件补丁和双槽检查，不能与本页 TR3000 的镜像或复现命令混用。
+
 基于官方 OpenWrt 25.12.5、`mediatek/filogic` 的 ImageBuilder 工程。
 首版保留官方硬件定义，加入中文 LuCI 和 HTTPS 管理界面，默认地址为
 `10.0.0.1/24`，主机名为 `TR3000-Personal`。不嵌入管理密码、Wi-Fi 密码、

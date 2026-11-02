@@ -1,3 +1,5 @@
 # Preserve upstream reference files byte for byte, including patch context spacing.
 reference/legacy-kwrt/*.patch -whitespace
 evidence/*.dts -whitespace
+devices/tr3600/patches/*.patch -whitespace
+reference/tr3600/** -whitespace

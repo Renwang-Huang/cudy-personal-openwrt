@@ -1,0 +1,66 @@
+--- a/target/linux/mediatek/filogic/base-files/lib/upgrade/platform.sh
++++ b/target/linux/mediatek/filogic/base-files/lib/upgrade/platform.sh
+@@ -1,5 +1,6 @@
+ REQUIRE_IMAGE_METADATA=1
+-RAMFS_COPY_BIN='fitblk fit_check_sign'
++RAMFS_COPY_BIN='fitblk fit_check_sign fw_printenv fw_setenv sha256sum head'
++RAMFS_COPY_DATA='/etc/fw_env.config /lib/upgrade/cudy-tr3600.sh'
+ 
+ asus_initial_setup()
+ {
+@@ -97,6 +98,11 @@
+ 
+ platform_do_upgrade() {
+ 	local board=$(board_name)
++	if [ "$board" = "cudy,tr3600-v1" ]; then
++		. /lib/upgrade/cudy-tr3600.sh
++		cudy_tr3600_do_upgrade "$1"
++		return $?
++	fi
+ 
+ 	case "$board" in
+ 	abt,asr3000|\
+@@ -300,6 +306,12 @@
+ PART_NAME=firmware
+ 
+ platform_check_image() {
++	if [ "$(board_name)" = "cudy,tr3600-v1" ]; then
++		. /lib/upgrade/cudy-tr3600.sh
++		cudy_tr3600_check_image "$1"
++		return $?
++	fi
++
+ 	local board=$(board_name)
+ 
+ 	[ "$#" -gt 1 ] && return 1
+--- a/package/boot/uboot-tools/uboot-envtools/files/mediatek_filogic
++++ b/package/boot/uboot-tools/uboot-envtools/files/mediatek_filogic
+@@ -22,6 +22,13 @@
+ }
+ 
+ case "$board" in
++cudy,tr3600-v1)
++	. /lib/upgrade/nand.sh
++	ubidev="$(nand_find_ubi ubi)"
++	envdev="$(nand_find_volume "$ubidev" u-boot-env)"
++	[ -n "$envdev" ] || exit 1
++	ubootenv_add_uci_config "/dev/$envdev" "0x0" "0x80000" "0x80000" "1"
++	;;
+ abt,asr3000|\
+ acer,predator-w6x-ubootmod|\
+ asus,zenwifi-bt8-ubootmod|\
+--- a/target/linux/mediatek/dts/mt7987b-cudy-tr3600-v1.dts
++++ b/target/linux/mediatek/dts/mt7987b-cudy-tr3600-v1.dts
+@@ -81,9 +81,11 @@
+ };
+ 
+ &fan {
++	/delete-property/ pinctrl-0;
++	/delete-property/ pinctrl-names;
+ 	fan-supply = <&fan_3p3v>;
+ 	cooling-levels = <0 64 128 192 255>;
+-	pwms = <&pwm 0 50000 0>;
++	pwms = <&pwm 0 50000>;
+ 	status = "okay";
+ };
+ 

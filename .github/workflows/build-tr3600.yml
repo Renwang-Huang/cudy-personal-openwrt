@@ -1,0 +1,32 @@
+name: Build TR3600 v1 experimental candidate
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install host build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential flex bison gawk gettext git libncurses-dev libssl-dev rsync unzip zlib1g-dev file wget xz-utils libelf-dev python3-setuptools swig curl ca-certificates clang llvm zstd squashfs-tools xsltproc
+      - name: Prepare locked source and toolchain
+        run: python3 devices/tr3600/scripts/prepare.py
+      - name: Build TR3600 candidate
+        run: JOBS=2 bash devices/tr3600/scripts/build.sh
+      - name: Inspect image
+        run: python3 devices/tr3600/scripts/verify-image.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tr3600-v1-experimental-candidate
+          path: |
+            work/tr3600-source/bin/targets/mediatek/filogic/
+            work/tr3600-source/logs/
+          if-no-files-found: warn

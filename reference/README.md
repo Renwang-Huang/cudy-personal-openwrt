@@ -24,6 +24,11 @@ OpenWrt 的包配方负责按固定版本和校验值获取这些原始源码；
 本次实际镜像通过官方 ImageBuilder 组装，所使用的 ImageBuilder 和下载的软件包
 可作为 GitHub Release 的独立附件备份，不把大型构建产物混入源码树。
 
+`tr3600/` 保存 TR3600 官方开发 ZIP、厂商 GPL 包和相关启动/升级源码参考。
+`sources/` 中额外保存 TR3600 上游 PR 及社区硬件修正的固定提交快照。
+TR3600 配方使用主工程锁定版本和独立补丁，从源码编译内核与软件包；其下载缓存
+另行归档至 Release，不复用 TR3000 的 APK 或镜像。
+
 ## 使用快照
 
 在 `reference/sources/` 中运行 `sha256sum -c SHA256SUMS` 验证。
