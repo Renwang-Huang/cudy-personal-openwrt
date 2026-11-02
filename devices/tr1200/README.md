@@ -24,11 +24,7 @@ USB 共享、VPN 等插件后续按空间及性能添加；保留拨动开关输
 
 当前版本：[tr1200-v0.1.1-candidate](https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/tag/tr1200-v0.1.1-candidate)。
 系统镜像 **6,619,419 字节（约 6.31 MiB）**，包含 151 个包及依赖，估算可写区域约
-9.19 MiB，未扣除 JFFS2 开销。SHA-256：
-
-```text
-7dec3ae143b5d1f41c6d969e176ff5f6e74b0abf6c9cc69a16e5ce256595a37a
-```
+9.19 MiB，未扣除 JFFS2 开销。
 
 v0.1.1 修正了旧中间固件使用 `cudy,tr1200` 时无法通过新版元数据检查的问题，
 并将 backup 偏移由 `0xfe000` 修正为 `0xfe0000`。同时移除原厂 `R46` 的直接
@@ -69,8 +65,8 @@ python3 devices/tr1200/scripts/verify-image.py
 python3 devices/tr1200/scripts/reproduce-release.py
 ```
 
-脚本验证 ImageBuilder 与归档 APK 缓存，禁止 APK 联网，重建后比较发布哈希。
-v0.1.1 复用 v0.1.0 Release 中不可变的工具与软件包缓存，锁文件引用精确 URL 和 SHA-256。
+脚本验证 ImageBuilder 与归档 APK 缓存，禁止 APK 联网，重建后与发布镜像比较内容。
+v0.1.1 复用 v0.1.0 Release 中不可变的工具与软件包缓存，锁文件固定下载来源与构建输入。
 普通构建仍会获取官方源的当前包；修改 `config.json` 或叠加文件后应走普通构建流程。
 SBOM 的生成时间和 UUID 不承诺逐字节复现。
 

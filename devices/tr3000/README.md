@@ -25,9 +25,6 @@
 官方 ImageBuilder：
 `openwrt-imagebuilder-25.12.5-mediatek-filogic.Linux-x86_64.tar.zst`
 
-SHA-256：
-`7fb6cf626582ebcbfb46974da48c1eae577213f38879eaf6b1d982041e843461`
-
 下载源：
 https://downloads.openwrt.org/releases/25.12.5/targets/mediatek/filogic/
 
@@ -55,13 +52,13 @@ python3 scripts/verify-image.py
 日后添加插件，修改 `config.json` 中的 `packages`；修改主机名、管理地址或
 默认界面语言，编辑 `files/etc/uci-defaults/99-personalize`。修改后使用
 `build.sh` 生成新的候选版本；`reproduce-release.py` 专门验证归档首版，
-个性化输入变化后其原始 SHA-256 检查会按预期失败。
+个性化输入变化后归档版本的一致性检查会按预期失败。
 
 OpenWrt 25.12 使用 apk 软件包；不能直接复用旧 Kwrt 的 opkg/IPK 软件源和包。
 
 ## 版本与复现边界
 
-`build.lock.json` 锁定官方 ImageBuilder 的 SHA-256 和源码参考提交；
+`build.lock.json` 锁定官方 ImageBuilder 与源码参考提交；
 `reference/archives.lock.json` 锁定备份源码的具体内容。
 官方软件包服务器仍可能更新包版本，实际构建的软件包版本以输出 `.manifest` 为准。
 如需复现同一次构建，应同时保存构建所用的 ImageBuilder、软件包缓存及构建输出。
@@ -73,21 +70,20 @@ OpenWrt 25.12 使用 apk 软件包；不能直接复用旧 Kwrt 的 opkg/IPK 软
 python3 scripts/reproduce-release.py
 ```
 
-脚本验证 Release 附件的 SHA-256，在安装镜像软件包时使用归档缓存并禁止网络，
-然后检查输出镜像 SHA-256 是否与首版相同。普通 `build.sh` 可从官方源获取更新后的包；
+脚本检查 Release 附件的完整性，在安装镜像软件包时使用归档缓存并禁止网络，
+然后检查输出镜像是否与首版逐字节一致。普通 `build.sh` 可从官方源获取更新后的包；
 这两种用途应区分。
 
 当前候选版为 `v0.1.1-candidate`，镜像为 9,574,687 字节（约 9.13 MiB），含 161 个基础包及依赖。
-SHA-256：`c02e0d22ed2bdb6f1a1b1e47fce7f702f27e638d2d41a2de66aab089eeac32c2`。
 它仍是未完成实机迁移验证的候选版本，不应仅凭构建成功而刷写。
 
 已通过[独立 GitHub Actions 环境的离线复现](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41333664663)，
 并下载云端产物与本机镜像逐字节比较，结果一致。
 
 `v0.1.0-candidate` 保留早期本机构建记录；其本机默认目录权限与 GitHub 环境不同。
-`v0.1.1-candidate` 统一 umask、个性化目录权限与构建语言环境，解决跨主机哈希差异。
+`v0.1.1-candidate` 统一 umask、个性化目录权限与构建语言环境，解决跨主机内容差异。
 两版共用同一份官方 ImageBuilder 和 APK 缓存，输入附件继续保存在 v0.1.0 Release，
-由 `release-assets.lock.json` 按 URL 与 SHA-256 精确引用。
+由 `release-assets.lock.json` 固定下载来源并自动检查完整性。
 
 MIT 许可证仅适用于本工程原创脚本和文档；上游源码和固件组件遵循各自许可证。
 

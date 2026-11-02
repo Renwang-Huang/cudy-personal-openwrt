@@ -43,7 +43,7 @@ def evaluate(snapshot):
         'errors': errors, 'warnings': warnings,
         'manual_checks_still_required': [
             'physical TR1200 1.0 label and original firmware version',
-            'matching image SHA-256 and successful on-device sysupgrade -T without force',
+            'verified image integrity and successful on-device sysupgrade -T without force',
             'verified off-device bootloader, environment, factory and bdinfo backups',
             'WAN-side official recovery request and correct matching original firmware',
             'stable power, isolated wired bring-up and no retained old configuration',

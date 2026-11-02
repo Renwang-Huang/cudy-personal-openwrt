@@ -10,11 +10,7 @@ ImageBuilder，移植两项固定的上游提案：
 DTB 只改两个字节，uImage 重新计算 CRC。每次准备时先验证原始封装能逐字节重现。
 
 中文 LuCI、HTTPS、默认 `10.0.0.1/24`，主机名 `TR1200-Personal`，151 个包及依赖，
-无内置密码、私钥、订阅或代理插件。sysupgrade 为 **6,619,419 字节**，SHA-256：
-
-```text
-7dec3ae143b5d1f41c6d969e176ff5f6e74b0abf6c9cc69a16e5ce256595a37a
-```
+无内置密码、私钥、订阅或代理插件。sysupgrade 为 **6,619,419 字节**。
 
 ## 验证与附件
 
@@ -22,12 +18,12 @@ DTB 只改两个字节，uImage 重新计算 CRC。每次准备时先验证原�
 已通过 fwtool / uImage / 分区检查、8 类损坏或不兼容输入拒绝、实际 MIPS 24KEc
 用户态 BusyBox / UCI / dnsmasq 检查；个性化脚本的提交、重复执行和 WAN/VLAN 保留通过。
 镜像没有已知可触发 SMALL_FLASH 服务问题的 ujail。
-原厂恢复文件通过 ZIP、归档 SHA-256 和厂商 MD5；没有启动恢复服务或刷写设备。
+原厂恢复文件通过 ZIP、归档完整性校验和厂商 MD5；没有启动恢复服务或刷写设备。
 
 已通过 [GitHub 独立环境的完整本轮检查](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41443725093)：
 离线重建、MIPS 用户态与异常输入检查、原厂恢复材料核验均通过。
 下载云端镜像与本地逐字节一致，静态报告与 MIPS 审计报告也一致。
-本版 11 个发布附件的服务器 SHA-256 已全部核对。
+本版 11 个发布附件的完整性检查已全部通过。
 
 附件包含镜像、manifest、SBOM、profiles、静态检查、离线审计和关键修正报告。
 工具与 APK 缓存继续复用 v0.1.0 的已锁定附件，`release-assets.lock.json` 精确引用，

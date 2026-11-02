@@ -35,7 +35,7 @@
 | **TR3600 v1**<br>BE3600 | 官方源码 + 实验适配补丁<br>`mediatek/filogic` | [说明](devices/tr3600/README.md)<br>[v0.1.0](https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/tag/tr3600-v0.1.0-candidate) |
 
 每个型号都有独立的镜像、配置和构建流程。TR3600 的设备支持补丁尚未合入上游；
-各型号的镜像不能混刷。精确版本、软件包清单与 SHA-256 见各自 Release。
+各型号的镜像不能混刷。精确版本、软件包清单和验证结果见各自 Release。
 
 ## 默认体验
 
@@ -71,7 +71,7 @@ cd cudy-personal-openwrt
 python3 devices/tr1200/scripts/reproduce-release.py
 ```
 
-校验归档 ImageBuilder 与软件包缓存，禁用 APK 联网，重建后比较首版 SHA-256。
+校验归档 ImageBuilder 与软件包缓存，禁用 APK 联网，重建后与首版镜像比较一致性。
 修改软件包或默认配置时，使用[设备文档中的常规构建流程](devices/tr1200/README.md#构建与复现)。
 
 </details>
@@ -83,7 +83,7 @@ python3 devices/tr1200/scripts/reproduce-release.py
 python3 scripts/reproduce-release.py
 ```
 
-校验归档输入，禁用 APK 联网，重建后比较首版 SHA-256。
+校验归档输入，禁用 APK 联网，重建后与首版镜像比较一致性。
 配置与脚本位于仓库根目录，详见 [TR3000 构建说明](devices/tr3000/README.md#构建输入)。
 
 </details>

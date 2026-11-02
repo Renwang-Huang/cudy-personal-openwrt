@@ -17,15 +17,13 @@
 - 设备源码、补丁、官方开发包、GPL 包和校验值在仓库 `devices/tr3600/`、`reference/`。
 
 已完成本地源码编译、设备树及镜像静态检查、槽位状态与写入失败路径的 stub 检查。
-完整哈希、大小和构建重复性结果以附件及仓库 evidence 为准。
+产物大小和构建重复性结果以附件及仓库 evidence 为准。
 
 已通过 [GitHub 独立环境的发布镜像静态检查](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41394843131)：
-重新下载公开附件，检查设备树、软件包、个性化文件及槽位 stub 逻辑，并比对发布哈希。
-全部 13 个附件的 GitHub SHA-256 也与本地一致。此检查没有执行完整源码重建。
+重新下载公开附件，检查设备树、软件包、个性化文件及槽位 stub 逻辑，并核对发布镜像内容。
+全部 13 个附件均已通过完整性检查。此检查没有执行完整源码重建。
 
-最终 sysupgrade：10,987,804 字节（约 10.48 MiB），SHA-256：
-`71911f83ebf60dfd70e72916c02306961b36d5b399dd4056aeb7964da65c8dbe`。
-
+最终 sysupgrade：10,987,804 字节（约 10.48 MiB）。
 连续两次本地完整构建的 sysupgrade 和 initramfs 分别逐字节一致。
 回移了已合入上游的 APK 时间戳修复，并通过标准包清理目标避免增量构建重复生成
 CA 证书；最终信任库含 121 个不重复的证书。独立主机源码重建未验证。
@@ -43,6 +41,6 @@ CA 证书；最终信任库含 121 个不重复的证书。独立主机源码重
 ## 复现
 
 参照 `devices/tr3600/README.md`，依次运行 `prepare.py`、`restore-downloads.py`、
-`build.sh`、`verify-image.py`。缓存恢复脚本先验证附件 SHA-256，再恢复 `dl/`。
+`build.sh`、`verify-image.py`。缓存恢复脚本先检查附件完整性，再恢复 `dl/`。
 固定 feed、源码与补丁，使用附带工具链。内核模块必须与本次完整 kernel 版本匹配。
 本配方不导出或复用 TR3000 的 ImageBuilder；完整源码构建的独立主机复现尚未验证。
