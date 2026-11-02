@@ -27,7 +27,8 @@
     "001-openwrt-tr3600-v1.patch": "f3184d2e4b330e4bc15d5f63e83a9d1d1cb7db29e2e0ffbf12b9ad3f685291b5",
     "002-tr3600-hardware-fixes.patch": "18d2461f08163630522ed6a4b6ad25411388bcf2796033925f57ff2fdbb0e102",
     "003-cudy-dualboot-kernel.patch": "b5afa74d34ff2786aec41127363f539b036eef20192ee002555a9cdc53713665",
-    "004-slot-aware-upgrade-and-pwm-binding.patch": "3910ba3165072f176a57851de0327ca37ef36b4b6ab957830d560883847fc51d"
+    "004-slot-aware-upgrade-and-pwm-binding.patch": "3910ba3165072f176a57851de0327ca37ef36b4b6ab957830d560883847fc51d",
+    "005-upstream-reproducible-apk-timestamps.patch": "b4f7efd2a1f7c1e82507a2b468f0de72c3a1df399ad1f03dee7bd93d9606137c"
   },
   "local_source_files": {
     "files/etc/init.d/cudy-boot-success": "de3ca733f4ac9419d49a31b5d6580bd273892e5dd36d7689a90aeba570e62525",
@@ -37,6 +38,17 @@
     "source-overlay/package/kernel/cudy-bootcount/src/Makefile": "2ed36b8a217e83e575e8d26641a2119cfc66396e48ed2062d41acaf79e4a01ed",
     "source-overlay/package/kernel/cudy-bootcount/src/reset-boot-count.c": "8f095b72541baa4faa3ff4348a3b6b14ff0792416f49eaf85bfa48a92d039a1c",
     "config/feeds.conf": "ae22a9a8771e42ff8bcb9d7e97084bcd596fc18916690835d1db1a16cf63d09f",
-    "config/minimal.config": "0cc0ddf7f376a3d7046ba8986065d676b1e4f7c6efcfbe469c7df9ce6e61935c"
+    "config/minimal.config": "69acca1c00c3d5486d3a0daefd74753a399d69d784cdb191f48922094a32dd62"
+  },
+  "apk_reproducibility_reference": [
+    "https://github.com/openwrt/openwrt/pull/21574",
+    "https://github.com/openwrt/openwrt/pull/24005"
+  ],
+  "apk_reproducibility_commit": "b0b4bf6ea0927195631a3557d05f48f8e302d498",
+  "source_cache": {
+    "filename": "tr3600-v0.1.0-source-cache.tar.zst",
+    "url": "https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/releases/download/tr3600-v0.1.0-candidate/tr3600-v0.1.0-source-cache.tar.zst",
+    "sha256": "e5f18ade9baf39c3c8f4032eb35a8611b53cd15ff0fbd7f6cf2a6c24f84f5ec0",
+    "files": 105
   }
 }

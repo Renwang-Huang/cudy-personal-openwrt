@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Read-only inspection of the TR3600 candidate and its compiled device tree."""
+import base64
 import hashlib
 import json
 from pathlib import Path
@@ -10,6 +11,8 @@ import tarfile
 
 project = Path(__file__).resolve().parents[3]
 device_dir = project / 'devices/tr3600'
+subprocess.run(['bash', str(device_dir / 'scripts/check-slot-logic.sh')],
+               check=True, stdout=subprocess.PIPE)
 output = project / 'work/tr3600-source/bin/targets/mediatek/filogic'
 images = list(output.glob('*cudy_tr3600-v1-squashfs-sysupgrade.bin'))
 if len(images) != 1:
@@ -108,6 +111,11 @@ assert 'cudy_tr3600_do_upgrade' in platform and 'cudy_tr3600_check_image' in pla
 assert 'u-boot-env' in read_root('etc/uci-defaults/30_uboot-envtools').decode()
 root_entry = next(line for line in read_root('etc/shadow').decode().splitlines() if line.startswith('root:'))
 assert root_entry.split(':')[1] in ('', '!', '*')
+certificates = re.findall(b'-----BEGIN CERTIFICATE-----\\s*(.*?)\\s*-----END CERTIFICATE-----',
+                          read_root('etc/ssl/certs/ca-certificates.crt'), re.S)
+certificate_ids = [hashlib.sha256(base64.b64decode(value)).hexdigest() for value in certificates]
+assert certificates and len(certificate_ids) == len(set(certificate_ids)), 'Duplicate CA certificates in bundle'
+assert 'https://downloads.openwrt.org/releases/25.12.5/' in read_root('etc/apk/repositories.d/distfeeds.list').decode()
 manifests = list(output.glob('*cudy_tr3600-v1.manifest'))
 if not manifests:
     manifests = list(output.glob('*mediatek-filogic.manifest'))
@@ -133,6 +141,7 @@ report = {
     'fan_pwm_channel': 0, 'fan_period_ns': 50000,
     'required_packages_present': required, 'package_count': len(packages),
     'slot_logic_stub_tests_passed': True, 'private_root_password_embedded': False,
+    'ca_bundle_certificates': len(certificates), 'duplicate_ca_certificates': False,
     'hardware_tested': False, 'wifi7_mlo_tested': False, 'dual_slot_upgrade_tested_on_hardware': False,
     'status': 'TR3600 v1 experimental candidate; requires hardware migration review',
     'initramfs_sha256': hashlib.sha256(initramfs[0].read_bytes()).hexdigest()

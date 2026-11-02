@@ -1,0 +1,8 @@
+{
+  "tag": "tr3600-v0.1.0-candidate",
+  "image": "openwrt-25.12.5-tr3600-personal-r33051-f5dae5ece4-mediatek-filogic-cudy_tr3600-v1-squashfs-sysupgrade.bin",
+  "image_sha256": "71911f83ebf60dfd70e72916c02306961b36d5b399dd4056aeb7964da65c8dbe",
+  "initramfs_sha256": "bc72685ee9cf84b8ad4ef596e80a14b60a2014ce23dfcd5ecafc1730c5d4a622",
+  "source_cache_sha256": "e5f18ade9baf39c3c8f4032eb35a8611b53cd15ff0fbd7f6cf2a6c24f84f5ec0",
+  "hardware_tested": false
+}

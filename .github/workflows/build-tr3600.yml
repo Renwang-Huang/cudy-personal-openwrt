@@ -18,6 +18,8 @@ jobs:
           sudo apt-get install -y build-essential flex bison gawk gettext git libncurses-dev libssl-dev rsync unzip zlib1g-dev file wget xz-utils libelf-dev python3-setuptools swig curl ca-certificates clang llvm zstd squashfs-tools xsltproc
       - name: Prepare locked source and toolchain
         run: python3 devices/tr3600/scripts/prepare.py
+      - name: Restore locked source downloads
+        run: python3 devices/tr3600/scripts/restore-downloads.py
       - name: Build TR3600 candidate
         run: JOBS=2 bash devices/tr3600/scripts/build.sh
       - name: Inspect image

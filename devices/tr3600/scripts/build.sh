@@ -9,4 +9,8 @@ export BUILD_USER=builder BUILD_HOST=openwrt
 jobs="${JOBS:-6}"
 bash "$project_dir/devices/tr3600/scripts/check-slot-logic.sh"
 make -C "$source_dir" -j"$jobs" download
+# Debian's certdata2pem.py creates *_2.crt when certificates from a prior
+# conversion remain. Re-extract this small cached package for each build so
+# incremental rebuilds cannot accumulate duplicate trust anchors.
+make -C "$source_dir" package/system/ca-certificates/clean
 make -C "$source_dir" -j"$jobs" "$@"

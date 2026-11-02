@@ -1,0 +1,12 @@
+{
+  "issue": "APK metadata timestamps caused identical file contents to produce changing package identities",
+  "affected_root_files": [
+    "lib/apk/db/installed",
+    "lib/apk/db/scripts.tar.gz"
+  ],
+  "upstream_fix": "https://github.com/openwrt/openwrt/pull/24005",
+  "adaptation": "Set SOURCE_DATE_EPOCH=0 for apk mkpkg, matching merged upstream change",
+  "kernel_payload_was_identical": true,
+  "additional_issue": "Debian certdata2pem repeated conversion generated *_2.crt duplicate certificates during incremental builds",
+  "ca_bundle_fix": "Use standard OpenWrt package/system/ca-certificates/clean before each build"
+}

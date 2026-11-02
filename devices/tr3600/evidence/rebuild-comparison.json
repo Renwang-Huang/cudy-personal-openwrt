@@ -1,0 +1,11 @@
+{
+  "same_source_tree_repeat_build": true,
+  "upstream_apk_timestamp_fix_applied": true,
+  "ca_package_reprepared_for_each_build": true,
+  "sysupgrade_sha256": "71911f83ebf60dfd70e72916c02306961b36d5b399dd4056aeb7964da65c8dbe",
+  "initramfs_sha256": "bc72685ee9cf84b8ad4ef596e80a14b60a2014ce23dfcd5ecafc1730c5d4a622",
+  "sysupgrade_identical": true,
+  "initramfs_identical": true,
+  "independent_host_rebuild_tested": false,
+  "hardware_tested": false
+}

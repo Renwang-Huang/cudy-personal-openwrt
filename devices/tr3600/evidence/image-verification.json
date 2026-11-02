@@ -1,0 +1,71 @@
+{
+  "image": "openwrt-25.12.5-tr3600-personal-r33051-f5dae5ece4-mediatek-filogic-cudy_tr3600-v1-squashfs-sysupgrade.bin",
+  "bytes": 10987804,
+  "sha256": "71911f83ebf60dfd70e72916c02306961b36d5b399dd4056aeb7964da65c8dbe",
+  "metadata": {
+    "metadata_version": "1.1",
+    "compat_version": "1.0",
+    "supported_devices": [
+      "cudy,tr3600-v1",
+      "R126"
+    ],
+    "version": {
+      "dist": "OpenWrt",
+      "version": "25.12.5-tr3600-personal",
+      "revision": "r0-f5dae5e",
+      "target": "mediatek/filogic",
+      "board": "cudy_tr3600-v1"
+    }
+  },
+  "kernel_sha256": "5028ca2367c8b0649d3a9c278e721e277d27b279a9ffe3c5c932c36469555b8b",
+  "rootfs_sha256": "4505793ab88466342062a467a7a3e369dcd1bb4f4e971f0c97c700a9459583ec",
+  "partitions": {
+    "BL2": [
+      0,
+      1048576
+    ],
+    "backup": [
+      1048576,
+      524288
+    ],
+    "Factory": [
+      1572864,
+      4194304
+    ],
+    "bdinfo": [
+      5767168,
+      262144
+    ],
+    "FIP": [
+      6029312,
+      2097152
+    ],
+    "ubi": [
+      8126464,
+      243531776
+    ]
+  },
+  "fan_pwm_channel": 0,
+  "fan_period_ns": 50000,
+  "required_packages_present": [
+    "luci-ssl",
+    "luci-i18n-base-zh-cn",
+    "luci-i18n-firewall-zh-cn",
+    "kmod-mt7990-firmware",
+    "kmod-mt7996e",
+    "kmod-hwmon-pwmfan",
+    "kmod-cudy-bootcount",
+    "mt7987-2p5g-phy-firmware",
+    "kmod-usb3"
+  ],
+  "package_count": 165,
+  "slot_logic_stub_tests_passed": true,
+  "private_root_password_embedded": false,
+  "ca_bundle_certificates": 121,
+  "duplicate_ca_certificates": false,
+  "hardware_tested": false,
+  "wifi7_mlo_tested": false,
+  "dual_slot_upgrade_tested_on_hardware": false,
+  "status": "TR3600 v1 experimental candidate; requires hardware migration review",
+  "initramfs_sha256": "bc72685ee9cf84b8ad4ef596e80a14b60a2014ce23dfcd5ecafc1730c5d4a622"
+}

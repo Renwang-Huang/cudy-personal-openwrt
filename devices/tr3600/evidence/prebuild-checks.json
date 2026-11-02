@@ -1,0 +1,17 @@
+{
+  "model": "Cudy TR3600 v1",
+  "base_commit": "f5dae5ece4805730c5e2850f8aa84765af2f6b32",
+  "dts_compiles": true,
+  "fan_pwm_channel": 0,
+  "fan_period_ns": 50000,
+  "fan_cooling_levels": [
+    0,
+    64,
+    128,
+    192,
+    255
+  ],
+  "kernel_vendor_boot_parameters_present": true,
+  "slot_stub_checks": "Slot checks passed: both directions, inconsistent state rejection, no writes on invalid state, write/readback/commit ordering, no slot switch after flash or verification failure.",
+  "hardware_tested": false
+}

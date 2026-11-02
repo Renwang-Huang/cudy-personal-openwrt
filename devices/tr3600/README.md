@@ -8,6 +8,12 @@
 首版包含中文 LuCI、HTTPS 和基础联网功能，默认管理地址 `10.0.0.1/24`，
 主机名 `TR3600-Personal`。不预装代理插件，不嵌入密码、密钥或订阅。
 
+候选产物：[tr3600-v0.1.0-candidate](https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/releases/tag/tr3600-v0.1.0-candidate)。
+sysupgrade 为 10,987,804 字节，SHA-256 为
+`71911f83ebf60dfd70e72916c02306961b36d5b399dd4056aeb7964da65c8dbe`。
+本地连续两次完整构建的系统与 initramfs 镜像分别一致；完整证据见 `evidence/`。
+独立主机源码重建、实际设备启动和刷写均未验证。
+
 ## 源码与补丁
 
 `build.lock.json` 锁定基础源码、工具链、PR、硬件修正及官方开发包；
@@ -17,6 +23,12 @@
 2. `002`：社区的红白 LED、PWM0、Wi-Fi MAC 和温控修正。
 3. `003`：Cudy 官方开发包中的 UBI rootfs 选择与 `boot_param` 内核补丁。
 4. `004`：本工程的双槽升级集成、UBI 环境卷定位，以及本基础源码的 PWM 参数单元修正。
+5. `005`：移植已合入上游的 PR #24005，在 APK 打包时固定文件时间戳，避免重复构建时
+   包校验标识变化。只调整原补丁的上下文，保留其单行行为。
+
+构建脚本还通过上游提供的 `package/system/ca-certificates/clean` 目标重新准备证书包，
+防止 Debian 的证书转换脚本在增量构建时把已有证书再次生成为 `_2.crt`，导致信任库重复。
+此步骤只处理本工程的证书包构建目录，不触及主机或路由器的证书。
 
 `source-overlay/package/kernel/cudy-bootcount/` 来自 Cudy GPL 包中的 MediaTek
 BSD-3-Clause 启动计数复位模块，仅将旧 `file_operations` 接口改为 Linux 6.12 的
@@ -45,6 +57,7 @@ Linux x86_64 主机需要 OpenWrt 构建依赖，另需 `clang`/LLVM（提供 BP
 
 ```sh
 python3 devices/tr3600/scripts/prepare.py
+python3 devices/tr3600/scripts/restore-downloads.py
 JOBS=6 bash devices/tr3600/scripts/build.sh
 python3 devices/tr3600/scripts/verify-image.py
 ```
@@ -53,10 +66,19 @@ python3 devices/tr3600/scripts/verify-image.py
 initramfs、软件包清单和校验文件。准备脚本只获取并校验源码、应用补丁和配置，
 构建脚本没有连接路由器或刷写动作。临时构建目录及私人备份均不进入 Git。
 
+采用官方预编译工具链的完整源码构建。上游禁止在 external-toolchain 配置下导出
+ImageBuilder，因此本配方保留完整源码、补丁、工具链和下载缓存，不承诺可直接使用
+TR3000 的 ImageBuilder 来重建。普通用户态插件使用官方 25.12.5 软件源；内核模块
+必须与本配方的完整 kernel 版本匹配，不能强制安装官方或其他固件的 kmod。
+
 ## 参考
+
+`restore-downloads.py` 从本候选 Release 获取并校验源码下载缓存，减少上游站点变化对
+复现的影响。没有缓存时也可跳过此步，由 OpenWrt 按包配方的版本和校验值下载。
 
 - https://www.cudy.com/en-us/products/tr3600-1-0
 - https://www.cudy.com/zh-cn/pages/download-center/tr3600-1-0
 - https://github.com/openwrt/openwrt/pull/24596
 - https://github.com/openwrt/openwrt/pull/24596#issuecomment-5226298465
 - https://github.com/hyqhyq3/openwrt-cudy-tr3600
+- https://github.com/openwrt/openwrt/pull/24005

@@ -2,11 +2,13 @@
 """Prepare the locked TR3600 source, feeds, external toolchain and patches."""
 import hashlib
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
 
 project = Path(__file__).resolve().parents[3]
+os.umask(0o022)
 device = project / 'devices/tr3600'
 lock = json.loads((device / 'build.lock.json').read_text())
 source = project / 'work/tr3600-source'
@@ -29,6 +31,11 @@ compiler_root = toolchain_root / 'toolchain-aarch64_cortex-a53_gcc-14.3.0_musl'
 marker = source / '.tr3600-patches.json'
 patches = sorted((device / 'patches').glob('*.patch'))
 hashes = {patch.name: hashlib.sha256(patch.read_bytes()).hexdigest() for patch in patches}
+if hashes != lock['patches']:
+    raise SystemExit('Patch contents do not match build.lock.json')
+for relative, expected in lock['local_source_files'].items():
+    if hashlib.sha256((device / relative).read_bytes()).hexdigest() != expected:
+        raise SystemExit(f'Local build input differs from the lock: {relative}')
 if marker.exists():
     if json.loads(marker.read_text()) != hashes:
         raise SystemExit('Patch inputs changed; use a fresh source checkout before preparing')
