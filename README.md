@@ -30,7 +30,7 @@
 
 | 设备 | 构建基础 | 入口 |
 | :--- | :--- | :---: |
-| **TR1200 v1**<br>AC1200 | 官方 ImageBuilder<br>`ramips/mt76x8` | [说明](devices/tr1200/README.md)<br>[v0.1.0](https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/tag/tr1200-v0.1.0-candidate) |
+| **TR1200 v1**<br>AC1200 | 官方 ImageBuilder + 两项设备修正<br>`ramips/mt76x8` | [说明](devices/tr1200/README.md)<br>[v0.1.1](https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/tag/tr1200-v0.1.1-candidate) |
 | **TR3000 256MB v1**<br>AX3000 | 官方 ImageBuilder<br>`mediatek/filogic` | [说明](devices/tr3000/README.md)<br>[v0.1.1](https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/tag/v0.1.1-candidate) |
 | **TR3600 v1**<br>BE3600 | 官方源码 + 实验适配补丁<br>`mediatek/filogic` | [说明](devices/tr3600/README.md)<br>[v0.1.0](https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/tag/tr3600-v0.1.0-candidate) |
 
@@ -48,7 +48,7 @@
 
 | 设备 | 已完成的验证 | 云端记录 |
 | :--- | :--- | :---: |
-| **TR1200** | 本地离线重建与云端镜像逐字节一致 | [重建](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41398059150) |
+| **TR1200** | v0.1.1 本地离线重建、分区修正与 MIPS 用户态检查通过 | [复核](devices/tr1200/AUDIT.md) |
 | **TR3000** | 本地离线重建与云端镜像逐字节一致 | [重建](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41333664663) |
 | **TR3600** | 本地两次源码构建一致；云端发布镜像静态检查通过 | [检查](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41394843131) |
 

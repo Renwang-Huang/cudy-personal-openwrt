@@ -1,0 +1,49 @@
+{
+  "image_sha256": "7dec3ae143b5d1f41c6d969e176ff5f6e74b0abf6c9cc69a16e5ce256595a37a",
+  "corrupt_inputs_rejected": [
+    "uimage_header_crc_corruption",
+    "kernel_payload_crc_corruption",
+    "wrong_device_metadata",
+    "missing_squashfs_header",
+    "missing_chinese_luci_package",
+    "unsupported_namespace_jail",
+    "firmware_partition_overflow",
+    "disabled_python_assertions"
+  ],
+  "actual_mips_busybox_executed": true,
+  "actual_mips_uci_executed": true,
+  "personalization_values_verified": {
+    "system.@system[0].hostname": "TR1200-Personal",
+    "luci.main.lang": "zh_cn",
+    "network.lan.ipaddr": "10.0.0.1",
+    "network.lan.netmask": "255.255.255.0",
+    "network.lan.device": "br-lan",
+    "network.wan.device": "eth0.2",
+    "network.wan.proto": "dhcp",
+    "network.lan_vlan.ports": "0 6t",
+    "network.wan_vlan.ports": "1 6t",
+    "network.switch0.enable_vlan": "1"
+  },
+  "personalization_idempotent": true,
+  "wan_and_vlan_configuration_preserved": true,
+  "actual_package_lists_match_manifest": true,
+  "dnsmasq": "Dnsmasq version 2.93  Copyright (c) 2000-2026 Simon Kelley",
+  "dnsmasq_config_syntax_test": "dnsmasq: syntax check OK.",
+  "critical_executable_abi": {
+    "bin/busybox": "MIPSEL ELF32, MIPS32r2, soft float",
+    "sbin/init": "MIPSEL ELF32, MIPS32r2, soft float",
+    "sbin/procd": "MIPSEL ELF32, MIPS32r2, soft float",
+    "sbin/uci": "MIPSEL ELF32, MIPS32r2, soft float",
+    "usr/sbin/dnsmasq": "MIPSEL ELF32, MIPS32r2, soft float",
+    "usr/sbin/dropbear": "MIPSEL ELF32, MIPS32r2, soft float"
+  },
+  "kernel_module_vermagic_verified": true,
+  "qemu_cpu_model": "24KEc",
+  "device_inventory_guards_tested": true,
+  "archived_intermediate_version_verified": "23.05.3 r23809-234f1a2efa",
+  "archived_intermediate_legacy_board_verified": "cudy,tr1200",
+  "actual_intermediate_mips_fwtool_parses_candidate": true,
+  "full_system_boot_emulated": false,
+  "hardware_tested": false,
+  "physical_label_bootloader_recovery_and_calibration_backups_verified": false
+}

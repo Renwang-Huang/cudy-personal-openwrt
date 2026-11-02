@@ -1,0 +1,21 @@
+{
+  "official_roundtrip_byte_identical": true,
+  "kernel_machine_code_byte_identical": true,
+  "kernel_machine_code_bytes": 6994304,
+  "kernel_machine_code_sha256": "d0fb9f31f236a6e856721c10cb7a2acb5a16172432487523c77f4b6708710ccc",
+  "dtb_changed_byte_offsets": [
+    3277,
+    3278
+  ],
+  "patched_dtb_sha256": "9bb057cafb2131b09266fff26f4e9be8c521252843de6cb97d528b55c06af2af",
+  "patched_kernel_sha256": "b70cc2beb4d343404aed440dcf27023a94a014516409a360fd92a5b186930bb9",
+  "supported_devices": [
+    "cudy,tr1200-v1",
+    "cudy,tr1200"
+  ],
+  "patches": {
+    "openwrt-pr-22648.patch": "094d6c324142f891f17ac870a0461454c46dcc9a120bd503eff3a47adb461097",
+    "openwrt-pr-23812.patch": "b4e0a64d723aa4cc7dd719c2d7a8adab57813d5349b1614677261d701aed3ef2"
+  },
+  "hardware_tested": false
+}

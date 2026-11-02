@@ -1,0 +1,26 @@
+diff --git a/target/linux/ramips/dts/mt7628an_cudy_m1200-v1.dts b/target/linux/ramips/dts/mt7628an_cudy_m1200-v1.dts
+index 2e1381c4afbc1e..056b0314561503 100644
+--- a/target/linux/ramips/dts/mt7628an_cudy_m1200-v1.dts
++++ b/target/linux/ramips/dts/mt7628an_cudy_m1200-v1.dts
+@@ -115,7 +115,7 @@
+ 
+ 			partition@fe0000 {
+ 				label = "backup";
+-				reg = <0xfe000 0x10000>;
++				reg = <0xfe0000 0x10000>;
+ 				read-only;
+ 			};
+ 
+diff --git a/target/linux/ramips/dts/mt7628an_cudy_tr1200-v1.dts b/target/linux/ramips/dts/mt7628an_cudy_tr1200-v1.dts
+index ae2bdd8a1c7529..0644d17aed2990 100644
+--- a/target/linux/ramips/dts/mt7628an_cudy_tr1200-v1.dts
++++ b/target/linux/ramips/dts/mt7628an_cudy_tr1200-v1.dts
+@@ -126,7 +126,7 @@
+ 
+ 			partition@fe0000 {
+ 				label = "backup";
+-				reg = <0xfe000 0x10000>;
++				reg = <0xfe0000 0x10000>;
+ 				read-only;
+ 			};
+ 

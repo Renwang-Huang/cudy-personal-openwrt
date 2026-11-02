@@ -9,6 +9,11 @@
   },
   "references": [
     {
+      "filename": "README.md",
+      "bytes": 1727,
+      "sha256": "2162b8157b1c6668fcd342296fb0ff5a17de6d0dc7993cb3566836498b21bc27"
+    },
+    {
       "filename": "TR1200-R46-2.5.41-stock.zip",
       "bytes": 13419371,
       "sha256": "3ba6eb7a078a7c0072aadbbb14229f2457bc94ecdf05ca19fcf2684f30de8638"
@@ -24,6 +29,36 @@
       "sha256": "0e853673d1695ce4a7817b84391a659a467039c87ccc2b05218f022658189ffb"
     },
     {
+      "filename": "openwrt-pr-22648.json",
+      "bytes": 5016,
+      "sha256": "b03583142e1128e9b48739ff2d2eff39da4da3ee1ef1a54ad0c1d960d66ba631"
+    },
+    {
+      "filename": "openwrt-pr-22648.patch",
+      "bytes": 507,
+      "sha256": "094d6c324142f891f17ac870a0461454c46dcc9a120bd503eff3a47adb461097"
+    },
+    {
+      "filename": "openwrt-pr-23812.json",
+      "bytes": 2021,
+      "sha256": "19c81817e903a19a46dcdaa5ac13109e98231d7483163b98db19faa22bccbc07"
+    },
+    {
+      "filename": "openwrt-pr-23812.patch",
+      "bytes": 862,
+      "sha256": "b4e0a64d723aa4cc7dd719c2d7a8adab57813d5349b1614677261d701aed3ef2"
+    },
+    {
+      "filename": "openwrt-pr-25123.json",
+      "bytes": 13392,
+      "sha256": "f86fbb872fae0ade051341f9b89463577e5586c4b9eeb26226d8d15b27b6c5a6"
+    },
+    {
+      "filename": "openwrt-pr-25123.patch",
+      "bytes": 1896,
+      "sha256": "c8035fdcd2f62f4a61e375ebde971a3c4781e3223c73a653f9d3571cde4204f6"
+    },
+    {
       "filename": "upstream-support-commit.json",
       "bytes": 2805,
       "sha256": "4932e5622a052e630995e48fb41ee823cb632ff4ec26d5e0d7d0cd4e971fe758"
@@ -32,11 +67,6 @@
       "filename": "vendor-R46.dts",
       "bytes": 2092,
       "sha256": "5c01bf5c3b599b062e2d580a35f931ae51abca94e62161194e920b6f4b793237"
-    },
-    {
-      "filename": "README.md",
-      "bytes": 1727,
-      "sha256": "2162b8157b1c6668fcd342296fb0ff5a17de6d0dc7993cb3566836498b21bc27"
     }
   ]
 }

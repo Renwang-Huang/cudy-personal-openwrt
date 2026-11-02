@@ -1,0 +1,90 @@
+{
+  "image": "openwrt-25.12.5-tr1200-personal-v0.1.1-ramips-mt76x8-cudy_tr1200-v1-squashfs-sysupgrade.bin",
+  "bytes": 6619419,
+  "sha256": "7dec3ae143b5d1f41c6d969e176ff5f6e74b0abf6c9cc69a16e5ce256595a37a",
+  "metadata": {
+    "metadata_version": "1.1",
+    "compat_version": "1.0",
+    "supported_devices": [
+      "cudy,tr1200-v1",
+      "cudy,tr1200"
+    ],
+    "version": {
+      "dist": "OpenWrt",
+      "version": "25.12.5",
+      "revision": "r33051-f5dae5ece4",
+      "target": "ramips/mt76x8",
+      "board": "cudy_tr1200-v1"
+    }
+  },
+  "model": "Cudy TR1200 v1",
+  "kernel_sha256": "b70cc2beb4d343404aed440dcf27023a94a014516409a360fd92a5b186930bb9",
+  "dtb_sha256": "9bb057cafb2131b09266fff26f4e9be8c521252843de6cb97d528b55c06af2af",
+  "official_kernel_machine_code_unchanged": true,
+  "kernel_machine_code_sha256": "d0fb9f31f236a6e856721c10cb7a2acb5a16172432487523c77f4b6708710ccc",
+  "device_tree_change": "backup reg offset 0xfe000 -> 0xfe0000; all other bytes unchanged",
+  "rootfs_sha256": "b300c05def526cad6f3b2cc0753ccac7ad77133625b16772416d28259192a57f",
+  "rootfs_offset": 2115363,
+  "rootfs_squashfs_bytes": 4479500,
+  "partitions": {
+    "u-boot": [
+      0,
+      196608
+    ],
+    "u-boot-env": [
+      196608,
+      65536
+    ],
+    "factory": [
+      262144,
+      65536
+    ],
+    "firmware": [
+      327680,
+      16252928
+    ],
+    "debug": [
+      16580608,
+      65536
+    ],
+    "backup": [
+      16646144,
+      65536
+    ],
+    "bdinfo": [
+      16711680,
+      65536
+    ]
+  },
+  "firmware_partition_bytes": 16252928,
+  "estimated_overlay_bytes_before_jffs2_overhead": 9633792,
+  "uimage_crcs_valid": true,
+  "required_packages_present": [
+    "luci-ssl",
+    "luci-i18n-base-zh-cn",
+    "luci-i18n-firewall-zh-cn",
+    "kmod-mt7603",
+    "kmod-mt7615e",
+    "kmod-mt7663-firmware-ap",
+    "kmod-usb2",
+    "kmod-usb-ohci",
+    "swconfig",
+    "firewall4"
+  ],
+  "package_count": 151,
+  "private_root_password_embedded": false,
+  "private_ssh_host_keys_embedded": false,
+  "ca_bundle_certificates": 120,
+  "duplicate_ca_certificates": false,
+  "personalization_file_verified": true,
+  "inherited_backup_partition_offset_mismatch": false,
+  "flash_partitions_contiguous_nonoverlapping": true,
+  "legacy_cudy_tr1200_board_accepted_by_metadata": true,
+  "oem_R46_direct_sysupgrade_accepted": false,
+  "procd_ujail_absent": true,
+  "switch_driver_modified": false,
+  "boot_time_lan_wan_leak_hardware_tested": false,
+  "hardware_tested": false,
+  "migration_tested": false,
+  "status": "candidate-requires-hardware-migration-review"
+}

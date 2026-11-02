@@ -4,7 +4,13 @@ umask 022
 export TZ=UTC LANG=C LC_ALL=C
 device_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 project_dir="$(cd -- "$device_dir/../.." && pwd)"
-builder_dir="$project_dir/work/openwrt-imagebuilder-25.12.5-ramips-mt76x8.Linux-x86_64"
+builder_dir="$(python3 - "$project_dir" <<'PY'
+import json, sys
+from pathlib import Path
+root = Path(sys.argv[1])
+print(root / json.loads((root / 'devices/tr1200/build.lock.json').read_text())['workspace'])
+PY
+)"
 if [[ ! -f "$builder_dir/Makefile" ]]; then
   printf '%s\n' 'Run devices/tr1200/scripts/prepare.py first.' >&2
   exit 1
@@ -29,6 +35,13 @@ for path in [target, *target.rglob('*')]:
     if not path.is_symlink():
         path.chmod(0o755 if path.is_dir() else stat.S_IMODE(path.stat().st_mode) & ~0o022)
 PY
-mkdir -p "$project_dir/output/tr1200"
+output_dir="$(python3 - "$project_dir" <<'PY'
+import json, sys
+from pathlib import Path
+root = Path(sys.argv[1])
+print(root / json.loads((root / 'devices/tr1200/build.lock.json').read_text())['output_directory'])
+PY
+)"
+mkdir -p "$output_dir"
 make -C "$builder_dir" image "${build_args[@]}" \
-  "FILES=$overlay_dir" "BIN_DIR=$project_dir/output/tr1200" "$@"
+  "FILES=$overlay_dir" "BIN_DIR=$output_dir" "$@"

@@ -12,7 +12,7 @@ release = json.loads((device / 'release-assets.lock.json').read_text())
 for relative, expected in release['input_files_sha256'].items():
     if hashlib.sha256((device / relative).read_bytes()).hexdigest() != expected:
         raise SystemExit(f'Candidate input was modified: {relative}')
-assets = project / 'release-assets/tr1200-v0.1.0'
+assets = project / 'release-assets' / release['tag'].removesuffix('-candidate')
 assets.mkdir(parents=True, exist_ok=True)
 for item in release['assets']:
     folder = project / 'downloads' if item['role'] == 'imagebuilder' else assets
@@ -37,7 +37,7 @@ for item in release['assets']:
 
 subprocess.run(['python3', str(device / 'scripts/prepare.py')], check=True)
 build_lock = json.loads((device / 'build.lock.json').read_text())
-builder = project / 'work' / build_lock['imagebuilder']['filename'].removesuffix('.tar.zst')
+builder = project / build_lock['workspace']
 cache = assets / release['package_cache']
 cache_dir = builder / 'dl'
 makefile = builder / 'Makefile'
@@ -63,7 +63,7 @@ with tempfile.TemporaryDirectory(prefix='tr1200-cache-', dir=project / 'work') a
         if cache_backup.exists():
             cache_backup.rename(cache_dir)
 subprocess.run(['python3', str(device / 'scripts/verify-image.py')], check=True)
-report = json.loads((project / 'output/tr1200/tr1200-verification.json').read_text())
+report = json.loads((project / build_lock['output_directory'] / 'tr1200-verification.json').read_text())
 if report['sha256'] != release['expected_image_sha256']:
     raise SystemExit('Rebuilt image differs from the archived candidate')
 print('TR1200 candidate reproduced with identical SHA-256 and APK network disabled.')

@@ -1,0 +1,16 @@
+{
+  "model": "Cudy TR1200 1.0 / R46; confirm physical hardware version before use",
+  "original_filename": "TR1200-R46-2.5.41-20261016-130008-flash.bin",
+  "bytes": 13697179,
+  "recovery_bin_sha256": "a9b7a35ee23c6b2a9236a2c3339159250efd9292a2c539fc44b4d5da4b03424f",
+  "vendor_md5_verified": true,
+  "zip_crc_verified": true,
+  "official_archive_sha256": "3ba6eb7a078a7c0072aadbbb14229f2457bc94ecdf05ca19fcf2684f30de8638",
+  "official_guide": "https://www.cudy.com/zh-cn/blogs/faq/how-to-recovery-the-cudy-router-from-openwrt-firmware-to-cudy-official-firmware",
+  "physical_port": "WAN",
+  "computer_ipv4": "192.168.1.88",
+  "requested_filename": "recovery.bin",
+  "tftp_server_started": false,
+  "router_contacted": false,
+  "recovery_tested_on_hardware": false
+}

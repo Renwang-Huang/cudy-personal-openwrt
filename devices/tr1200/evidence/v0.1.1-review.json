@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-11-02T12:15:32.598600+00:00",
+  "base_image_sha256": "61b98e0139bfc6c850821036c4b8733cb73fff9634d6965f31951fd47ceff74f",
+  "candidate_image_sha256": "7dec3ae143b5d1f41c6d969e176ff5f6e74b0abf6c9cc69a16e5ce256595a37a",
+  "upstream_refs": [
+    {
+      "pr": 22648,
+      "url": "https://github.com/openwrt/openwrt/pull/22648",
+      "state": "OPEN",
+      "head_commit": "89fdddfa58f48c0c60099c98b07c2f5d3d7dcd51",
+      "applied": true
+    },
+    {
+      "pr": 23812,
+      "url": "https://github.com/openwrt/openwrt/pull/23812",
+      "state": "OPEN",
+      "head_commit": "3684a7fa1f6f781635228411b3adc1be62929d50",
+      "applied": true
+    },
+    {
+      "pr": 25123,
+      "url": "https://github.com/openwrt/openwrt/pull/25123",
+      "state": "OPEN",
+      "head_commit": "788b1c9b9c5ce4db4a023548eb142cef06b136c9",
+      "applied": false
+    }
+  ],
+  "reviewed_issues": [
+    22640,
+    22428,
+    5625
+  ],
+  "hardware_tested": false,
+  "next_step": "Read-only physical identity, firmware/MTD layout, calibration backups and recovery review on the newly arrived TR1200."
+}

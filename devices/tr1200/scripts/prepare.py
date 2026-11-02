@@ -7,7 +7,8 @@ import subprocess
 
 project = Path(__file__).resolve().parents[3]
 device = project / 'devices/tr1200'
-item = json.loads((device / 'build.lock.json').read_text())['imagebuilder']
+lock = json.loads((device / 'build.lock.json').read_text())
+item = lock['imagebuilder']
 archive = project / 'downloads' / item['filename']
 archive.parent.mkdir(parents=True, exist_ok=True)
 if not archive.exists():
@@ -28,7 +29,10 @@ if to_check != archive:
     to_check.rename(archive)
 work = project / 'work'
 work.mkdir(exist_ok=True)
-builder = work / item['filename'].removesuffix('.tar.zst')
+builder = project / lock['workspace']
 if not (builder / 'Makefile').exists():
-    subprocess.run(['tar', '--zstd', '-xf', str(archive), '-C', str(work)], check=True)
+    builder.mkdir(parents=True, exist_ok=True)
+    subprocess.run(['tar', '--zstd', '-xf', str(archive), '--strip-components=1',
+                    '-C', str(builder)], check=True)
+subprocess.run(['python3', str(device / 'scripts/harden-imagebuilder.py')], check=True)
 print(builder)

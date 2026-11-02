@@ -1,0 +1,10 @@
+{
+  "zip_sha256": "2208375f901c4987e1f4fa3ee0b1260ab3faa2fe54e1eda5a7eab13235a55887",
+  "kernel_uimage_offset": 327680,
+  "legacy_board_string_present": true,
+  "version": "23.05.3 r23809-234f1a2efa",
+  "candidate_old_name_compatibility_fix_required": true,
+  "contains_prefix_before_kernel": true,
+  "prefix_region_write_behavior_not_verified": true,
+  "hardware_boot_not_tested": true
+}

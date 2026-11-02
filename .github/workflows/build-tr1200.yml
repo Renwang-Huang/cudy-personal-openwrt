@@ -15,11 +15,15 @@ jobs:
       - name: Install ImageBuilder host dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential file libncurses-dev zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip python3 zstd squashfs-tools
+          sudo apt-get install -y build-essential file libncurses-dev zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip python3 zstd squashfs-tools device-tree-compiler patch qemu-user-static
       - name: Reproduce from verified release inputs with APK offline
         run: python3 devices/tr1200/scripts/reproduce-release.py
+      - name: Reject corrupt images and execute MIPS userspace checks
+        run: python3 devices/tr1200/scripts/audit-candidate.py
+      - name: Verify official recovery kit without starting a server
+        run: python3 devices/tr1200/scripts/prepare-recovery.py
       - uses: actions/upload-artifact@v4
         with:
           name: tr1200-personal-candidate
-          path: output/tr1200/
+          path: output/tr1200-v0.1.1/
           if-no-files-found: error

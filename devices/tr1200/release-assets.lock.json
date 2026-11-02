@@ -1,5 +1,5 @@
 {
-  "tag": "tr1200-v0.1.0-candidate",
+  "tag": "tr1200-v0.1.1-candidate",
   "package_cache": "openwrt-25.12.5-tr1200-package-cache.tar.zst",
   "assets": [
     {
@@ -17,10 +17,10 @@
       "sha256": "0344a80a62e65c72c8f8541e598540b980a3985a0f25e2d7d000d57b567b4229"
     }
   ],
-  "expected_image_sha256": "61b98e0139bfc6c850821036c4b8733cb73fff9634d6965f31951fd47ceff74f",
+  "expected_image_sha256": "7dec3ae143b5d1f41c6d969e176ff5f6e74b0abf6c9cc69a16e5ce256595a37a",
   "input_files_sha256": {
-    "config.json": "2a639338916e3711132d01b073901c11ca8d60b93e89520d41fb15e574364830",
+    "config.json": "14a60b6ca3fd930fadba380bf594ba5521aed9bc26dfba0c1834c3279f480f62",
     "files/etc/uci-defaults/99-personalize": "e319855dc1955a58973a143754ca5f41f625a025ed56c7eb04343134e7af1108",
-    "build.lock.json": "f758a4b6aeea2a758548a62368a13d558beab0bc781c6fbf2a9e2d1f23bfb79e"
+    "build.lock.json": "ef4c4125b2c4514a4ebda0e4396653e66c704c48c2dccc3698220def08d943ee"
   }
 }

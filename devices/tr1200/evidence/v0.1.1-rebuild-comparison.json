@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-11-02T12:15:32.598600+00:00",
+  "image_sha256": "7dec3ae143b5d1f41c6d969e176ff5f6e74b0abf6c9cc69a16e5ce256595a37a",
+  "local_offline_rebuild_byte_identical": true,
+  "kernel_machine_code_identical_to_v0_1_0": true,
+  "rootfs_identical_to_v0_1_0": true,
+  "independent_host_v0_1_1_tested": false,
+  "hardware_tested": false
+}

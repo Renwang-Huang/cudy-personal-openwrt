@@ -1,0 +1,120 @@
+{
+  "baseRefName": "main",
+  "body": "## Problem\r\n\r\nOn the Cudy TR1200 v1, port 0 is used as LAN and port 1 as WAN,\r\nisolated via VLANs configured through swconfig. During boot there\r\nis a window of a few seconds where both ports are electrically up\r\nand unfiltered, before VLAN isolation is applied.\r\n\r\nTraced via kernel boot log timestamps:\r\n- rt3050-esw driver brings ports 0 and 1 link-up at ~6s uptime\r\n  (hardware probe), with no VLAN filtering active yet.\r\n- preinit only resets the switch and applies VLAN isolation via\r\n  swconfig at ~17-21s uptime.\r\n\r\nFor roughly 12-15 seconds, ports 0 and 1 share the same unfiltered\r\nL2 domain. If a client is powered on in that window, it can reach\r\na DHCP server on the wrong port and get an IP from the wrong\r\nnetwork segment. Reproduced with two separate physical networks\r\nconnected to LAN and WAN: Windows clients ended up with an IP from\r\nthe wrong network and would not recover automatically until an\r\nexplicit `ipconfig /renew`, since Windows does not retry DHCP on\r\nits own once a lease is (wrongly) obtained.\r\n\r\nConfirmed the leak directly in the router's own DHCP log: a client\r\nbriefly received an IP from the unintended network, followed by a\r\nDHCPNAK (\"wrong network\") and a corrected DHCPACK on the intended\r\nsubnet moments later.\r\n\r\n## Root cause\r\n\r\n`target/linux/ramips/dts/mt7628an_cudy_tr1200-v1.dts` sets:\r\n\r\n    mediatek,portdisable = <0x3c>;   // ports 2-5 disabled by default\r\n\r\nThis does not cover ports 0 and 1, the two ports actually used\r\n(LAN/WAN) on this device, so they come up enabled at the hardware\r\nlevel before any VLAN configuration is applied.\r\n\r\n## Fix\r\n\r\nTwo parts:\r\n\r\n1. Extend `portdisable` to also cover ports 0 and 1\r\n   (`mediatek,portdisable = <0x3f>;`), so all user-facing ports\r\n   stay disabled at power-on. Port 6 (CPU port) is unaffected.\r\n   Mirrors the approach already used on other rt3050/rt3052-family\r\n   devices (e.g. mt7628an_duzun_dm06.dts).\r\n\r\n2. Add `package/base-files/files/etc/init.d/95-switch-port-fixup`,\r\n   a generic init script that re-enables every port referenced in\r\n   the active `switch_vlan` UCI config, verifying via\r\n   `swconfig ... show` that the VLAN assignment is actually in\r\n   effect before doing so. This is necessary because neither\r\n   preinit (which only handles the role matching the LAN\r\n   interface) nor netifd re-enable ports disabled via the\r\n   devicetree.\r\n\r\n   Runs at START=21 (right after network setup) rather than at\r\n   the very end of boot: on this hardware, wifi firmware and\r\n   wpa_supplicant initialization alone account for ~15-20s of the\r\n   boot sequence, and wired client connectivity has no reason to\r\n   wait for it.\r\n\r\n## Testing\r\n\r\nTested by compiling a full firmware image and flashing it on the\r\nactual Cudy TR1200 v1 device described above. Boot log confirms\r\nports are re-enabled only after VLAN isolation is verified active,\r\nwith no early hardware-probe link-up leak window. A real\r\npower-cycle test with a client PC on the LAN port showed correct\r\nsubnet assignment with no wrong-network DHCP lease and no need for\r\n`ipconfig /renew`.\r\n\r\nTwo earlier approaches were tried and found insufficient during\r\nthis testing (re-enabling ports directly inside preinit \u2014 misses\r\nthe WAN role and gets raced by a later netifd switch touch), before\r\narriving at the init-script approach above.\r\n\r\nNote on the PKG_RELEASE warning: package/base-files/Makefile sets\r\nPKG_RELEASE:=$(COMMITCOUNT), so it's derived automatically from the\r\ncommit count and doesn't need a manual bump.",
+  "comments": [
+    {
+      "id": "IC_kwDOArsuZM8AAAABTxLVuw",
+      "author": {
+        "login": "openwrt"
+      },
+      "authorAssociation": "NONE",
+      "body": "## Formality Check: Suggestions Available\n\nWe checked this pull request against the contribution guidelines. Here is what needs your attention:\n\n### \u26a0\ufe0f STYLISTIC WARNINGS & SUGGESTIONS\n> **Package Release Audit**:\n> - \u26a0\ufe0f Content changed in these packages, but without a `PKG_RELEASE` or version bump:\n>   - `package/base-files`\n> \n>   Increment `PKG_RELEASE` by 1 (or bump `PKG_VERSION`/`PKG_SOURCE_DATE` and reset `PKG_RELEASE` to 1) so users receive the update.\n> \n> **Do not increment release for minor changes.** Cosmetic edits (e.g., typos in comments, copyright updates, formatting/whitespace), changing the package maintainer (`PKG_MAINTAINER`), or updating source download info (`PKG_SOURCE_URL` / `PKG_HASH`) do not require incrementing `PKG_RELEASE`.\n>\n\n\n---\n<sub>Something broken? Consider [reporting an issue](https://github.com/openwrt/openwrt-bot-worker/issues/new).</sub><br><sub>_Running version [`059e3de`](https://github.com/openwrt/openwrt-bot-worker/commit/059e3de0ec39af24a69ad361636ee5eb39762364) deployed on 2026-09-09 11:53:18 CEST_</sub>",
+      "createdAt": "2026-09-10T15:58:33Z",
+      "includesCreatedEdit": false,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/openwrt/openwrt/pull/25123#issuecomment-5621601723",
+      "viewerDidAuthor": false
+    },
+    {
+      "id": "IC_kwDOArsuZM8AAAABTx-Ohw",
+      "author": {
+        "login": "Linaro1985"
+      },
+      "authorAssociation": "CONTRIBUTOR",
+      "body": "@servicegalbiati-coder I think it would be better to fix it like this instead: https://github.com/kroks-free/openwrt/commit/875b64b3ff693c50ac49a8bd973a88ffdfbc96fb\r\n\r\nThis keeps the LAN/WAN partitioning logic in `esw_apply_mapping()` and applies the mapping after the switch hardware initialization.\r\n",
+      "createdAt": "2026-09-10T17:03:06Z",
+      "includesCreatedEdit": false,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/openwrt/openwrt/pull/25123#issuecomment-5622435463",
+      "viewerDidAuthor": false
+    },
+    {
+      "id": "IC_kwDOArsuZM8AAAABT8byAg",
+      "author": {
+        "login": "servicegalbiati-coder"
+      },
+      "authorAssociation": "NONE",
+      "body": "@Linaro1985 Thank you \u2014 I agree your approach is better than mine, and I've now tested it on the affected hardware.\r\n\r\nI applied only esw_apply_mapping() and its call site from your commit (leaving out the rt305x_mii_write() changes, see below), built a full image and flashed it on my Cudy TR1200 v1.\r\n\r\nOn my board (portmap = 0x3d, portdisable = 0x3c) the mapping resolves to lan_ports = 0x01 (port 0) and wan_ports = 0x02 (port 1), which is exactly the LAN/WAN split on this device. After boot, swconfig dev switch0 show confirms enable_vlan: 1, port 0 with pvid: 1, untag: 1, port 1 with pvid: 2, untag: 1, all other ports zeroed.\r\n\r\nTest of the original failure scenario: everything powered off at the wall, router and a Windows client switched on simultaneously. The client gets DHCPDISCOVER \u2192 DHCPOFFER \u2192 DHCPREQUEST \u2192 DHCPACK for 192.168.50.145 on the first attempt, with no DHCPNAK ... wrong network and no lease from the upstream office network (192.168.1.0/24) at any point. The router's own WAN correctly obtains 192.168.1.182 from the upstream DHCP server in the same boot. Previously this scenario would leave Windows clients holding a lease from the wrong segment until an explicit ipconfig /renew.\r\n\r\nSince applying the mapping inside esw_hw_init() means the ports come up already partitioned, the leak window never exists \u2014 no need to disable the ports at all. That also avoids every problem the review raised with my version: the DTS stays at 0x3c so failsafe keeps working, there's no base-files script affecting every other swconfig target, and no ordering or timeout logic to get wrong.\r\n\r\nI'm happy to close this PR in favour of yours. One note: the diff you linked also changes some rt305x_mii_write() calls (0x0020 -> 0x0000 on PHY 0, and two writes dropped from the per-port loop) which look unrelated to the LAN/WAN partitioning \u2014 I deliberately left those out of my test build to isolate the mapping change, and my testing says nothing about them either way. Might be worth splitting them into a separate commit.\r\n\r\nIf you open a PR with your patch I'm glad to test any further revisions on real hardware and report back.",
+      "createdAt": "2026-09-11T10:56:20Z",
+      "includesCreatedEdit": false,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/openwrt/openwrt/pull/25123#issuecomment-5633405442",
+      "viewerDidAuthor": false
+    },
+    {
+      "id": "IC_kwDOArsuZM8AAAABXdFRkA",
+      "author": {
+        "login": "servicegalbiati-coder"
+      },
+      "authorAssociation": "NONE",
+      "body": "@Linaro1985 gentle ping \u2014 do you plan to open a PR with your esw_apply_mapping() patch? I tested it on real hardware (see my comment above) and it fixes the issue cleanly.\r\n\r\nIf you'd rather not, I'm happy to submit it myself with Suggested-by: Linaro1985 and a reference to your commit, and close this PR. Just let me know which you prefer.",
+      "createdAt": "2026-09-28T11:29:28Z",
+      "includesCreatedEdit": false,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/openwrt/openwrt/pull/25123#issuecomment-5868966288",
+      "viewerDidAuthor": false
+    }
+  ],
+  "commits": [
+    {
+      "authoredDate": "2026-09-10T15:55:55Z",
+      "authors": [
+        {
+          "email": "service.galbiati@gmail.com",
+          "id": "U_kgDODofgCA",
+          "login": "servicegalbiati-coder",
+          "name": "Gigi Galbiati"
+        }
+      ],
+      "committedDate": "2026-09-10T15:55:55Z",
+      "messageBody": "Ports 0 and 1 (lan/wan) are not covered by mediatek,portdisable,\r\nso the switch enables them at hardware probe time (~6s uptime),\r\nbefore preinit applies VLAN isolation (~17-21s uptime). During\r\nthis window the two ports share an unfiltered L2 domain, allowing\r\nDHCP traffic to leak between the intended lan and wan segments.\r\n\r\nExtend portdisable to cover ports 0 and 1 so both stay down until\r\na dedicated late-boot init script (see next commit) re-enables\r\nthem once VLAN isolation is confirmed active.\n\nSigned-off-by: Gigi Galbiati <service.galbiati@gmail.com>",
+      "messageHeadline": "ramips: mt76x8: fix cudy tr1200-v1 switch port leak on boot",
+      "oid": "cb43c2fee867458fe13037d84899c2e3168e189e"
+    },
+    {
+      "authoredDate": "2026-09-10T15:57:04Z",
+      "authors": [
+        {
+          "email": "service.galbiati@gmail.com",
+          "id": "U_kgDODofgCA",
+          "login": "servicegalbiati-coder",
+          "name": "Gigi Galbiati"
+        }
+      ],
+      "committedDate": "2026-09-10T15:57:04Z",
+      "messageBody": "Ports disabled via mediatek,portdisable in the devicetree are\r\nnever re-enabled by preinit (which only applies VLAN config, not\r\nport enable state) nor by netifd. Add an init script that\r\nre-enables every port referenced in the active switch_vlan UCI\r\nconfig, verifying via swconfig that VLAN isolation is actually in\r\neffect before doing so.\r\n\r\nRuns at START=21 (right after network setup) rather than at the\r\nvery end of boot: on this hardware, wifi firmware/wpa_supplicant\r\ninitialization alone accounts for ~15-20s of the boot sequence,\r\nand there is no reason wired client connectivity should wait for\r\nit. Testing on real hardware showed a full power-cycle correctly\r\nassigns the intended subnet to a wired client with no wrong-network\r\nDHCP lease.\r\n\r\nSigned-off-by: CQ Galbiati <service.galbiati@gmail.com>\n\nSigned-off-by: Gigi Galbiati <service.galbiati@gmail.com>",
+      "messageHeadline": "base-files: add switch port re-enable for cudy tr1200-v1",
+      "oid": "788b1c9b9c5ce4db4a023548eb142cef06b136c9"
+    }
+  ],
+  "headRefOid": "788b1c9b9c5ce4db4a023548eb142cef06b136c9",
+  "number": 25123,
+  "reviews": [
+    {
+      "id": "PRR_kwDOArsuZM8AAAABNHA5gQ",
+      "author": {
+        "login": "openwrt-ai"
+      },
+      "authorAssociation": "COLLABORATOR",
+      "body": "## Commit checks\n\n- `cb43c2f` \"ramips: mt76x8: fix cudy tr1200-v1 switch port leak on boot\" \u2014 subject claims a fix, but on its own this commit leaves lan and wan permanently down; the tree is broken at this commit for bisect. Either squash the two commits or reword the subject to state that it disables the ports.\n- `788b1c9` \"base-files: add switch port re-enable for cudy tr1200-v1\" \u2014 the subject scopes this to one device, but the added script is device-agnostic and runs on every swconfig target. Subject/body should say it changes global base-files behaviour.\n- `788b1c9` \u2014 two `Signed-off-by:` trailers with different names (\"CQ Galbiati\" and \"Gigi Galbiati\") for the same address; drop the duplicate.\n\n---\n_Generated by [Claude Code](https://claude.ai/code)_",
+      "submittedAt": "2026-09-11T03:37:28Z",
+      "includesCreatedEdit": false,
+      "reactionGroups": [],
+      "state": "COMMENTED",
+      "commit": {
+        "oid": "788b1c9b9c5ce4db4a023548eb142cef06b136c9"
+      }
+    }
+  ],
+  "state": "OPEN",
+  "title": "ramips: mt76x8: fix cudy tr1200-v1 switch port leak on boot",
+  "url": "https://github.com/openwrt/openwrt/pull/25123"
+}
