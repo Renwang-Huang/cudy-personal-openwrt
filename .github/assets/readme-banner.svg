@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="380" viewBox="0 0 1400 380" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Cudy Personal OpenWrt</title>
+  <desc id="desc">Minimal firmware and reproducible builds for Cudy TR1200, TR3000 and TR3600 routers.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1400" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101C30"/>
+      <stop offset="0.55" stop-color="#0B1527"/>
+      <stop offset="1" stop-color="#0C2934"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="960" y1="90" x2="1250" y2="285" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#79DDF0"/>
+      <stop offset="1" stop-color="#38C9AD"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="960" y1="110" x2="1290" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#2DD4BF" stop-opacity="0.08"/>
+    </linearGradient>
+    <pattern id="grid" x="810" y="0" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" stroke="#94B8D4" stroke-opacity="0.055"/>
+    </pattern>
+    <clipPath id="round"><rect width="1400" height="380" rx="20"/></clipPath>
+  </defs>
+  <g clip-path="url(#round)">
+    <rect width="1400" height="380" fill="url(#background)"/>
+    <rect x="820" width="580" height="380" fill="url(#grid)"/>
+    <circle cx="1335" cy="20" r="265" fill="#2DD4BF" fill-opacity="0.035"/>
+    <circle cx="1335" cy="20" r="200" stroke="#5EEAD4" stroke-opacity="0.07"/>
+    <circle cx="1335" cy="20" r="140" stroke="#5EEAD4" stroke-opacity="0.07"/>
+    <rect x="0" y="0" width="6" height="380" fill="url(#accent)"/>
+    <g font-family="Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">
+      <text x="68" y="70" fill="#7DD3E8" font-size="15" font-weight="600" letter-spacing="4">CUDY ROUTER FIRMWARE</text>
+      <text x="64" y="157" fill="#F4F8FF" font-size="68" font-weight="700" letter-spacing="-2">Personal OpenWrt</text>
+      <text x="68" y="207" fill="#A4B7CD" font-size="23" letter-spacing="0.1">Minimal firmware. Reproducible builds.</text>
+      <rect x="68" y="263" width="122" height="37" rx="8" fill="#172B40" stroke="#2B465E"/>
+      <rect x="202" y="263" width="122" height="37" rx="8" fill="#172B40" stroke="#2B465E"/>
+      <rect x="336" y="263" width="122" height="37" rx="8" fill="#12373C" stroke="#24605F"/>
+      <text x="129" y="287" text-anchor="middle" fill="#CEE4F4" font-size="15" font-weight="600" letter-spacing="1">TR1200</text>
+      <text x="263" y="287" text-anchor="middle" fill="#CEE4F4" font-size="15" font-weight="600" letter-spacing="1">TR3000</text>
+      <text x="397" y="287" text-anchor="middle" fill="#80E1D0" font-size="15" font-weight="600" letter-spacing="1">TR3600</text>
+    </g>
+    <g stroke-linecap="round" stroke-linejoin="round">
+      <path d="M902 298H1265L1315 334H952Z" fill="#0D2432" stroke="url(#edge)"/>
+      <rect x="928" y="215" width="333" height="81" rx="18" fill="#102D3A" stroke="url(#accent)" stroke-width="2"/>
+      <path d="M945 235H1243" stroke="#426D7D" stroke-opacity="0.55"/>
+      <path d="M976 215L960 139C958 130 945 130 945 141L952 217" fill="#123240" stroke="url(#accent)" stroke-width="2"/>
+      <path d="M1218 215L1234 139C1236 130 1249 130 1249 141L1242 217" fill="#123240" stroke="url(#accent)" stroke-width="2"/>
+      <path d="M1014 258H1089M1014 267H1069" stroke="#4D7C8D" stroke-width="2"/>
+      <circle cx="1192" cy="258" r="4" fill="#5EEAD4"/>
+      <circle cx="1210" cy="258" r="4" fill="#5EEAD4" fill-opacity="0.3"/>
+      <path d="M1065 140C1082 124 1109 124 1127 140" stroke="#72E0D0" stroke-width="3"/>
+      <path d="M1047 121C1074 95 1118 95 1145 121" stroke="#72E0D0" stroke-opacity="0.6" stroke-width="3"/>
+      <path d="M1028 102C1066 65 1126 65 1164 102" stroke="#72E0D0" stroke-opacity="0.3" stroke-width="3"/>
+      <circle cx="1096" cy="161" r="5" fill="#72E0D0"/>
+      <path d="M864 231H885V161H916" stroke="#3D788B" stroke-opacity="0.5"/>
+      <path d="M1278 269H1303V208H1332" stroke="#3D788B" stroke-opacity="0.5"/>
+      <circle cx="860" cy="231" r="3" fill="#62C4D4" fill-opacity="0.6"/>
+      <circle cx="1337" cy="208" r="3" fill="#62C4D4" fill-opacity="0.6"/>
+    </g>
+    <rect x="0.5" y="0.5" width="1399" height="379" rx="19.5" stroke="#A5D8ED" stroke-opacity="0.08"/>
+  </g>
+</svg>
