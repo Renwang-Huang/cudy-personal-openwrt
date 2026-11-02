@@ -2,7 +2,7 @@
   "vendor_gpl": {
     "role": "Vendor 17.01 GPL source reference; not used to build this candidate",
     "upstream_url": "https://drive.google.com/file/d/1sDSWjrw51HYsv-NPoADaDgPwrUE7EtgL/view",
-    "release_url": "https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/releases/download/tr1200-v0.1.0-candidate/tr1200-vendor-gpl.tar.gz",
+    "release_url": "https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/download/tr1200-v0.1.0-candidate/tr1200-vendor-gpl.tar.gz",
     "filename": "tr1200-vendor-gpl.tar.gz",
     "bytes": 134358230,
     "sha256": "5ee2e58e720c7a7085dbcf368b7531aa522b78b5a848ad93615edd03c568d353"

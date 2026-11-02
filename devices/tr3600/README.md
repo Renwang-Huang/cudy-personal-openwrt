@@ -8,11 +8,11 @@
 首版包含中文 LuCI、HTTPS 和基础联网功能，默认管理地址 `10.0.0.1/24`，
 主机名 `TR3600-Personal`。不预装代理插件，不嵌入密码、密钥或订阅。
 
-候选产物：[tr3600-v0.1.0-candidate](https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/releases/tag/tr3600-v0.1.0-candidate)。
+候选产物：[tr3600-v0.1.0-candidate](https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/tag/tr3600-v0.1.0-candidate)。
 sysupgrade 为 10,987,804 字节，SHA-256 为
 `71911f83ebf60dfd70e72916c02306961b36d5b399dd4056aeb7964da65c8dbe`。
 本地连续两次完整构建的系统与 initramfs 镜像分别一致；完整证据见 `evidence/`。
-已通过 [GitHub 独立环境的发布镜像静态检查](https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/actions/runs/41394843131)，
+已通过 [GitHub 独立环境的发布镜像静态检查](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41394843131)，
 并核对全部 13 个公开附件的 GitHub SHA-256 与本地一致。云端检查下载已发布的镜像，
 检查设备树、软件包、个性化文件和槽位 stub 逻辑；它没有执行完整源码重建。
 独立主机源码重建、实际设备启动和刷写均未验证。

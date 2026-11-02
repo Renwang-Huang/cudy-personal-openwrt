@@ -1,0 +1,87 @@
+{
+  "checked_at": "2026-11-02T06:27:30.427059+00:00",
+  "repository_id": 1442071882,
+  "old_repository": "Renwang-Huang/cudy-tr3000-personal-openwrt",
+  "new_repository": "Renwang-Huang/cudy-personal-openwrt",
+  "repository_url": "https://github.com/Renwang-Huang/cudy-personal-openwrt",
+  "public": true,
+  "old_repository_http_redirect": 301,
+  "old_and_new_anonymous_downloads_match": true,
+  "releases": [
+    {
+      "id": 431089199,
+      "tag": "tr3600-v0.1.0-candidate",
+      "asset_count": 13,
+      "asset_ids_sizes_and_sha256_unchanged": true
+    },
+    {
+      "id": 431119803,
+      "tag": "tr1200-v0.1.0-candidate",
+      "asset_count": 10,
+      "asset_ids_sizes_and_sha256_unchanged": true
+    },
+    {
+      "id": 430754284,
+      "tag": "v0.1.1-candidate",
+      "asset_count": 7,
+      "asset_ids_sizes_and_sha256_unchanged": true
+    },
+    {
+      "id": 430746232,
+      "tag": "v0.1.0-candidate",
+      "asset_count": 9,
+      "asset_ids_sizes_and_sha256_unchanged": true
+    }
+  ],
+  "total_retained_assets": 39,
+  "current_download_locks": [
+    {
+      "lock": "release-assets.lock.json",
+      "asset": "openwrt-imagebuilder-25.12.5-mediatek-filogic.Linux-x86_64.tar.zst",
+      "sha256_matches": true
+    },
+    {
+      "lock": "release-assets.lock.json",
+      "asset": "openwrt-25.12.5-tr3000-package-cache.tar.zst",
+      "sha256_matches": true
+    },
+    {
+      "lock": "devices/tr1200/release-assets.lock.json",
+      "asset": "openwrt-imagebuilder-25.12.5-ramips-mt76x8.Linux-x86_64.tar.zst",
+      "sha256_matches": true
+    },
+    {
+      "lock": "devices/tr1200/release-assets.lock.json",
+      "asset": "openwrt-25.12.5-tr1200-package-cache.tar.zst",
+      "sha256_matches": true
+    },
+    {
+      "lock": "devices/tr3600/build.lock.json",
+      "asset": "tr3600-v0.1.0-source-cache.tar.zst",
+      "sha256_matches": true
+    },
+    {
+      "lock": "reference/tr1200/archives.lock.json",
+      "asset": "tr1200-vendor-gpl.tar.gz",
+      "sha256_matches": true
+    }
+  ],
+  "retained_validation_runs": [
+    {
+      "id": 41333664663,
+      "url": "https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41333664663",
+      "conclusion": "success"
+    },
+    {
+      "id": 41394843131,
+      "url": "https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41394843131",
+      "conclusion": "success"
+    },
+    {
+      "id": 41398059150,
+      "url": "https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41398059150",
+      "conclusion": "success"
+    }
+  ],
+  "firmware_rebuilt": false
+}

@@ -4,14 +4,14 @@
   "assets": [
     {
       "role": "imagebuilder",
-      "url": "https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/releases/download/tr1200-v0.1.0-candidate/openwrt-imagebuilder-25.12.5-ramips-mt76x8.Linux-x86_64.tar.zst",
+      "url": "https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/download/tr1200-v0.1.0-candidate/openwrt-imagebuilder-25.12.5-ramips-mt76x8.Linux-x86_64.tar.zst",
       "filename": "openwrt-imagebuilder-25.12.5-ramips-mt76x8.Linux-x86_64.tar.zst",
       "bytes": 32693316,
       "sha256": "eb62a030c42fa8d0c3d922dc15a05e8410166389ab1c818fd2e4ff875c0ba453"
     },
     {
       "role": "package-cache",
-      "url": "https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/releases/download/tr1200-v0.1.0-candidate/openwrt-25.12.5-tr1200-package-cache.tar.zst",
+      "url": "https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/download/tr1200-v0.1.0-candidate/openwrt-25.12.5-tr1200-package-cache.tar.zst",
       "filename": "openwrt-25.12.5-tr1200-package-cache.tar.zst",
       "bytes": 6834688,
       "sha256": "0344a80a62e65c72c8f8541e598540b980a3985a0f25e2d7d000d57b567b4229"

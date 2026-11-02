@@ -19,7 +19,7 @@
 已完成本地源码编译、设备树及镜像静态检查、槽位状态与写入失败路径的 stub 检查。
 完整哈希、大小和构建重复性结果以附件及仓库 evidence 为准。
 
-已通过 [GitHub 独立环境的发布镜像静态检查](https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/actions/runs/41394843131)：
+已通过 [GitHub 独立环境的发布镜像静态检查](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41394843131)：
 重新下载公开附件，检查设备树、软件包、个性化文件及槽位 stub 逻辑，并比对发布哈希。
 全部 13 个附件的 GitHub SHA-256 也与本地一致。此检查没有执行完整源码重建。
 

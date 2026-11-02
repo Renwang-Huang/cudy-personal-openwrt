@@ -47,7 +47,7 @@
   "apk_reproducibility_commit": "b0b4bf6ea0927195631a3557d05f48f8e302d498",
   "source_cache": {
     "filename": "tr3600-v0.1.0-source-cache.tar.zst",
-    "url": "https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/releases/download/tr3600-v0.1.0-candidate/tr3600-v0.1.0-source-cache.tar.zst",
+    "url": "https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/download/tr3600-v0.1.0-candidate/tr3600-v0.1.0-source-cache.tar.zst",
     "sha256": "e5f18ade9baf39c3c8f4032eb35a8611b53cd15ff0fbd7f6cf2a6c24f84f5ec0",
     "files": 105
   }
