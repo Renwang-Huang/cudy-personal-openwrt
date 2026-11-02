@@ -1,0 +1,85 @@
+{
+  "conclusion": "success",
+  "createdAt": "2026-11-02T06:08:25Z",
+  "headSha": "7e0fd395811d55331491247da4ba25f00b2f8356",
+  "jobs": [
+    {
+      "completedAt": "2026-11-02T06:09:03Z",
+      "conclusion": "success",
+      "databaseId": 125123629514,
+      "name": "reproduce",
+      "startedAt": "2026-11-02T06:08:31Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-02T06:08:32Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-02T06:08:31Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T06:08:39Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-02T06:08:32Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T06:08:49Z",
+          "conclusion": "success",
+          "name": "Install ImageBuilder host dependencies",
+          "number": 3,
+          "startedAt": "2026-11-02T06:08:39Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T06:09:00Z",
+          "conclusion": "success",
+          "name": "Reproduce from verified release inputs with APK offline",
+          "number": 4,
+          "startedAt": "2026-11-02T06:08:49Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T06:09:02Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 5,
+          "startedAt": "2026-11-02T06:09:00Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T06:09:02Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 10,
+          "startedAt": "2026-11-02T06:09:02Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T06:09:02Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 11,
+          "startedAt": "2026-11-02T06:09:02Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/actions/runs/41398059150/job/125123629514"
+    }
+  ],
+  "status": "completed",
+  "updatedAt": "2026-11-02T06:09:04Z",
+  "url": "https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/actions/runs/41398059150",
+  "checked_at": "2026-11-02T06:10:45.790944+00:00",
+  "validation_scope": "Independent GitHub runner rebuilt the firmware image using the pinned official ImageBuilder and archived APK cache, with APK network access disabled.",
+  "cloud_image_sha256": "61b98e0139bfc6c850821036c4b8733cb73fff9634d6965f31951fd47ceff74f",
+  "downloaded_cloud_image_byte_identical_to_local": true,
+  "independent_host_imagebuilder_reproduction": true,
+  "independent_full_source_build": false,
+  "hardware_tested": false,
+  "migration_tested": false
+}

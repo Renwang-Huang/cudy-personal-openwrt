@@ -25,6 +25,10 @@ USB 文件共享、VPN、代理及其他插件后续按空间和性能需求添�
 首版镜像 6,619,411 字节（约 6.31 MiB），共 151 个包及依赖。
 本地使用归档 APK 并禁止其联网后重建，镜像与首版逐字节一致。
 SHA-256：`61b98e0139bfc6c850821036c4b8733cb73fff9634d6965f31951fd47ceff74f`。
+已通过 [GitHub 独立环境的镜像重建](https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/actions/runs/41398059150)，
+使用归档 ImageBuilder 与 APK 缓存并禁用 APK 联网后，得到相同 SHA-256。
+全部 10 个发布附件的 GitHub SHA-256 均与本地一致，匿名下载已核验。
+证据见 `evidence/github-actions-reproduction.json` 和 `evidence/github-release-assets.json`。
 
 ## 构建与复现
 

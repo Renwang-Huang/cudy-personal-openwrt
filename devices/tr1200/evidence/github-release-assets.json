@@ -1,0 +1,68 @@
+{
+  "release_url": "https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/releases/tag/tr1200-v0.1.0-candidate",
+  "published_at": "2026-11-02T06:08:22Z",
+  "is_prerelease": true,
+  "all_assets_match": true,
+  "assets": [
+    {
+      "name": "local-rebuild-comparison.json",
+      "size": 314,
+      "sha256": "39badbcbcc6371deb9a71d4eb1ea65c9b4a911ea380e15ccf4d52db019c2e7fa",
+      "github_digest_matches": true
+    },
+    {
+      "name": "openwrt-25.12.5-tr1200-package-cache.tar.zst",
+      "size": 6834688,
+      "sha256": "0344a80a62e65c72c8f8541e598540b980a3985a0f25e2d7d000d57b567b4229",
+      "github_digest_matches": true
+    },
+    {
+      "name": "openwrt-25.12.5-tr1200-personal-v0.1.0-ramips-mt76x8-cudy_tr1200-v1-squashfs-sysupgrade.bin",
+      "size": 6619411,
+      "sha256": "61b98e0139bfc6c850821036c4b8733cb73fff9634d6965f31951fd47ceff74f",
+      "github_digest_matches": true
+    },
+    {
+      "name": "openwrt-25.12.5-tr1200-personal-v0.1.0-ramips-mt76x8-cudy_tr1200-v1.bom.cdx.json",
+      "size": 20378,
+      "sha256": "851b848591d98c4214c9238f0b0be68ca966c7e9ec07d2e6ba9c7584408b3514",
+      "github_digest_matches": true
+    },
+    {
+      "name": "openwrt-25.12.5-tr1200-personal-v0.1.0-ramips-mt76x8-cudy_tr1200-v1.manifest",
+      "size": 4917,
+      "sha256": "84e80608e19f1596292f03eee5a0e6325e81953bc43738a3ba57ee1d94a39ef4",
+      "github_digest_matches": true
+    },
+    {
+      "name": "openwrt-imagebuilder-25.12.5-ramips-mt76x8.Linux-x86_64.tar.zst",
+      "size": 32693316,
+      "sha256": "eb62a030c42fa8d0c3d922dc15a05e8410166389ab1c818fd2e4ff875c0ba453",
+      "github_digest_matches": true
+    },
+    {
+      "name": "profiles.json",
+      "size": 1355,
+      "sha256": "d22b0aa951a2e71d8412016c3774ba14c07a3576e64de7e877c5f9e07e456560",
+      "github_digest_matches": true
+    },
+    {
+      "name": "TR1200-SHA256SUMS.txt",
+      "size": 1047,
+      "sha256": "e46a98b514201689abd792bc2a72cb78562cf6d2e0f1813dc5f49d1944c785b1",
+      "github_digest_matches": true
+    },
+    {
+      "name": "tr1200-vendor-gpl.tar.gz",
+      "size": 134358230,
+      "sha256": "5ee2e58e720c7a7085dbcf368b7531aa522b78b5a848ad93615edd03c568d353",
+      "github_digest_matches": true
+    },
+    {
+      "name": "tr1200-verification.json",
+      "size": 2153,
+      "sha256": "1cfc8fa044e3d31298075b0b986bcfae17cd5fd4e7513dd5b8ab2a2550729786",
+      "github_digest_matches": true
+    }
+  ]
+}
