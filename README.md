@@ -2,6 +2,9 @@
 
 公开仓库：https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt
 
+另有 [Cudy TR1200 v1（AC1200）最小定制系统](devices/tr1200/README.md)，使用官方
+`ramips/mt76x8` ImageBuilder，配置、输出及复现流程独立保存。
+
 另有 [Cudy TR3600 v1（BE3600）实验适配](devices/tr3600/README.md)，使用独立的源码
 构建、硬件补丁和双槽检查，不能与本页 TR3000 的镜像或复现命令混用。
 

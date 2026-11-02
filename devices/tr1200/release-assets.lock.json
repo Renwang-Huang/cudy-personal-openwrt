@@ -1,0 +1,26 @@
+{
+  "tag": "tr1200-v0.1.0-candidate",
+  "package_cache": "openwrt-25.12.5-tr1200-package-cache.tar.zst",
+  "assets": [
+    {
+      "role": "imagebuilder",
+      "url": "https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/releases/download/tr1200-v0.1.0-candidate/openwrt-imagebuilder-25.12.5-ramips-mt76x8.Linux-x86_64.tar.zst",
+      "filename": "openwrt-imagebuilder-25.12.5-ramips-mt76x8.Linux-x86_64.tar.zst",
+      "bytes": 32693316,
+      "sha256": "eb62a030c42fa8d0c3d922dc15a05e8410166389ab1c818fd2e4ff875c0ba453"
+    },
+    {
+      "role": "package-cache",
+      "url": "https://github.com/Renwang-Huang/cudy-tr3000-personal-openwrt/releases/download/tr1200-v0.1.0-candidate/openwrt-25.12.5-tr1200-package-cache.tar.zst",
+      "filename": "openwrt-25.12.5-tr1200-package-cache.tar.zst",
+      "bytes": 6834688,
+      "sha256": "0344a80a62e65c72c8f8541e598540b980a3985a0f25e2d7d000d57b567b4229"
+    }
+  ],
+  "expected_image_sha256": "61b98e0139bfc6c850821036c4b8733cb73fff9634d6965f31951fd47ceff74f",
+  "input_files_sha256": {
+    "config.json": "2a639338916e3711132d01b073901c11ca8d60b93e89520d41fb15e574364830",
+    "files/etc/uci-defaults/99-personalize": "e319855dc1955a58973a143754ca5f41f625a025ed56c7eb04343134e7af1108",
+    "build.lock.json": "f758a4b6aeea2a758548a62368a13d558beab0bc781c6fbf2a9e2d1f23bfb79e"
+  }
+}

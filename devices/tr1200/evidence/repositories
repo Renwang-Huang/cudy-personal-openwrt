@@ -1,0 +1,8 @@
+https://downloads.openwrt.org/releases/25.12.5/targets/ramips/mt76x8/packages/packages.adb
+https://downloads.openwrt.org/releases/25.12.5/packages/mipsel_24kc/base/packages.adb
+https://downloads.openwrt.org/releases/25.12.5/targets/ramips/mt76x8/kmods/6.12.94-1-2fe195f1cc4f533c70c3c6ea555ac460/packages.adb
+https://downloads.openwrt.org/releases/25.12.5/packages/mipsel_24kc/luci/packages.adb
+https://downloads.openwrt.org/releases/25.12.5/packages/mipsel_24kc/packages/packages.adb
+https://downloads.openwrt.org/releases/25.12.5/packages/mipsel_24kc/routing/packages.adb
+https://downloads.openwrt.org/releases/25.12.5/packages/mipsel_24kc/telephony/packages.adb
+https://downloads.openwrt.org/releases/25.12.5/packages/mipsel_24kc/video/packages.adb

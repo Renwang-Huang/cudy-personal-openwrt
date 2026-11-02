@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-11-02T05:57:16.593934+00:00",
+  "product_url": "https://www.cudy.com/en-us/products/tr1200-1-0",
+  "product_page_verified_via": "https://www.cudy.com/zh-cn/products/tr1200-1-0",
+  "download_center": "https://www.cudy.com/en-us/pages/download-center/tr1200-1-0",
+  "wiki": "https://openwrt.org/toh/cudy/tr1200",
+  "official_profile": "https://downloads.openwrt.org/releases/25.12.5/targets/ramips/mt76x8/profiles.json",
+  "hardware": {
+    "soc": "MT7628AN",
+    "cpu_mhz": 580,
+    "ram_mib": 128,
+    "flash_mib": 16,
+    "flash_type": "SPI NOR",
+    "ethernet": "1x 100Mbps WAN + 1x 100Mbps LAN",
+    "wifi_5ghz": "MT7613BEN"
+  },
+  "board_name_migration_issue": {
+    "url": "https://github.com/openwrt/openwrt/issues/22640",
+    "state": "OPEN",
+    "legacy": "cudy,tr1200",
+    "current": [
+      "cudy,tr1200-v1",
+      "R46"
+    ],
+    "compatibility_bypass_added": false
+  },
+  "backup_partition_discrepancy": {
+    "official_node": "partition@fe0000",
+    "official_reg_offset": "0xfe000",
+    "vendor_reg_offset": "0xfe0000",
+    "official_binary_modified": false,
+    "requires_real_flash_backup_review": true
+  },
+  "flash_attempted": false,
+  "hardware_tested": false
+}

@@ -1,0 +1,30 @@
+{
+  "sha": "f1091ef7ac3596f1e401b918a36273672acbe389",
+  "html_url": "https://github.com/openwrt/openwrt/commit/f1091ef7ac3596f1e401b918a36273672acbe389",
+  "commit": {
+    "author": {
+      "name": "Luis Mita",
+      "email": "luis@luismita.com",
+      "date": "2024-05-30T18:50:23Z"
+    },
+    "committer": {
+      "name": "Nick Hainke",
+      "email": "vincent@systemli.org",
+      "date": "2024-06-05T08:44:44Z"
+    },
+    "message": "ramips: mt76x8: add support for Cudy TR1200 v1\n\nHardware:\n - SoC: MediaTek MT7628AN (MIPS 580MHz)\n - Flash: 16 MiB XMC 25QH128CH10\n - RAM: 128 MiB ESMT M14D1G1664A\n - WLAN: 2.4 GHz (MT7628), 5 GHz (MT7613BEN 802.11ac)\n - Ethernet: 1x 10/100 Mbps WAN, 1x 10/100 LAN (MT7628)\n - USB 2.0 port\n - Buttons: 1 Reset button, 1 slider button\n - LEDs: 1x Red, 1x White\n - Serial console: unpopulated header, 115200 8n1\n - Power: 5 VDC, 2 A\n\nMAC addresses:\n+---------+-------------------+-----------+\n|         | MAC               | Algorithm |\n+---------+-------------------+-----------+\n| WAN     | 80:af:ca:xx:xx:x0 | label     |\n| LAN     | 80:af:ca:xx:xx:x0 | label     |\n| WLAN 2g | 80:af:ca:xx:xx:x0 | label     |\n| WLAN 5g | 80:af:ca:xx:xx:x2 | label+2   |\n+---------+-------------------+-----------+\n\nInstallation:\nThe installation must be done via TFTP by disassembling the router.\nOn other occasions Cudy has distributed intermediate firmware to make\ninstallation easier, and so I recommend checking the Wiki for this\ndevice if there is a more convenient solution than the one below.\n\nTo install using TFTP:\n1. Upgrade to a beta firmware (signed by Cudy) that can be downloaded\nfrom the wiki. This is required in order to use an unlocked u-boot.\n2. Connect to UART.\n3. While the router is turning on, press 1.\n4. Connect to LAN and set your IP to 192.168.1.88/24. Configure a TFTP\nserver and an OpenWrt initramfs-kernel.bin firmware file as recovery.bin.\n5. Press Enter three times. Verify the filename.\n6. If you can reach LuCI or SSH now, just use the sysupgrade image with\nthe 'Keep settings' option turned off.\n\nIf you don't want to use the beta firmware nor the unlocked u-boot, you\ncan install the firmware writing the sysupgrade image on the firmware\npartition of the SPI flash.\n\nSigned-off-by: Luis Mita <luis@luismita.com>",
+    "tree": {
+      "sha": "da0c738864abe55d502bfdc311769e4d6fa26704",
+      "url": "https://api.github.com/repos/openwrt/openwrt/git/trees/da0c738864abe55d502bfdc311769e4d6fa26704"
+    },
+    "url": "https://api.github.com/repos/openwrt/openwrt/git/commits/f1091ef7ac3596f1e401b918a36273672acbe389",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  }
+}

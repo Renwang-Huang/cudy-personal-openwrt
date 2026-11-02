@@ -1,0 +1,8 @@
+{
+  "checked_at": "2026-11-02T05:56:38.614312+00:00",
+  "sysupgrade_sha256": "61b98e0139bfc6c850821036c4b8733cb73fff9634d6965f31951fd47ceff74f",
+  "local_apk_offline_rebuild_identical": true,
+  "imagebuilder_kernel_and_dtb_unchanged": true,
+  "independent_host_rebuild_tested": false,
+  "hardware_tested": false
+}

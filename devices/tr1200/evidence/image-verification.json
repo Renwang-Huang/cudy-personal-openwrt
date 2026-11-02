@@ -1,0 +1,83 @@
+{
+  "image": "openwrt-25.12.5-tr1200-personal-v0.1.0-ramips-mt76x8-cudy_tr1200-v1-squashfs-sysupgrade.bin",
+  "bytes": 6619411,
+  "sha256": "61b98e0139bfc6c850821036c4b8733cb73fff9634d6965f31951fd47ceff74f",
+  "metadata": {
+    "metadata_version": "1.1",
+    "compat_version": "1.0",
+    "supported_devices": [
+      "cudy,tr1200-v1",
+      "R46"
+    ],
+    "version": {
+      "dist": "OpenWrt",
+      "version": "25.12.5",
+      "revision": "r33051-f5dae5ece4",
+      "target": "ramips/mt76x8",
+      "board": "cudy_tr1200-v1"
+    }
+  },
+  "model": "Cudy TR1200 v1",
+  "kernel_sha256": "5ea774902ba583f3451fd9a8d345a8a0cf74948f5b963b9d4ed9913daff0064e",
+  "dtb_sha256": "c67f8cefe8302c29a86b80f4e56bf25ba88611ff197ecaa3c8917abc1f758b15",
+  "official_kernel_and_device_tree_unchanged": true,
+  "rootfs_sha256": "b300c05def526cad6f3b2cc0753ccac7ad77133625b16772416d28259192a57f",
+  "rootfs_offset": 2115366,
+  "rootfs_squashfs_bytes": 4479500,
+  "partitions": {
+    "u-boot": [
+      0,
+      196608
+    ],
+    "u-boot-env": [
+      196608,
+      65536
+    ],
+    "factory": [
+      262144,
+      65536
+    ],
+    "firmware": [
+      327680,
+      16252928
+    ],
+    "debug": [
+      16580608,
+      65536
+    ],
+    "backup": [
+      1040384,
+      65536
+    ],
+    "bdinfo": [
+      16711680,
+      65536
+    ]
+  },
+  "firmware_partition_bytes": 16252928,
+  "estimated_overlay_bytes_before_jffs2_overhead": 9633792,
+  "uimage_crcs_valid": true,
+  "required_packages_present": [
+    "luci-ssl",
+    "luci-i18n-base-zh-cn",
+    "luci-i18n-firewall-zh-cn",
+    "kmod-mt7603",
+    "kmod-mt7615e",
+    "kmod-mt7663-firmware-ap",
+    "kmod-usb2",
+    "kmod-usb-ohci",
+    "swconfig",
+    "firewall4"
+  ],
+  "package_count": 151,
+  "private_root_password_embedded": false,
+  "private_ssh_host_keys_embedded": false,
+  "ca_bundle_certificates": 120,
+  "duplicate_ca_certificates": false,
+  "personalization_file_verified": true,
+  "inherited_backup_partition_offset_mismatch": true,
+  "legacy_cudy_tr1200_board_accepted_by_metadata": false,
+  "hardware_tested": false,
+  "migration_tested": false,
+  "status": "candidate-requires-hardware-migration-review"
+}

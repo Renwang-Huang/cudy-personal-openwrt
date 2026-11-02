@@ -1,0 +1,22 @@
+{
+  "version": "25.12.5",
+  "target": "ramips/mt76x8",
+  "profile": "cudy_tr1200-v1",
+  "imagebuilder": {
+    "filename": "openwrt-imagebuilder-25.12.5-ramips-mt76x8.Linux-x86_64.tar.zst",
+    "url": "https://downloads.openwrt.org/releases/25.12.5/targets/ramips/mt76x8/openwrt-imagebuilder-25.12.5-ramips-mt76x8.Linux-x86_64.tar.zst",
+    "sha256": "eb62a030c42fa8d0c3d922dc15a05e8410166389ab1c818fd2e4ff875c0ba453",
+    "bytes": 32693316
+  },
+  "openwrt_build_revision": "f5dae5ece4805730c5e2850f8aa84765af2f6b32",
+  "source_reference_lock": "reference/archives.lock.json",
+  "source_modifications": false,
+  "firmware_partition": {
+    "offset": 327680,
+    "bytes": 16252928
+  },
+  "firmware_flash_authorized": false,
+  "hardware_tested": false,
+  "official_kernel_sha256": "5ea774902ba583f3451fd9a8d345a8a0cf74948f5b963b9d4ed9913daff0064e",
+  "official_dtb_sha256": "c67f8cefe8302c29a86b80f4e56bf25ba88611ff197ecaa3c8917abc1f758b15"
+}

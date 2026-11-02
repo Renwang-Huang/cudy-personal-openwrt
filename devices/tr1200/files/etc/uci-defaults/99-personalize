@@ -1,0 +1,11 @@
+#!/bin/sh
+# Applied by OpenWrt on first boot. No passwords or Wi-Fi keys are embedded.
+uci -q batch <<'EOF'
+set system.@system[0].hostname='TR1200-Personal'
+set network.lan.ipaddr='10.0.0.1'
+set network.lan.netmask='255.255.255.0'
+set luci.main.lang='zh_cn'
+commit system
+commit network
+commit luci
+EOF
