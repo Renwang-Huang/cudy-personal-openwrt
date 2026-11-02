@@ -1,0 +1,73 @@
+{
+  "release_url": "https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/tag/tr1200-v0.1.1-candidate",
+  "all_uploaded_assets_match_local": true,
+  "anonymous_verification_download_checked": true,
+  "assets": [
+    {
+      "name": "openwrt-25.12.5-tr1200-package-cache.tar.zst",
+      "bytes": 6834688,
+      "sha256": "0344a80a62e65c72c8f8541e598540b980a3985a0f25e2d7d000d57b567b4229",
+      "github_digest_matches": true
+    },
+    {
+      "name": "openwrt-25.12.5-tr1200-personal-v0.1.1-ramips-mt76x8-cudy_tr1200-v1-squashfs-sysupgrade.bin",
+      "bytes": 6619419,
+      "sha256": "7dec3ae143b5d1f41c6d969e176ff5f6e74b0abf6c9cc69a16e5ce256595a37a",
+      "github_digest_matches": true
+    },
+    {
+      "name": "openwrt-25.12.5-tr1200-personal-v0.1.1-ramips-mt76x8-cudy_tr1200-v1.bom.cdx.json",
+      "bytes": 20378,
+      "sha256": "493ef250d7fe3c5a3a1353ebc205d2bd6a88b9d2b9943ddcb5438be85e9494bd",
+      "github_digest_matches": true
+    },
+    {
+      "name": "openwrt-25.12.5-tr1200-personal-v0.1.1-ramips-mt76x8-cudy_tr1200-v1.manifest",
+      "bytes": 4917,
+      "sha256": "84e80608e19f1596292f03eee5a0e6325e81953bc43738a3ba57ee1d94a39ef4",
+      "github_digest_matches": true
+    },
+    {
+      "name": "profiles.json",
+      "bytes": 1363,
+      "sha256": "81e4f94f21313342557e568a9127ab1427e466e86a079236f0956ce3e89f98df",
+      "github_digest_matches": true
+    },
+    {
+      "name": "rebuild-comparison.json",
+      "bytes": 349,
+      "sha256": "d0bf0c8af2b81d42ebe64831570fb3a85cfa142bdd560d114c2ebe2fa5e82bbd",
+      "github_digest_matches": true
+    },
+    {
+      "name": "recovery-manifest.json",
+      "bytes": 767,
+      "sha256": "3171f4cd07ae128130a832b6ae402f10d8a9ef45c99070d6eba0b8abec8493d0",
+      "github_digest_matches": true
+    },
+    {
+      "name": "tr1200-hardening.json",
+      "bytes": 790,
+      "sha256": "79b1f942b1e49ad0229e4cd6306f38f968a416640db4d57397f198161f0d48b9",
+      "github_digest_matches": true
+    },
+    {
+      "name": "tr1200-offline-audit.json",
+      "bytes": 2010,
+      "sha256": "5ed4322ded60b7a0821324b87c9a80aa318744b66a5a1cb016b4eb2d86ec08c0",
+      "github_digest_matches": true
+    },
+    {
+      "name": "TR1200-SHA256SUMS.txt",
+      "bytes": 1089,
+      "sha256": "29403e2d05f651a0c203e564213a26c6e406f678e54d27f9a9b40de959161c76",
+      "github_digest_matches": true
+    },
+    {
+      "name": "tr1200-verification.json",
+      "bytes": 2568,
+      "sha256": "fe426459cdbac62abca27463abe7b87b15b5b9984aee0c09df7bf038ccdd9571",
+      "github_digest_matches": true
+    }
+  ]
+}

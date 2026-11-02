@@ -39,6 +39,8 @@ sysupgrade 兼容身份，保留原厂至 Cudy 签名中间固件的迁移步骤
 内核机器码和根文件系统与 v0.1.0 逐字节一致，DTB 只有 backup `reg` 中的两个字节改变。
 本地归档缓存离线重建、uImage/fwtool/分区检查、8 类异常输入拒绝和实际 MIPS 用户态
 程序执行通过。具体证据、未覆盖范围及交换机串流风险见 [AUDIT.md](AUDIT.md)。
+新版已通过 [GitHub 独立环境重建与强化检查](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41443725093)，
+下载云端镜像与本地逐字节比较一致，静态与 MIPS 离线报告也一致。
 
 [v0.1.0](https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/tag/tr1200-v0.1.0-candidate)
 保留原官方定义和旧镜像证据，供历史复现；当前首次迁移评估使用 v0.1.1。

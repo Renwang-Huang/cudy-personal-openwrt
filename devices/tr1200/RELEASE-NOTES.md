@@ -24,6 +24,11 @@ DTB 只改两个字节，uImage 重新计算 CRC。每次准备时先验证原�
 镜像没有已知可触发 SMALL_FLASH 服务问题的 ujail。
 原厂恢复文件通过 ZIP、归档 SHA-256 和厂商 MD5；没有启动恢复服务或刷写设备。
 
+已通过 [GitHub 独立环境的完整本轮检查](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41443725093)：
+离线重建、MIPS 用户态与异常输入检查、原厂恢复材料核验均通过。
+下载云端镜像与本地逐字节一致，静态报告与 MIPS 审计报告也一致。
+本版 11 个发布附件的服务器 SHA-256 已全部核对。
+
 附件包含镜像、manifest、SBOM、profiles、静态检查、离线审计和关键修正报告。
 工具与 APK 缓存继续复用 v0.1.0 的已锁定附件，`release-assets.lock.json` 精确引用，
 不复制改变原始输入。候选复现：

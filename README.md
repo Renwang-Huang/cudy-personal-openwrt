@@ -48,7 +48,7 @@
 
 | 设备 | 已完成的验证 | 云端记录 |
 | :--- | :--- | :---: |
-| **TR1200** | v0.1.1 本地离线重建、分区修正与 MIPS 用户态检查通过 | [复核](devices/tr1200/AUDIT.md) |
+| **TR1200** | v0.1.1 云端离线重建逐字节一致，MIPS 用户态与异常检查通过 | [重建](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41443725093) |
 | **TR3000** | 本地离线重建与云端镜像逐字节一致 | [重建](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41333664663) |
 | **TR3600** | 本地两次源码构建一致；云端发布镜像静态检查通过 | [检查](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41394843131) |
 

@@ -20,5 +20,7 @@
 https://drive.google.com/file/d/1sDSWjrw51HYsv-NPoADaDgPwrUE7EtgL/view
 
 注意官方设备树的 `backup` 分区 `reg` 偏移与厂商版本相差一位十六进制零，详见
-`devices/tr1200/README.md` 和对应静态检查报告。本项目保留官方 ImageBuilder 的
-内核与设备树，在实机未核查前不把分区名称当作真实备份范围的保证。
+`devices/tr1200/README.md` 和对应静态检查报告。v0.1.0 保留官方设备树，v0.1.1
+采用固定的上游 PR #23812 修正该偏移，保持内核机器码原样。实机核查前不能仅凭
+分区名称认定备份范围正确。`openwrt-pr-*.patch` / `.json` 保存本次核对的上游提案，
+#22648、#23812 采用其中的 TR1200 部分，#25123 仅归档研究，不应用交换机修改。

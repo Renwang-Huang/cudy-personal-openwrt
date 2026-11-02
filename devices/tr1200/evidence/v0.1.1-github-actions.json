@@ -1,0 +1,101 @@
+{
+  "conclusion": "success",
+  "createdAt": "2026-11-02T12:19:19Z",
+  "headSha": "7b5cf941d5e73e065a14fe122d1be0b4eb6d85ff",
+  "jobs": [
+    {
+      "completedAt": "2026-11-02T12:20:27Z",
+      "conclusion": "success",
+      "databaseId": 125271604960,
+      "name": "reproduce",
+      "startedAt": "2026-11-02T12:19:23Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-02T12:19:24Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-02T12:19:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T12:19:34Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-02T12:19:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T12:19:56Z",
+          "conclusion": "success",
+          "name": "Install ImageBuilder host dependencies",
+          "number": 3,
+          "startedAt": "2026-11-02T12:19:34Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T12:20:18Z",
+          "conclusion": "success",
+          "name": "Reproduce from verified release inputs with APK offline",
+          "number": 4,
+          "startedAt": "2026-11-02T12:19:56Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T12:20:22Z",
+          "conclusion": "success",
+          "name": "Reject corrupt images and execute MIPS userspace checks",
+          "number": 5,
+          "startedAt": "2026-11-02T12:20:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T12:20:22Z",
+          "conclusion": "success",
+          "name": "Verify official recovery kit without starting a server",
+          "number": 6,
+          "startedAt": "2026-11-02T12:20:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T12:20:24Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 7,
+          "startedAt": "2026-11-02T12:20:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T12:20:25Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 14,
+          "startedAt": "2026-11-02T12:20:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T12:20:25Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 15,
+          "startedAt": "2026-11-02T12:20:25Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41443725093/job/125271604960"
+    }
+  ],
+  "status": "completed",
+  "updatedAt": "2026-11-02T12:20:28Z",
+  "url": "https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41443725093",
+  "checked_at": "2026-11-02T12:22:05.446898+00:00",
+  "downloaded_cloud_image_byte_identical_to_local": true,
+  "image_sha256": "7dec3ae143b5d1f41c6d969e176ff5f6e74b0abf6c9cc69a16e5ce256595a37a",
+  "cloud_static_report_matches_local": true,
+  "cloud_mips_and_negative_test_report_matches_local": true,
+  "independent_full_source_build": false,
+  "hardware_tested": false,
+  "router_contacted": false
+}
