@@ -21,6 +21,14 @@
 避免与现有 `10.0.0.1` 路由器冲突，也避免启动期交换机串流。无线和管理密码首次启动自行设置。
 USB 共享、VPN 等插件后续按空间及性能添加；保留拨动开关输入，不预设模式切换行为。
 
+## 当前实机维护方式
+
+现场设备已部署 [PassWall 精简方案](passwall/README.md)、[现代管理界面](ui/modern/README.md)
+及 [舒缓灯语](leds/README.md)，与下面保留的 v0.1.1 首版候选镜像有所不同。
+当前采用 [固定版本维护](fixed-release/README.md)：关闭运行时在线软件源，保留现有软件及配置，
+源码、构建配方和 [194 个已安装包的精确版本](fixed-release/installed-packages.json)在仓库留档。
+后续升级或个性化由设备所有者明确发起，不安排软件自动升级。
+
 ## 当前候选与验证
 
 当前版本：[tr1200-v0.1.1-candidate](https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/tag/tr1200-v0.1.1-candidate)。
@@ -74,6 +82,10 @@ python3 devices/tr1200/scripts/reproduce-release.py
 v0.1.1 复用 v0.1.0 Release 中不可变的工具与软件包缓存，锁文件固定下载来源与构建输入。
 普通构建仍会获取官方源的当前包；修改 `config.json` 或叠加文件后应走普通构建流程。
 SBOM 的生成时间和 UUID 不承诺逐字节复现。
+
+以上描述的是历史 v0.1.1 的构建流程。构建主机获取依赖与设备运行时配置软件源是两回事；
+后续组装个性化镜像应按 [固定版本规则](fixed-release/README.md)叠加关闭源配置，
+并按选定版本准备依赖，不改变用于历史复现的输入和发布镜像。
 
 离线强化检查：
 

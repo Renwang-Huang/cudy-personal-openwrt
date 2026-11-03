@@ -3,6 +3,10 @@
   "target": "ramips/mt76x8",
   "profile": "cudy_tr1200-v1",
   "image_name": "tr1200-passwall-lite-v0.2.0",
+  "runtime_software_policy": "fixed-versions-no-online-repositories",
+  "files_overlays": [
+    "devices/tr1200/fixed-release/files"
+  ],
   "packages": [
     "luci-ssl",
     "luci-i18n-base-zh-cn",

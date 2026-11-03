@@ -1,0 +1,23 @@
+{
+  "checked_utc": "2026-11-03T14:52:03.087602+00:00",
+  "device": "Cudy TR1200 v1",
+  "policy": "fixed-versions-no-online-repositories",
+  "active_repository_entries": 0,
+  "installed_package_database_unchanged": true,
+  "apk_world_unchanged": true,
+  "passwall_configuration_unchanged": true,
+  "system_configuration_unchanged": true,
+  "empty_repository_refresh_passed": true,
+  "repository_refresh_referenced_remote_urls": false,
+  "automatic_software_upgrade_jobs_present": false,
+  "software_source_backup_on_device_and_host": true,
+  "core_services_running": {
+    "network": true,
+    "dnsmasq": true,
+    "dropbear": true,
+    "uhttpd": true,
+    "rpcd": true
+  },
+  "firmware_reflash_required": false,
+  "private_backup_published": false
+}

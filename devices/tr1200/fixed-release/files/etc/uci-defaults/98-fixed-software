@@ -1,0 +1,10 @@
+#!/bin/sh
+# Apply last in new images; preserve installed packages and their signing keys.
+set -eu
+umask 022
+mkdir -p /etc/apk/repositories.d
+for file in /etc/apk/repositories /etc/apk/repositories.d/*.list; do
+    [ -f "$file" ] || continue
+    printf '%s\n' '# Fixed-version device: no online package repositories.' > "$file"
+done
+exit 0
