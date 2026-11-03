@@ -5,6 +5,7 @@
   "image_name": "tr1200-passwall-lite-v0.2.0",
   "runtime_software_policy": "fixed-versions-no-online-repositories",
   "files_overlays": [
+    "devices/tr1200/passwall/runtime/files",
     "devices/tr1200/fixed-release/files"
   ],
   "packages": [
@@ -30,5 +31,8 @@
   ],
   "core_package_version": "1.13.21-r3",
   "dns_package_version": "2.93-r99",
-  "minimum_overlay_bytes": 2097152
+  "minimum_overlay_bytes": 2097152,
+  "passwall_source_patches": [
+    "devices/tr1200/passwall/runtime/patches/001-cudy-lite-status.patch"
+  ]
 }

@@ -1,0 +1,101 @@
+{
+  "checked_utc": "2026-11-03T17:31:01.163387+00:00",
+  "device": "Cudy TR1200 v1",
+  "base_system": "OpenWrt 25.12.5 / Linux 6.12.94",
+  "upstream": "Existing router direct 2.4 GHz WLAN",
+  "uplink_mode": "2.4 GHz station",
+  "downstream_modes": [
+    "Ethernet LAN",
+    "2.4 GHz AP",
+    "5 GHz AP"
+  ],
+  "private_node_migration": {
+    "vless_reality_nodes": 2,
+    "tuic_nodes": 1,
+    "urltest_group": 1,
+    "native_sing_box_nodes": true,
+    "source_loopback_proxy_not_reused": true,
+    "certificate_verification_preserved": true
+  },
+  "isolated_single_protocol_https": {
+    "upstream_vless_1": {
+      "https_passed": true,
+      "exit_country": "US",
+      "exit_code": 0
+    },
+    "upstream_tuic": {
+      "https_passed": true,
+      "exit_country": "US",
+      "exit_code": 0
+    }
+  },
+  "direct_baseline_exit_country": "CN",
+  "proxy_exit_country": "US",
+  "dns_domain_suffix_count": 71,
+  "runtime_source_patch": "runtime/patches/001-cudy-lite-status.patch",
+  "ethernet_client": {
+    "udp_dns_passed": true,
+    "tcp_dns_passed": true,
+    "https_proxy_passed": true,
+    "domestic_https_passed": true,
+    "udp_transparent_proxy_passed": true,
+    "one_mib_download_passed": true
+  },
+  "wireless_client_tests": {
+    "5g": {
+      "udp_dns_passed": true,
+      "tcp_dns_passed": true,
+      "https_proxy_passed": true,
+      "domestic_https_passed": true,
+      "udp_transparent_proxy_passed": true,
+      "one_mib_download_passed": true
+    },
+    "2g": {
+      "udp_dns_passed": true,
+      "tcp_dns_passed": true,
+      "https_proxy_passed": true,
+      "domestic_https_passed": true,
+      "udp_transparent_proxy_passed": true,
+      "one_mib_download_passed": true
+    }
+  },
+  "wireless_test_interface": "wlo1-quad",
+  "wireless_test_isolation": {
+    "temporary_networkmanager_profiles": true,
+    "dedicated_route_table": 4020,
+    "source_scoped_policy_rule": true,
+    "automatic_dns_ignored": true,
+    "temporary_test_client_neighbor_pinned": true,
+    "primary_wifi_and_ethernet_preserved": true,
+    "main_routes_rules_and_dns_preserved": true,
+    "temporary_profiles_and_secrets_removed": true
+  },
+  "same_band_24g_ap_sta_test": "passed with isolated idle client interface",
+  "earlier_same_band_failure_attribution_retracted": true,
+  "controlled_software_reboot_completed": true,
+  "automatic_proxy_after_reboot_verified": true,
+  "proxy_boot_delay_seconds": 60,
+  "startup_takes_several_minutes_on_this_device": true,
+  "ui_runtime_status": {
+    "dns_mode_status": true,
+    "udp_status": true,
+    "tcp_status": true,
+    "haproxy_status": "-1"
+  },
+  "installed_package_database_and_world_unchanged": true,
+  "online_package_repositories_active": 0,
+  "user_confirmed_power_supply": "5V/2A",
+  "earlier_unexpected_interruptions_observed": true,
+  "earlier_interruptions_single_cause_proven": false,
+  "private_before_and_after_backups_saved": true,
+  "credentials_or_private_configuration_published": false,
+  "not_tested": [
+    "wired WAN",
+    "maximum throughput",
+    "long-duration stability",
+    "high connection counts",
+    "subscription service",
+    "USB under load",
+    "complete factory recovery"
+  ]
+}

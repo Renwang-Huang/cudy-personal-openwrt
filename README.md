@@ -31,7 +31,7 @@
 | **硬件** | MediaTek MT7628AN · 128 MiB RAM · 16 MiB NOR · 百兆 WAN / LAN |
 | **基础系统** | OpenWrt 25.12.5 · Linux 6.12.94 · `ramips/mt76x8` |
 | **管理界面** | 中文 LuCI，shadcn 主题适配；保留 Argon 和 Bootstrap 回退 |
-| **PassWall** | 26.10.29-r1，搭配 sing-box 1.13.21 精简核心；默认关闭代理 |
+| **PassWall** | 26.10.29-r1，搭配 sing-box 1.13.21 精简核心；实机已导入私有节点并启用代理 |
 | **指示灯** | 白灯每 5 秒轻亮一次，红灯舒缓提示 LAN 数据活动 |
 | **软件维护** | 关闭在线软件源，保留固定版本；升级或个性化由设备所有者发起 |
 
@@ -52,7 +52,10 @@
 
 [PassWall 精简方案](devices/tr1200/passwall/README.md)将代理核心和 DNS 组件重新压缩进只读镜像，
 不依赖外置存储。VLESS、VMess、Trojan、Hysteria2 已通过本地加密传输测试；
-真实订阅、节点服务与公网代理出口尚未验证。
+之后已完成真实 VLESS Reality、TUIC 节点和自动测速组合的公网传输测试；订阅服务未测试。
+当前使用 2.4G 接收上游，同时提供 2.4G、5G 下游 Wi-Fi 和有线 LAN。
+两路无线已用闲置客户端接口、独立路由表完成测试，主用网络保持原样；
+验证范围和资源适配见 [实际节点运行说明](devices/tr1200/passwall/runtime/README.md)。
 
 [舒缓灯语](devices/tr1200/leds/README.md)使用现有内核触发器，不增加常驻进程。
 网络、Wi-Fi、节点和灯语等日常设置仍可按需调整。
