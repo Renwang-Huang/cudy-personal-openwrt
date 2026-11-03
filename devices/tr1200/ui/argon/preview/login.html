@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-cn" data-argon-mode="normal">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TR1200-Personal - LuCI</title>
+
+<!-- SEO and Description -->
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+<!-- Mobile and PWA -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="TR1200-Personal - LuCI">
+
+<!-- Theme and Colors -->
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#5e72e4">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#5a6cc5">
+
+<!-- Icons and Manifest -->
+<link rel="icon" type="image/x-icon" href="assets/argon/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/argon/icon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/argon/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/argon/icon/android-icon-192x192.png">
+<link rel="apple-touch-icon" sizes="144x144" href="assets/argon/icon/apple-icon-144x144.png">
+<link rel="manifest" href="assets/argon/icon/manifest.json">
+
+	<link rel="stylesheet" href="assets/argon/css/cascade.css?v=1793603210-1793685296-292552">
+	<style title="text/css">
+		:root {
+			--light-primary: #5e72e4;
+			--dark-primary: #5a6cc5;
+			--dark-on-primary: #ffffff;
+			--dark-link-color: #b0c1ff;
+			--dark-focus-ring: #d3ddff;
+			--dark-control-focus: #7a91ff;
+			--dark-progress-fill: #8fa4ff;
+			--dark-control-ring: rgba(122, 145, 255, .18);
+			--dark-selected-bg: #262e4f;
+			--dark-selected-hover-bg: #333d64;
+			--dark-accent-ring: rgba(176, 193, 255, .28);
+			--dark-accent-shadow: rgba(176, 193, 255, .1);
+			--dark-checkmark-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23ffffff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+			--blur-radius-light:0px;
+			--blur-opacity-light:1;
+			--blur-radius-dark:0px;
+			--blur-opacity-dark:1;
+		}
+	</style>
+	<!-- Stylesheets -->
+<link rel="stylesheet" href="preview.css">
+</head>
+
+<body>
+<!-- Login Page Start -->
+<div class="login-page" data-login-style="centered">
+	<!-- Image Background Start -->
+	<div class="main-bg" id="main-bg"><img src="assets/argon/img/bg1.webp" data-fallback="assets/argon/img/bg1.webp" onerror="this.onerror=null;this.src=this.dataset.fallback" alt=""></div>
+	<!-- Image Background End -->
+	<!-- Login Container Start -->
+	<div class="login-container">
+		<div class="login-form">
+			<!-- Logo Start -->
+			<a class="brand" href="/"><img src="assets/argon/img/argon.svg" class="icon" alt="" data-fallback="assets/argon/img/argon.svg" onerror="this.onerror=null;this.src=this.dataset.fallback">
+				<span class="brand-text">TR1200-Personal</span>
+			</a>
+			<!-- Logo End -->
+			<!-- Login Form Start -->
+<form class="form-login" method="get" action="./overview.html"><div class="input-container">
+		<div class="input-group user-icon">
+			<label class="visually-hidden" for="cbi-input-user">用户名</label>
+			<input class="cbi-input-user" id="cbi-input-user" type="text" disabled name="luci_username" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="用户名" value="" />
+			<span class="border" aria-hidden="true"></span>
+		</div>
+		<div class="input-group pass-icon">
+			<label class="visually-hidden" for="cbi-input-password">密码</label>
+			<input class="cbi-input-password" id="cbi-input-password" type="password" disabled name="luci_password" autocomplete="current-password" placeholder="密码" />
+			<span class="border" aria-hidden="true"></span>
+		</div>	</div><div>
+		<input type="submit" value="查看概览预览" class="cbi-button cbi-button-apply" />
+	</div></form>
+<!-- Login Form End -->
+
+</div>
+<footer>
+	<div class="login-footer-links">
+		<a href="https://github.com/openwrt/luci" target="_blank" title="Powered by LuCI (25.12)">LuCI</a>
+		<a href="https://github.com/jerrykuku/luci-theme-argon" target="_blank">ArgonTheme v3.1.2</a>
+	</div>
+	<a href="https://openwrt.org/" target="_blank" title="OpenWrt 25.12.5-UI Preview">OpenWrt 25.12.5-UI Preview</a>
+</footer>
+</div>
+</div>
+
+<script src="preview.js"></script>
+</body>
+</html>

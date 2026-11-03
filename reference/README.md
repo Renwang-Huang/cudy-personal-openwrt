@@ -36,3 +36,10 @@ TR3600 配方使用主工程锁定版本和独立补丁，从源码编译内核�
 重新获取相同提交的备份可运行 `python3 scripts/archive-sources.py`。
 
 官方构建说明：https://openwrt.org/docs/guide-developer/toolchain/use-buildsystem
+
+## 可选界面源码
+
+`ui/argon-v3.1.2.tar.gz` 保存 [Argon](https://github.com/jerrykuku/luci-theme-argon)
+v3.1.2 标签对应的完整源码快照，含模板、样式源码、资源、测试和上游许可证。
+固定提交、归档检查及官方依赖包来源见 [界面配方](../devices/tr1200/ui/argon/README.md)。
+主题以外的基础依赖仍按 OpenWrt 官方配方获取原始源码；此归档不代表所有系统组件的源码合集。

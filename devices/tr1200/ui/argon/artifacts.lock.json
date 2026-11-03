@@ -1,0 +1,78 @@
+{
+  "upstream": {
+    "repository": "https://github.com/jerrykuku/luci-theme-argon",
+    "tag": "v3.1.2",
+    "commit": "7b77b44b8324ba4939144760ed3f09c1a1d1e833"
+  },
+  "integrity_format": "blake2b-256",
+  "source": {
+    "path": "reference/ui/argon-v3.1.2.tar.gz",
+    "bytes": 10576094,
+    "content_id": "b4a83e696c229ee572b6b6d63737587d9532eb6fe3e23460b6f2ff4a0584619e"
+  },
+  "packages": [
+    {
+      "name": "coreutils",
+      "version": "9.9-r2",
+      "filename": "coreutils-9.9-r2.apk",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/packages/mipsel_24kc/packages/coreutils-9.9-r2.apk",
+      "bytes": 758,
+      "installed_bytes": 1,
+      "content_id": "ea2e8ca4cf5241f76aedd6f1c6cde740fae865697f40b152891e944d98f45544"
+    },
+    {
+      "name": "coreutils-timeout",
+      "version": "9.9-r2",
+      "filename": "coreutils-timeout-9.9-r2.apk",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/packages/mipsel_24kc/packages/coreutils-timeout-9.9-r2.apk",
+      "bytes": 15576,
+      "installed_bytes": 29372,
+      "content_id": "8a7b56ef478173d17a88793eea13271ad1e643589dc1cbb3e477cb6a9baeea2a"
+    },
+    {
+      "name": "flock",
+      "version": "2.41.5-r1",
+      "filename": "flock-2.41.5-r1.apk",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/packages/mipsel_24kc/base/flock-2.41.5-r1.apk",
+      "bytes": 11359,
+      "installed_bytes": 20919,
+      "content_id": "9c29dac56d16604823c64663232b1b588268fd177a5b666fa77da975822778c5"
+    },
+    {
+      "name": "libpthread",
+      "version": "1.2.5-r5",
+      "filename": "libpthread-1.2.5-r5.apk",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/targets/ramips/mt76x8/packages/libpthread-1.2.5-r5.apk",
+      "bytes": 644,
+      "installed_bytes": 1,
+      "content_id": "c7ca5cf11e1be1e2f9a97fa63dab73e26e6159d4195066061ca3680db7f28440"
+    },
+    {
+      "name": "librt",
+      "version": "1.2.5-r5",
+      "filename": "librt-1.2.5-r5.apk",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/targets/ramips/mt76x8/packages/librt-1.2.5-r5.apk",
+      "bytes": 648,
+      "installed_bytes": 1,
+      "content_id": "bda5b7c614052a3ce70e8c52c5eb3252d990703495703f975f59bb540f000c44"
+    },
+    {
+      "name": "luci-i18n-argon-config-zh-cn",
+      "version": "3.1.2-r1",
+      "filename": "luci-i18n-argon-config-zh-cn-3.1.2-r1.apk",
+      "url": "https://github.com/jerrykuku/luci-theme-argon/releases/download/v3.1.2/luci-i18n-argon-config-zh-cn-3.1.2-r1.apk",
+      "bytes": 4008,
+      "installed_bytes": 6187,
+      "content_id": "617c383f8f17c234afa029b9f6cca7fbcd8a873c90a239558d3afd722980817a"
+    },
+    {
+      "name": "luci-theme-argon",
+      "version": "3.1.2-r1",
+      "filename": "luci-theme-argon-3.1.2-r1.apk",
+      "url": "https://github.com/jerrykuku/luci-theme-argon/releases/download/v3.1.2/luci-theme-argon-3.1.2-r1.apk",
+      "bytes": 298865,
+      "installed_bytes": 662518,
+      "content_id": "ece7919f10c272ceeef0c7bdd94bc411d94d6607491ecf571f9983c6d0aca19a"
+    }
+  ]
+}

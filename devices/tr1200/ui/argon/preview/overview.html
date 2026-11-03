@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-cn" data-argon-mode="normal">
+
+<head>
+	<meta name="argon-menu-icons" content="arrow.svg asterisk.svg bandwidth_monitor.svg check.svg chevron-down.svg chevron-right.svg close.svg control.svg copy.svg default.svg delete.svg docker.svg download.svg edit.svg heart.svg hello-world.svg help.svg loading.svg logout.svg menu.svg monitor.svg moon.svg nas.svg network.svg password.svg ring.svg services.svg spinner.svg statistics.svg status.svg sun.svg system.svg transfer.svg user.svg vpn.svg">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TR1200-Personal - LuCI</title>
+
+<!-- SEO and Description -->
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+<!-- Mobile and PWA -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="TR1200-Personal - LuCI">
+
+<!-- Theme and Colors -->
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#5e72e4">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#5a6cc5">
+
+<!-- Icons and Manifest -->
+<link rel="icon" type="image/x-icon" href="assets/argon/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/argon/icon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/argon/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/argon/icon/android-icon-192x192.png">
+<link rel="apple-touch-icon" sizes="144x144" href="assets/argon/icon/apple-icon-144x144.png">
+<link rel="manifest" href="assets/argon/icon/manifest.json">
+
+	<link rel="stylesheet" href="assets/argon/css/cascade.css?v=1793603210-1793685296-292552">
+	<style title="text/css">
+		:root {
+			--light-primary: #5e72e4;
+			--dark-primary: #5a6cc5;
+			--dark-on-primary: #ffffff;
+			--dark-link-color: #b0c1ff;
+			--dark-focus-ring: #d3ddff;
+			--dark-control-focus: #7a91ff;
+			--dark-progress-fill: #8fa4ff;
+			--dark-control-ring: rgba(122, 145, 255, .18);
+			--dark-selected-bg: #262e4f;
+			--dark-selected-hover-bg: #333d64;
+			--dark-accent-ring: rgba(176, 193, 255, .28);
+			--dark-accent-shadow: rgba(176, 193, 255, .1);
+			--dark-checkmark-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23ffffff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+			--blur-radius-light:0px;
+			--blur-opacity-light:1;
+			--blur-radius-dark:0px;
+			--blur-opacity-dark:1;
+		}
+	</style>
+	<!-- Stylesheets -->
+
+
+
+<link rel="stylesheet" href="preview.css">
+</head>
+
+<body
+	class="lang_zh-cn logged-in"
+	data-page="admin-status-overview">
+
+	<div class="main">
+		<div class="main-left" id="mainmenu" style="display:none">
+			<div class="sidenav-header d-flex align-items-center">
+				<a class="brand" href="#">TR1200-Personal</a>
+				<div class="ml-auto">
+					<!-- Sidenav toggler -->
+					<div class="sidenav-toggler d-none d-xl-block active" data-action="sidenav-unpin"
+						data-target="#sidenav-main">
+						<div class="sidenav-toggler-inner">
+							<i class="sidenav-toggler-line"></i>
+							<i class="sidenav-toggler-line"></i>
+							<i class="sidenav-toggler-line"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main-right">
+			<header class="bg-primary">
+				<div class="fill">
+					<div class="container">
+						<div class="flex1">
+							<button type="button" class="showSide" aria-label="展开导航" aria-controls="mainmenu" aria-expanded="false"></button>
+							<a class="brand" href="#" title="TR1200-Personal">TR1200-Personal</a>
+						</div>
+						<div class="header-actions">
+							<div class="status" id="indicators"></div>
+							<div id="argon-appearance" hidden></div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="darkMask"></div>
+			<div id="maincontent">
+				<div class="container">
+
+				<noscript>
+					<div class="alert-message error">
+						<h4>JavaScript required!</h4>
+						<p>You must enable JavaScript in your browser or LuCI will not work properly.</p>
+					</div>
+				</noscript>
+
+					<div id="tabmenu" style="display:none"></div>
+<div class="preview-notice">界面预览 · 以下为示例内容，未连接路由器</div><div id="view"><h2>概览</h2><div class="cbi-section"><h3>系统</h3><table class="table"><tr class="tr"><td class="td left">主机名</td><td class="td left">TR1200-Personal</td></tr><tr class="tr"><td class="td left">型号</td><td class="td left">Cudy TR1200 v1</td></tr><tr class="tr"><td class="td left">系统</td><td class="td left">OpenWrt 25.12.5 · 中文 LuCI</td></tr><tr class="tr"><td class="td left">界面</td><td class="td left">Argon 3.1.2</td></tr><tr class="tr"><td class="td left">运行时间</td><td class="td left">示例 · 2 小时 18 分钟</td></tr><tr class="tr"><td class="td left">平均负载</td><td class="td left">示例 · 0.03 / 0.02 / 0.00</td></tr></table></div><div class="cbi-section"><h3>内存</h3><div class="cbi-section-node preview-memory"><p>可用内存 · 示例</p><div class="cbi-progressbar" title="72 MiB / 120 MiB"><div style="width:60%"></div></div></div></div><div class="cbi-section"><h3>网络</h3><table class="table"><tr class="tr"><td class="td left">管理方式</td><td class="td left">有线 / HTTPS</td></tr><tr class="tr"><td class="td left">无线</td><td class="td left">双频 · 按需配置</td></tr><tr class="tr"><td class="td left">在线壁纸</td><td class="td left">关闭</td></tr></table></div></div></div>
+		<footer class="mobile-hide" style="text-wrap: auto">
+			<div class="footer-content" style="display: flex; flex-wrap: wrap; gap: 0.5em; justify-content: end;">
+				<a class="luci-link" href="https://github.com/openwrt/luci" target="_blank">Powered by LuCI (25.12)</a>
+
+				<span class="footer-separator">|</span>
+
+				<a href="https://github.com/jerrykuku/luci-theme-argon" target="_blank">ArgonTheme v3.1.2</a>
+
+				<span class="footer-separator">|</span>
+
+				<a class="luci-link" href="https://openwrt.org/" target="_blank">OpenWrt 25.12.5-UI Preview</a>
+
+				<ul class="breadcrumb pull-right" id="modemenu" style="display:none"></ul>
+			</div>
+		</footer>
+	</div>
+</div>
+
+
+
+<script src="preview.js"></script>
+</body>
+</html>

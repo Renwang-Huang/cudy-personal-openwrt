@@ -1,0 +1,178 @@
+{
+  "checked_utc": "2026-11-03T06:10:32.049763+00:00",
+  "status": "prepared-not-installed-on-device",
+  "system": "OpenWrt 25.12.5 / ramips/mt76x8 / mipsel_24kc",
+  "package_count": 7,
+  "installed_content_bytes": 718999,
+  "download_bytes": 331858,
+  "solver": {
+    "existing_package_upgrade_count": 0,
+    "existing_package_removal_count": 0,
+    "new_packages": 7,
+    "scope": "isolated copy of device package database"
+  },
+  "templates": [
+    {
+      "file": "usr/share/ucode/luci/template/themes/argon/login_form.ut",
+      "passed": true
+    },
+    {
+      "file": "usr/share/ucode/luci/template/themes/argon/footer_login.ut",
+      "passed": true
+    },
+    {
+      "file": "usr/share/ucode/luci/template/themes/argon/login_background.ut",
+      "passed": true
+    },
+    {
+      "file": "usr/share/ucode/luci/template/themes/argon/footer.ut",
+      "passed": true
+    },
+    {
+      "file": "usr/share/ucode/luci/template/themes/argon/sysauth.ut",
+      "passed": true
+    },
+    {
+      "file": "usr/share/ucode/luci/template/themes/argon/page_scripts.ut",
+      "passed": true
+    },
+    {
+      "file": "usr/share/ucode/luci/template/themes/argon/header.ut",
+      "passed": true
+    },
+    {
+      "file": "usr/share/ucode/luci/template/themes/argon/head_meta.ut",
+      "passed": true
+    },
+    {
+      "file": "usr/share/ucode/luci/template/themes/argon/header_login.ut",
+      "passed": true
+    },
+    {
+      "file": "usr/share/ucode/luci/template/themes/argon/head.ut",
+      "passed": true
+    },
+    {
+      "file": "usr/share/ucode/luci/template/themes/argon/out_header_login.ut",
+      "passed": true
+    },
+    {
+      "file": "luci.argon-branding",
+      "passed": true,
+      "method": "runtime module import"
+    },
+    {
+      "file": "luci.argon-palette",
+      "passed": true,
+      "method": "runtime module import"
+    }
+  ],
+  "browser": [
+    {
+      "case": "desktop-light",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "javascript_errors": 0,
+      "missing_resources": 0,
+      "external_requests": 0,
+      "horizontal_overflow": false,
+      "appearance_and_auto_mode": true
+    },
+    {
+      "case": "desktop-dark",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "javascript_errors": 0,
+      "missing_resources": 0,
+      "external_requests": 0,
+      "horizontal_overflow": false,
+      "appearance_and_auto_mode": true
+    },
+    {
+      "case": "mobile",
+      "viewport": [
+        390,
+        844
+      ],
+      "javascript_errors": 0,
+      "missing_resources": 0,
+      "external_requests": 0,
+      "horizontal_overflow": false,
+      "appearance_and_auto_mode": true
+    },
+    {
+      "case": "login",
+      "viewport": [
+        1440,
+        950
+      ],
+      "javascript_errors": 0,
+      "missing_resources": 0,
+      "external_requests": 0,
+      "horizontal_overflow": false,
+      "appearance_and_auto_mode": true
+    },
+    {
+      "case": "login-mobile",
+      "viewport": [
+        390,
+        844
+      ],
+      "javascript_errors": 0,
+      "missing_resources": 0,
+      "external_requests": 0,
+      "horizontal_overflow": false,
+      "appearance_and_auto_mode": true
+    }
+  ],
+  "scripts": {
+    "preflight_preserves_luci_and_database": true,
+    "wrong_device_rejected": true,
+    "changed_package_rejected": true,
+    "offline_application": true,
+    "rollback_restores_luci_byte_for_byte": true,
+    "installation_failure_restores_luci": true,
+    "scope": "Local copies only; real MIPS apk and uci; model, free space and service restart mocked; failure injected."
+  },
+  "public_artifact_urls": [
+    {
+      "name": "coreutils",
+      "http_status": 200,
+      "declared_size": "758"
+    },
+    {
+      "name": "coreutils-timeout",
+      "http_status": 200,
+      "declared_size": "15576"
+    },
+    {
+      "name": "flock",
+      "http_status": 200,
+      "declared_size": "11359"
+    },
+    {
+      "name": "libpthread",
+      "http_status": 200,
+      "declared_size": "644"
+    },
+    {
+      "name": "librt",
+      "http_status": 200,
+      "declared_size": "648"
+    },
+    {
+      "name": "luci-i18n-argon-config-zh-cn",
+      "http_status": 200,
+      "declared_size": "4008"
+    },
+    {
+      "name": "luci-theme-argon",
+      "http_status": 200,
+      "declared_size": "298865"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+/* Preview-only controls. The router uses the original Argon stylesheet. */
+.preview-notice { padding: .8rem 1rem; border: 1px solid var(--border-color); border-radius: .75rem; background: var(--surface-color); color: var(--muted-text); font-size: .85rem; }
+.preview-toolbar { display:flex; align-items:center; flex-wrap:wrap; gap:.7rem; }
+.preview-toolbar select { width:auto; max-width:100%; min-width:7rem; }
+.preview-toolbar a { white-space:nowrap; }
+.preview-memory { padding:1.25rem; }
+.preview-login-note { margin: 0 0 1rem; font-size:.85rem; color:var(--muted-text); }
+.preview-page-links { position:fixed; top:1rem; right:1rem; z-index:200; padding:.7rem; border:1px solid var(--border-color); border-radius:.75rem; background:var(--surface-color); }
+@media (max-width:600px) { .preview-page-links { top:.6rem; right:.6rem; left:.6rem; justify-content:center; } }
