@@ -51,6 +51,9 @@ TR1200 提供 [Argon 界面与可选离线包](devices/tr1200/ui/argon/README.md
 当前 TR1200 实机已进一步采用 [现代管理界面](devices/tr1200/ui/modern/README.md)：
 基于 shadcn 主题进行轻量适配，提供紧凑侧栏、页面搜索、线条图标、浅深色与手机布局，保留 Argon 回退。
 
+机身红白灯另有 [星舰巡航灯语](devices/tr1200/leds/README.md)：白灯每 5 秒轻亮一次，
+红灯缓慢提示 LAN 数据活动，使用系统内核触发器，不增加常驻进程。
+
 TR1200 另有 [PassWall 精简方案](devices/tr1200/passwall/README.md)：
 单台设备已完成保留配置升级、四协议加密传输和中文插件页面验证。
 该方案使用自编译精简核心及 DNS 组件，不依赖外置存储，默认关闭代理。

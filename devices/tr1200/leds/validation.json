@@ -1,0 +1,49 @@
+{
+  "profile": "starship-calm",
+  "device": "Cudy TR1200 v1",
+  "white": {
+    "trigger": "timer",
+    "on_ms": 350,
+    "off_ms": 4650,
+    "period_ms": 5000
+  },
+  "red": {
+    "trigger": "netdev",
+    "device": "br-lan",
+    "rx": true,
+    "tx": true,
+    "interval_ms": 400,
+    "link_light": false
+  },
+  "brightness_sampling": {
+    "white:status": {
+      "on_samples": 36,
+      "off_samples": 414,
+      "transitions": 6
+    },
+    "red:power": {
+      "on_samples": 193,
+      "off_samples": 257,
+      "transitions": 28
+    }
+  },
+  "samples_per_led": 450,
+  "sample_duration_seconds": 13.5,
+  "standard_led_service_reload_verified": true,
+  "enabled_at_boot": true,
+  "reboot_executed_for_test": false,
+  "unrelated_system_sections_unchanged": true,
+  "new_background_processes": 0,
+  "new_packages": 0,
+  "services": {
+    "uhttpd": true,
+    "rpcd": true,
+    "network": true,
+    "dnsmasq": true,
+    "dropbear": true
+  },
+  "backup_saved_on_router_and_host": true,
+  "installer_preflight_on_device_passed": true,
+  "luci_led_configuration_entries_verified": true,
+  "physical_user_feedback_used": "Slower calm preset selected after initial effect was too frequent"
+}

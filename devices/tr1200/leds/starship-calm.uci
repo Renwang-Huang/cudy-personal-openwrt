@@ -1,0 +1,16 @@
+set system.cudy_starship_white=led
+set system.cudy_starship_white.name='星舰 · 白色巡航'
+set system.cudy_starship_white.sysfs='white:status'
+set system.cudy_starship_white.trigger='timer'
+set system.cudy_starship_white.default='1'
+set system.cudy_starship_white.delayon='350'
+set system.cudy_starship_white.delayoff='4650'
+set system.cudy_starship_red=led
+set system.cudy_starship_red.name='星舰 · 红色数据提示'
+set system.cudy_starship_red.sysfs='red:power'
+set system.cudy_starship_red.trigger='netdev'
+set system.cudy_starship_red.dev='br-lan'
+set system.cudy_starship_red.mode='tx rx'
+set system.cudy_starship_red.interval='400'
+set system.cudy_starship_red.default='0'
+commit system
