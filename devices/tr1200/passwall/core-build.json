@@ -1,0 +1,9 @@
+{
+  "source_tag": "v1.13.21",
+  "tags": "with_quic,with_utls,badlinkname,tfogo_checklinkname0",
+  "ldflags": "-X internal/godebug.defaultGODEBUG=multipathtcp=0 -checklinkname=0 -s -w -buildid= -X github.com/sagernet/sing-box/constant.Version=1.13.21-cudy-lite.3",
+  "go_toolchain": "go1.25.5",
+  "architecture": "linux/mipsle softfloat",
+  "cgo": false,
+  "gcflags": "all=-l"
+}

@@ -1,0 +1,58 @@
+{
+  "image": "openwrt-25.12.5-tr1200-passwall-lite-v0.2.0-test-ramips-mt76x8-cudy_tr1200-v1-squashfs-sysupgrade.bin",
+  "bytes": 13828379,
+  "rootfs_bytes": 11665404,
+  "overlay_reserve_bytes": 2424832,
+  "official_patched_kernel_unchanged": true,
+  "hardware_metadata_valid": true,
+  "image_crcs_valid": true,
+  "required_packages_present": true,
+  "core_version": "1.13.21-r3",
+  "dns_version": "2.93-r99",
+  "native_core_tests": {
+    "scope": "Physical TR1200 client to a native host reference sing-box server built from fixed upstream source; synthetic credentials; no subscription or production routing",
+    "protocols": [
+      {
+        "protocol": "vless",
+        "passed": true,
+        "payload_bytes": 32801,
+        "elapsed_seconds": 1.07,
+        "VmHWM": 26552,
+        "VmRSS": 26552
+      },
+      {
+        "protocol": "vmess",
+        "passed": true,
+        "payload_bytes": 32801,
+        "elapsed_seconds": 0.61,
+        "VmHWM": 26704,
+        "VmRSS": 26704
+      },
+      {
+        "protocol": "trojan",
+        "passed": true,
+        "payload_bytes": 32801,
+        "elapsed_seconds": 0.9,
+        "VmHWM": 27180,
+        "VmRSS": 27180
+      },
+      {
+        "protocol": "hysteria2",
+        "passed": true,
+        "payload_bytes": 32801,
+        "elapsed_seconds": 1.06,
+        "VmHWM": 28108,
+        "VmRSS": 28108
+      }
+    ],
+    "passed": true
+  },
+  "offline_tests": {
+    "core-version": true,
+    "four-protocols": true,
+    "dns-version": true,
+    "dns-config": true
+  },
+  "no_embedded_secrets": true,
+  "passwall_disabled_by_default": true
+}

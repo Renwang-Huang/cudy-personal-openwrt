@@ -1,0 +1,107 @@
+{
+  "checked_utc": "2026-11-03T12:52:07.171374+00:00",
+  "device": "Cudy TR1200 v1",
+  "status": "installed-proxy-disabled-awaiting-user-nodes",
+  "system": "OpenWrt 25.12.5 / Linux 6.12.94",
+  "passwall_version": "26.10.29-r1",
+  "core_version": "1.13.21-cudy-lite.3",
+  "core_packed_bytes": 5065076,
+  "dns_version": "2.93-r99",
+  "configuration_preserved": {
+    "network": true,
+    "wireless": true,
+    "system": true,
+    "management_credentials": true,
+    "argon": true,
+    "uhttpd_original_settings_restored": true,
+    "dhcp_only_localuse_added": true,
+    "existing_firewall_rules_preserved": true,
+    "passwall_firewall_include_added": true
+  },
+  "overlay_available_kib": 2020,
+  "services": {
+    "network": true,
+    "dnsmasq": true,
+    "dropbear": true,
+    "uhttpd": true,
+    "rpcd": true
+  },
+  "proxy_enabled": false,
+  "external_storage_required": false,
+  "actual_lan_dns_query_passed": true,
+  "nft_socket_tproxy_check_passed": true,
+  "protocol_tests": [
+    {
+      "protocol": "vless",
+      "passed": true,
+      "payload_bytes": 32801,
+      "elapsed_seconds": 1.07,
+      "VmHWM": 26564,
+      "VmRSS": 26564
+    },
+    {
+      "protocol": "vmess",
+      "passed": true,
+      "payload_bytes": 32801,
+      "elapsed_seconds": 0.62,
+      "VmHWM": 26716,
+      "VmRSS": 26716
+    },
+    {
+      "protocol": "trojan",
+      "passed": true,
+      "payload_bytes": 32801,
+      "elapsed_seconds": 0.89,
+      "VmHWM": 27196,
+      "VmRSS": 27196
+    },
+    {
+      "protocol": "hysteria2",
+      "passed": true,
+      "payload_bytes": 32801,
+      "elapsed_seconds": 1.06,
+      "VmHWM": 28084,
+      "VmRSS": 28084
+    }
+  ],
+  "browser": {
+    "pages": [
+      {
+        "path": "admin/services/passwall/settings",
+        "loaded": true
+      },
+      {
+        "path": "admin/services/passwall/node_list",
+        "loaded": true
+      },
+      {
+        "path": "admin/services/passwall/node_subscribe",
+        "loaded": true
+      },
+      {
+        "path": "admin/services/passwall/app_update",
+        "loaded": true
+      },
+      {
+        "path": "admin/network/network",
+        "loaded": true
+      },
+      {
+        "path": "admin/network/wireless",
+        "loaded": true
+      }
+    ],
+    "script_errors": [],
+    "http_failures": [],
+    "settings_has_singbox": false,
+    "detected_core_version": true,
+    "mobile_horizontal_overflow": false,
+    "passed": true
+  },
+  "private_configuration_published": false,
+  "real_subscription_or_public_egress_tested": false,
+  "long_term_load_tested": false,
+  "fresh_machine_image_reproduction_tested": false,
+  "core_rebuilt_from_archived_source_matches": true,
+  "core_rebuild_used_local_dependency_cache": true
+}

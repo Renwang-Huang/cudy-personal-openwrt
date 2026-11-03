@@ -1,0 +1,52 @@
+{
+  "integrity_format": "blake2b-256",
+  "archives": [
+    {
+      "name": "sing-box-1.13.21",
+      "path": "reference/passwall/sing-box-1.13.21.tar.gz",
+      "bytes": 961179,
+      "content_id": "e205b2c140238bcdec01cff3cf7c86034aa1fb6c91eb970b833ba0a9ff1b5b90",
+      "repository": "https://github.com/SagerNet/sing-box",
+      "tag": "v1.13.21"
+    },
+    {
+      "name": "passwall",
+      "path": "reference/passwall/passwall-26.10.29-1.tar.gz",
+      "bytes": 904261,
+      "content_id": "aac5cee5b8c27a7958d01f4971c71a4c65329a162ee54a3d07364dec83ce40f1",
+      "repository": "https://github.com/Openwrt-Passwall/openwrt-passwall",
+      "tag": "26.10.29-1"
+    },
+    {
+      "name": "dnsmasq-custom-recipe",
+      "path": "reference/passwall/dnsmasq-2.93-cudy-recipe.tar.gz",
+      "bytes": 20853,
+      "content_id": "a008e9b392a5a263829b31d49e6c0edd889f7efe0ebaae333f7c3f9883c9a8ae",
+      "repository": "https://github.com/openwrt/openwrt",
+      "commit": "2d44c5ae2269efdc73a9febf4b99f60cfcafcd7d"
+    },
+    {
+      "name": "dnsmasq-source",
+      "path": "reference/passwall/dnsmasq-2.93.tar.xz",
+      "bytes": 642764,
+      "content_id": "545b72002f4e102a0f35fbdba72b652234f9e004a4b88f9aef7c2ee4730da223",
+      "url": "https://thekelleys.org.uk/dnsmasq/dnsmasq-2.93.tar.xz"
+    }
+  ],
+  "tools": [
+    {
+      "name": "upx",
+      "filename": "upx-5.3.0-amd64_linux.tar.xz",
+      "url": "https://github.com/upx/upx/releases/download/v5.3.0/upx-5.3.0-amd64_linux.tar.xz",
+      "bytes": 670704,
+      "content_id": "462ddd2f8e92fd943bb9a8dc34a72caea6d409506e4786a413312312cb632045"
+    },
+    {
+      "name": "sdk",
+      "filename": "openwrt-sdk-25.12.5-ramips-mt76x8_gcc-14.3.0_musl.Linux-x86_64.tar.zst",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/targets/ramips/mt76x8/openwrt-sdk-25.12.5-ramips-mt76x8_gcc-14.3.0_musl.Linux-x86_64.tar.zst",
+      "bytes": 222885392,
+      "content_id": "72e54f4bf72c9d0b463de34721affce251d7dd9bd9edece0ac66f611b19511f5"
+    }
+  ]
+}

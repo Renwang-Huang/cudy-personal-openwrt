@@ -1,0 +1,30 @@
+{
+  "openwrt_version": "25.12.5",
+  "target": "ramips/mt76x8",
+  "profile": "cudy_tr1200-v1",
+  "image_name": "tr1200-passwall-lite-v0.2.0",
+  "packages": [
+    "luci-ssl",
+    "luci-i18n-base-zh-cn",
+    "luci-i18n-firewall-zh-cn",
+    "luci-theme-argon",
+    "luci-i18n-argon-config-zh-cn",
+    "luci-app-passwall",
+    "luci-i18n-passwall-zh-cn",
+    "sing-box-cudy-lite",
+    "dnsmasq-full",
+    "ipt2socks",
+    "kmod-nft-socket",
+    "kmod-nft-tproxy",
+    "kmod-nf-reject",
+    "kmod-nf-reject6",
+    "-dnsmasq"
+  ],
+  "disabled_services": [
+    "passwall",
+    "sing-box"
+  ],
+  "core_package_version": "1.13.21-r3",
+  "dns_package_version": "2.93-r99",
+  "minimum_overlay_bytes": 2097152
+}
