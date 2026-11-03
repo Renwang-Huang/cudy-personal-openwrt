@@ -1,0 +1,113 @@
+{
+  "checked_utc": "2026-11-03T10:48:20.499134+00:00",
+  "status": "installed-and-verified-on-one-device",
+  "device": "Cudy TR1200 v1",
+  "system": "OpenWrt 25.12.5 / ramips/mt76x8 / Linux 6.12.94",
+  "installed_packages": [
+    {
+      "name": "coreutils",
+      "version": "9.9-r2"
+    },
+    {
+      "name": "coreutils-timeout",
+      "version": "9.9-r2"
+    },
+    {
+      "name": "flock",
+      "version": "2.41.5-r1"
+    },
+    {
+      "name": "libpthread",
+      "version": "1.2.5-r5"
+    },
+    {
+      "name": "librt",
+      "version": "1.2.5-r5"
+    },
+    {
+      "name": "luci-i18n-argon-config-zh-cn",
+      "version": "3.1.2-r1"
+    },
+    {
+      "name": "luci-theme-argon",
+      "version": "3.1.2-r1"
+    }
+  ],
+  "existing_packages_changed": false,
+  "original_theme_retained": true,
+  "rebooted_during_install": false,
+  "pending_uci_changes": 0,
+  "settings": {
+    "luci.main.mediaurlbase": "/luci-static/argon",
+    "luci.main.lang": "zh_cn",
+    "argon.@global[0].mode": "normal",
+    "argon.@global[0].login_style": "centered",
+    "argon.@global[0].online_wallpaper": "none",
+    "argon.@global[0].blur": "0",
+    "argon.@global[0].transparency": "1"
+  },
+  "services": {
+    "rpcd": true,
+    "uhttpd": true,
+    "network": true,
+    "dnsmasq": true,
+    "dropbear": true
+  },
+  "other_configuration_unchanged": {
+    "wireless": true,
+    "dhcp": true,
+    "rpcd": true,
+    "firewall": true,
+    "system": true,
+    "network": true,
+    "dropbear": true,
+    "uhttpd": true
+  },
+  "overlay_free_kib_before": 8980,
+  "overlay_free_kib_after": 8452,
+  "configuration_backup_on_device_and_host": true,
+  "device_rollback_script_verified": true,
+  "physical_rollback_executed": false,
+  "browser": {
+    "argon_login_page": true,
+    "authenticated_login": true,
+    "chinese_ui": true,
+    "pages": [
+      {
+        "path": "admin/network/network",
+        "loaded": true
+      },
+      {
+        "path": "admin/network/wireless",
+        "loaded": true
+      },
+      {
+        "path": "admin/network/firewall",
+        "loaded": true
+      },
+      {
+        "path": "admin/system/system",
+        "loaded": true
+      },
+      {
+        "path": "admin/system/argon-config",
+        "loaded": true
+      }
+    ],
+    "appearance_saved_and_reloaded": [
+      "dark",
+      "light",
+      "normal"
+    ],
+    "automatic_dark_mode": true,
+    "mobile_menu_and_overview": true,
+    "mobile_appearance_settings": true,
+    "javascript_errors": [],
+    "http_failures": [],
+    "external_requests": [],
+    "logout": true,
+    "passed": true
+  },
+  "long_term_or_reboot_tested": false,
+  "screenshots_and_private_configuration_published": false
+}

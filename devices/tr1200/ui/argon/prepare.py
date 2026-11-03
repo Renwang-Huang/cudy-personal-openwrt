@@ -44,14 +44,14 @@ def main():
         if not valid(path, item):
             raise SystemExit('Cached package verification failed: ' + item['name'])
         print('Verified:', item['name'], item['version'])
-    for name in ('apply.sh', 'rollback.sh', 'README.md', 'VALIDATION.md', 'validation.json'):
+    for name in ('apply.sh', 'rollback.sh', 'README.md', 'VALIDATION.md', 'validation.json', 'FIELD-TEST.md', 'field-validation.json'):
         shutil.copy2(HERE / name, kit / name)
     # Transfer check on BusyBox. Source authenticity is checked against the fixed lock above.
     checksums = ''.join(hashlib.md5((packages / p['filename']).read_bytes(), usedforsecurity=False).hexdigest() + '  packages/' + p['filename'] + '\n' for p in lock['packages'])
     (kit / 'packages.verify').write_text(checksums)
     archive = output / 'tr1200-argon-3.1.2-offline-kit.tar.gz'
     with tarfile.open(archive, 'w:gz') as tar:
-        for name in ('apply.sh', 'rollback.sh', 'README.md', 'VALIDATION.md', 'validation.json', 'packages.verify', 'packages'):
+        for name in ('apply.sh', 'rollback.sh', 'README.md', 'VALIDATION.md', 'validation.json', 'FIELD-TEST.md', 'field-validation.json', 'packages.verify', 'packages'):
             tar.add(kit / name, arcname='tr1200-argon-3.1.2/' + name)
     if args.apk.is_file():
         theme = next(item for item in lock['packages'] if item['name'] == 'luci-theme-argon')
