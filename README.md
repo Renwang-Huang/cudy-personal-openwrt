@@ -1,149 +1,122 @@
 <p align="center">
-  <img src=".github/assets/readme-banner.svg" alt="Cudy Personal OpenWrt — 面向多款 Cudy 路由器的个性化固件" width="100%">
+  <img src=".github/assets/readme-banner.svg" alt="Cudy TR1200 AC1200 — 个性化 OpenWrt 系统" width="100%">
 </p>
 
 <p align="center">
-  面向多款 Cudy 路由器的轻量定制系统。<br>
-  源码参考与构建输入留档，插件按需添加。
+  专用于 <strong>Cudy TR1200 v1 / AC1200</strong> 旅行路由器。<br>
+  固定软件版本，源码与定制配方留档，按设备所有者的需求维护。
 </p>
 
 <p align="center">
   <a href="https://downloads.openwrt.org/releases/25.12.5/"><img src="https://img.shields.io/badge/OpenWrt-25.12.5-0ea5e9?style=flat-square" alt="基于 OpenWrt 25.12.5"></a>
-  <a href="#设备与固件"><img src="https://img.shields.io/badge/Cudy-3%20devices-14b8a6?style=flat-square" alt="3 款 Cudy 设备"></a>
-  <a href="https://github.com/Renwang-Huang/cudy-personal-openwrt/releases"><img src="https://img.shields.io/badge/Status-Candidate-f59e0b?style=flat-square" alt="候选版本"></a>
+  <a href="devices/tr1200/README.md"><img src="https://img.shields.io/badge/Cudy-TR1200%20v1-14b8a6?style=flat-square" alt="Cudy TR1200 v1"></a>
+  <a href="devices/tr1200/fixed-release/README.md"><img src="https://img.shields.io/badge/Software-Fixed%20versions-64748b?style=flat-square" alt="固定软件版本"></a>
 </p>
 
 <p align="center">
-  <a href="#设备与固件">选择设备</a> ·
-  <a href="#验证进度">验证进度</a> ·
-  <a href="#构建与定制">构建与定制</a> ·
-  <a href="reference/README.md">源码备份</a>
+  <a href="#当前系统">当前系统</a> ·
+  <a href="devices/tr1200/fixed-release/README.md">维护规则</a> ·
+  <a href="reference/README.md">源码备份</a> ·
+  <a href="devices/tr1200/RUNBOOK.md">迁移与恢复</a>
 </p>
 
 > [!IMPORTANT]
-> 当前固件均为个人定制候选版。TR1200 v0.1.1 已完成单台实机迁移、启动与有线管理验证；其他机型尚未完成实机迁移验证。
-> 下载前请核对完整型号和硬件版本，并阅读对应设备的迁移说明。
+> 本仓库只维护 **Cudy TR1200 v1**。AC1200 是无线速率等级，刷写前仍需核对完整型号和硬件版本。
+> 已发布的基础候选镜像与当前实机的个性化系统有所不同，请先阅读[设备说明](devices/tr1200/README.md)及[实机记录](devices/tr1200/FIELD-TEST.md)。
 
-## 设备与固件
+## 当前系统
 
-<a name="tr3000-256mb-使用说明"></a>
+| 项目 | 已归档的实机状态 |
+| :--- | :--- |
+| **硬件** | MediaTek MT7628AN · 128 MiB RAM · 16 MiB NOR · 百兆 WAN / LAN |
+| **基础系统** | OpenWrt 25.12.5 · Linux 6.12.94 · `ramips/mt76x8` |
+| **管理界面** | 中文 LuCI，shadcn 主题适配；保留 Argon 和 Bootstrap 回退 |
+| **PassWall** | 26.10.29-r1，搭配 sing-box 1.13.21 精简核心；默认关闭代理 |
+| **指示灯** | 白灯每 5 秒轻亮一次，红灯舒缓提示 LAN 数据活动 |
+| **软件维护** | 关闭在线软件源，保留固定版本；升级或个性化由设备所有者发起 |
 
-| 设备 | 构建基础 | 入口 |
-| :--- | :--- | :---: |
-| **TR1200 v1**<br>AC1200 | 官方 ImageBuilder + 两项设备修正<br>`ramips/mt76x8` | [说明](devices/tr1200/README.md)<br>[v0.1.1](https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/tag/tr1200-v0.1.1-candidate) |
-| **TR3000 256MB v1**<br>AX3000 | 官方 ImageBuilder<br>`mediatek/filogic` | [说明](devices/tr3000/README.md)<br>[v0.1.1](https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/tag/v0.1.1-candidate) |
-| **TR3600 v1**<br>BE3600 | 官方源码 + 实验适配补丁<br>`mediatek/filogic` | [说明](devices/tr3600/README.md)<br>[v0.1.0](https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/tag/tr3600-v0.1.0-candidate) |
+当前 194 个已安装包的精确版本见[现场软件清单](devices/tr1200/fixed-release/installed-packages.json)。
+现场管理地址为 `192.168.20.1`；历史基础候选镜像的默认地址为 `10.0.0.1`。
+密码、私钥、节点订阅及设备备份均不进入仓库。
 
-每个型号都有独立的镜像、配置和构建流程。TR3600 的设备支持补丁尚未合入上游；
-各型号的镜像不能混刷。精确版本、软件包清单和验证结果见各自 Release。
+### 现代管理界面
 
-## 默认体验
+<p align="center">
+  <img src=".github/assets/tr1200-modern-light.png" alt="TR1200 现代管理界面浅色模式" width="100%">
+</p>
 
-- **中文管理** — 中文 LuCI、HTTPS 管理界面、基础路由与防火墙。
-- **轻量起步** — 先保留基础联网组件，代理、VPN、存储共享等插件后续按需添加。
-- **配置自主** — 默认管理地址 `10.0.0.1/24`，主机名为对应的 `TRxxxx-Personal`；首次启动自行设置密码与无线。
-- **输入留档** — 固定源码参考与构建输入，归档工具及缓存，不嵌入密码、私钥或订阅。
+基于 shadcn 主题进行轻量适配，提供页面搜索、紧凑侧栏、浅深色模式和手机布局。
+[界面源码与构建](devices/tr1200/ui/modern/README.md) · [Argon 回退方案](devices/tr1200/ui/argon/README.md)
 
-TR1200 提供 [Argon 界面与可选离线包](devices/tr1200/ui/argon/README.md)：
-单台实机已通过安装、中文登录、外观保存与手机布局验证，保留原主题回退。
-已发布镜像仍使用原默认界面，Argon 通过独立主题包安装。
+### 小闪存定制
 
-当前 TR1200 实机已进一步采用 [现代管理界面](devices/tr1200/ui/modern/README.md)：
-基于 shadcn 主题进行轻量适配，提供紧凑侧栏、页面搜索、线条图标、浅深色与手机布局，保留 Argon 回退。
+[PassWall 精简方案](devices/tr1200/passwall/README.md)将代理核心和 DNS 组件重新压缩进只读镜像，
+不依赖外置存储。VLESS、VMess、Trojan、Hysteria2 已通过本地加密传输测试；
+真实订阅、节点服务与公网代理出口尚未验证。
 
-机身红白灯另有 [星舰巡航灯语](devices/tr1200/leds/README.md)：白灯每 5 秒轻亮一次，
-红灯缓慢提示 LAN 数据活动，使用系统内核触发器，不增加常驻进程。
+[舒缓灯语](devices/tr1200/leds/README.md)使用现有内核触发器，不增加常驻进程。
+网络、Wi-Fi、节点和灯语等日常设置仍可按需调整。
 
-TR1200 另有 [PassWall 精简方案](devices/tr1200/passwall/README.md)：
-单台设备已完成保留配置升级、四协议加密传输和中文插件页面验证。
-该方案使用自编译精简核心及 DNS 组件，不依赖外置存储，默认关闭代理。
+## 源码与维护
 
-当前 TR1200 实机采用 [固定版本维护](devices/tr1200/fixed-release/README.md)：已关闭在线软件源，
-保留现有软件和配置。精确包版本、源码与定制配方在仓库留档，后续升级或个性化由设备所有者发起。
-这项现场设置没有改写历史 Release；其他机型的运行时软件源尚未按此规则调整。
+| 内容 | 入口 |
+| :--- | :--- |
+| **维护策略与精确版本** | [固定版本规则](devices/tr1200/fixed-release/README.md) |
+| **系统源码与厂商资料** | [上游源码、feeds、设备树与补丁](reference/README.md) |
+| **代理核心与 DNS** | [固定源码及裁剪配方](devices/tr1200/passwall/README.md) |
+| **界面与灯语** | [现代界面](devices/tr1200/ui/modern/README.md) · [灯语配置](devices/tr1200/leds/README.md) |
+| **设备操作与验证** | [到货及恢复操作单](devices/tr1200/RUNBOOK.md) · [实机记录](devices/tr1200/FIELD-TEST.md) |
 
-## 验证进度
+后续维护按选定版本修改源码、检查依赖与闪存余量、构建并验证，再应用本地包或镜像。
+基础 OpenWrt 和 feeds 保留完整上游快照；备份范围与构建依赖边界见[源码说明](reference/README.md)。
 
-| 设备 | 已完成的验证 | 云端记录 |
-| :--- | :--- | :---: |
-| **TR1200** | v0.1.1 云端重建一致；单台迁移、启动、中文管理与重启验证通过，见[实机记录](devices/tr1200/FIELD-TEST.md) | [重建](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41443725093) |
-| **TR3000** | 本地离线重建与云端镜像逐字节一致 | [重建](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41333664663) |
-| **TR3600** | 本地两次源码构建一致；云端发布镜像静态检查通过 | [检查](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41394843131) |
+## 基础候选与复现
 
-TR1200 / TR3000 的云端验证使用官方 ImageBuilder 与归档 APK 重建镜像。
-TR3600 尚未完成独立主机的源码重建。TR1200 的实机覆盖范围见现场记录；无线收发、WAN、USB 和完整恢复仍待验证。
+历史基础候选 [tr1200-v0.1.1-candidate](https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/tag/tr1200-v0.1.1-candidate)
+用于记录最小系统的迁移与复现结果，**不包含当前实机的全部个性化改动**。
+该版本已完成[云端独立重建](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41443725093)，
+并通过单台设备的迁移、启动、有线管理和软件重启验证。
 
-## 构建与定制
-
-在 Linux x86_64 主机上，以普通用户运行。先克隆仓库，再按设备文档准备构建依赖：
+在 Linux x86_64 主机准备[构建依赖](devices/tr1200/README.md#构建与复现)，从仓库根目录运行：
 
 ```sh
 git clone https://github.com/Renwang-Huang/cudy-personal-openwrt.git
 cd cudy-personal-openwrt
-```
-
-<details>
-<summary><strong>TR1200</strong> · 精确复现已发布候选镜像</summary>
-
-```sh
 python3 devices/tr1200/scripts/reproduce-release.py
 ```
 
-校验归档 ImageBuilder 与软件包缓存，禁用 APK 联网，重建后与首版镜像比较一致性。
-修改软件包或默认配置时，使用[设备文档中的常规构建流程](devices/tr1200/README.md#构建与复现)。
+此命令使用归档 ImageBuilder 与软件包缓存复现历史基础镜像。
+当前 PassWall 和主题的独立构建脚本保存在各自目录，整套个性化镜像尚未完成从全新主机开始的独立重建验证。
+后续镜像应应用[关闭运行时软件源的叠加配置](devices/tr1200/fixed-release/README.md)。
 
-</details>
-
-<details>
-<summary><strong>TR3000</strong> · 精确复现已发布候选镜像</summary>
-
-```sh
-python3 scripts/reproduce-release.py
-```
-
-校验归档输入，禁用 APK 联网，重建后与首版镜像比较一致性。
-配置与脚本位于仓库根目录，详见 [TR3000 构建说明](devices/tr3000/README.md#构建输入)。
-
-</details>
+无线收发、WAN 吞吐、USB 负载、长时间稳定性及完整原厂恢复仍有未覆盖项，详见实机记录。
 
 <details>
-<summary><strong>TR3600</strong> · 使用固定源码与工具链构建</summary>
-
-```sh
-python3 devices/tr3600/scripts/prepare.py
-python3 devices/tr3600/scripts/restore-downloads.py
-JOBS=6 bash devices/tr3600/scripts/build.sh
-python3 devices/tr3600/scripts/verify-image.py
-```
-
-完整主机依赖、补丁来源与双槽行为见 [TR3600 设备说明](devices/tr3600/README.md)。
-
-</details>
-
-所有构建命令均从仓库根目录执行。添加插件、修改默认网络或界面语言，请使用对应设备的
-配置和叠加文件；精确复现脚本用于核对归档版本，修改配置后应走常规构建流程。
-
-<details>
-<summary>项目目录与资料位置</summary>
+<summary>项目目录</summary>
 
 ```text
-config.json / files/ / scripts/   TR3000 配置与构建脚本
-devices/
-├── tr1200/                      TR1200 配方、脚本与证据
-├── tr3000/                      TR3000 使用说明
-└── tr3600/                      TR3600 源码配方、补丁与证据
-reference/                       上游源码、厂商资料与来源校验
-evidence/                        TR3000 验证记录与仓库变更证据
+devices/tr1200/
+├── scripts/        基础镜像构建、复现与检查
+├── fixed-release/  固定版本策略、现场包清单与关闭源配置
+├── passwall/       精简代理核心与 DNS 配方
+├── ui/             现代界面和 Argon 回退方案
+└── leds/           舒缓灯语
+reference/
+├── sources/        OpenWrt 与官方 feeds 源码快照
+├── tr1200/         厂商资料、设备树与上游补丁
+├── passwall/       代理与 DNS 源码归档
+└── ui/             主题上游源码
+scripts/            共用源码归档工具
 ```
 
-临时构建目录、下载缓存和私人备份不进入 Git。Release 保存候选镜像与归档构建输入，
-源码参考的备份范围与复现边界见[参考资料说明](reference/README.md)。
+临时构建目录、下载缓存和私人设备备份不进入 Git。
+设备配置与历史复现输入保持独立，修改当前系统时应同步更新相应的配方和现场版本记录。
 
 </details>
 
 ## 上游与许可
 
-本项目基于 [OpenWrt](https://github.com/openwrt/openwrt)，结合 [Cudy 官方资料](https://www.cudy.com/)
-与设备社区的适配工作。具体来源和固定提交记录在各设备的锁文件与参考目录中。
+本项目基于 [OpenWrt](https://github.com/openwrt/openwrt)，结合 [Cudy 官方资料](https://www.cudy.com/en-us/products/tr1200-1-0)
+与设备社区的适配工作。具体来源和固定提交记录在设备锁文件与参考目录中。
 
 原创脚本和文档遵循 [MIT License](LICENSE)；固件组件、上游源码与厂商资料遵循各自许可证。

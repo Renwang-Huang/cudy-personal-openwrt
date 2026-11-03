@@ -61,16 +61,6 @@
       "sha256": "46174ff0ca251e91dcb606f44b9541fba4202a3863ccd96d80e61e93b7453daf"
     },
     {
-      "name": "kwrt-legacy-reference",
-      "repository": "kiddin9/Kwrt",
-      "commit": "033598f429ab294208888dd0b1651e21e720fe30",
-      "role": "Historical TR3000 v2-mod board support; reference only, not applied to the official candidate",
-      "filename": "kwrt-legacy-reference-033598f429ab294208888dd0b1651e21e720fe30.tar.gz",
-      "url": "https://codeload.github.com/kiddin9/Kwrt/tar.gz/033598f429ab294208888dd0b1651e21e720fe30",
-      "bytes": 108209,
-      "sha256": "c2cbe9d6be820509d52f06f4ac14a13970a4a2c7ab1b0dbc41b97035932f2a39"
-    },
-    {
       "name": "packages-build-date-reference",
       "repository": "openwrt/packages",
       "commit": "630cd7a8155db7be16abd00a2f41330f2d016add",
@@ -119,26 +109,6 @@
       "url": "https://codeload.github.com/openwrt/video/tar.gz/094bf58da6682f895255a35a84349a79dab4bf95",
       "bytes": 56467,
       "sha256": "46174ff0ca251e91dcb606f44b9541fba4202a3863ccd96d80e61e93b7453daf"
-    },
-    {
-      "name": "tr3600-upstream-pr",
-      "repository": "soapmancn/openwrt",
-      "commit": "046aec0dccd90f5a156cb8e9725c121c81955dd3",
-      "role": "Unmerged stable-branch TR3600 v1 device support; local patch included separately",
-      "filename": "tr3600-upstream-pr-046aec0dccd90f5a156cb8e9725c121c81955dd3.tar.gz",
-      "url": "https://codeload.github.com/soapmancn/openwrt/tar.gz/046aec0dccd90f5a156cb8e9725c121c81955dd3",
-      "bytes": 11613124,
-      "sha256": "a7d4a4e7858f147c308d2e3cde2cfd3f93245d62bedccfef676b0e0600052279"
-    },
-    {
-      "name": "tr3600-community-hardware-fixes",
-      "repository": "hyqhyq3/openwrt-cudy-tr3600",
-      "commit": "a9aa917c3a3fe3a2fb88572b77aea4f48a635549",
-      "role": "Reference fixes for fan, LED colors and wireless MAC addresses",
-      "filename": "tr3600-community-hardware-fixes-a9aa917c3a3fe3a2fb88572b77aea4f48a635549.tar.gz",
-      "url": "https://codeload.github.com/hyqhyq3/openwrt-cudy-tr3600/tar.gz/a9aa917c3a3fe3a2fb88572b77aea4f48a635549",
-      "bytes": 6308,
-      "sha256": "36f4e1e03f95162aa336c1b8892f9152dfedc5af40645a865dc1e4f4c6916d83"
     }
   ]
 }

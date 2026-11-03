@@ -1,61 +1,54 @@
-# 源码参考与备份
+# TR1200 源码参考与备份
 
-`sources/` 保存 `sources.json` 指定提交的完整仓库源码快照，不依赖未来分支的状态。
-来源锁文件和完整性清单记录来源、提交、文件大小及校验值。
-OpenWrt 构建版本和各 feed 提交取自官方发布的 `version.buildinfo`、
-`feeds.buildinfo`；这些发布文件已与官方清单核对。
+本目录只保留 Cudy TR1200 v1 / AC1200 所需的系统、插件、界面源码与厂商资料。
+当前实机采用[固定版本维护](../devices/tr1200/fixed-release/README.md)，运行时不加载在线软件源。
+后续升级或个性化由设备所有者发起，使用这里保存的源码和设备配方。
 
-`legacy-kwrt/` 另外保留旧定制固件的设备树与适配补丁，便于比较；首版官方镜像
-不应用这些补丁，也没有把旧板型标识加入官方镜像来绕过兼容性检查。
+## 基础系统与 feeds
 
-## 备份范围
+`sources/` 保存 `sources.json` 指定提交的完整上游源码快照，包括 OpenWrt 主工程及官方
+packages、LuCI、routing、telephony、video feeds，以及构建日期的 feed 对照快照。
+`archives.lock.json` 记录来源、固定提交、归档大小和完整性信息。
 
-包含 OpenWrt 主工程、官方五个 feed 的固定提交快照，以及旧 Kwrt 构建工程。
-同时保留构建当天官方 feed 的分支快照，用于对照发布后更新的软件包；
-例如本次 LuCI 包版本中的 `e969939` 与构建当天 LuCI 快照提交前缀一致。
-官方原始 `feeds.buildinfo` 只描述最初发布时的 feeds，并不能证明后来每个 APK 的精确来源提交。
-各工程中的软件包配方、补丁、源码下载地址和完整性信息都随快照保留。源项目许可证
-保存在各压缩包内；本仓库的 MIT 许可证不替代上游许可证。
+保留完整上游快照有助于复核源码和许可证，并避免裁剪改变固定输入；其中上游自带的其他设备定义
+不代表本项目维护那些型号。本仓库的设备配方、适配补丁和自动构建仅面向 TR1200。
 
-这些仓库快照不是 Linux、GCC 及每个应用所有上游源码压缩包的合集。
-OpenWrt 的包配方负责按固定版本和校验值获取这些原始源码；无线固件等上游只提供
-二进制的组件也不能在这里变成开放源码。二次开发时须按相应包的配方下载其原始源码。
+OpenWrt 构建版本和发布时的各 feed 提交取自官方 `version.buildinfo`、`feeds.buildinfo`。
+构建日期的对照快照用于辅助追溯后续更新的包；发布时的 feed 信息不能证明每个后来 APK 的精确来源提交。
+现场包版本以[固定版本清单](../devices/tr1200/fixed-release/installed-packages.json)为准，
+历史基础镜像以其 manifest 和归档 APK 为准。
 
-本次实际镜像通过官方 ImageBuilder 组装，所使用的 ImageBuilder 和下载的软件包
-可作为 GitHub Release 的独立附件备份，不把大型构建产物混入源码树。
+## 设备、插件与界面
 
-`tr3600/` 保存 TR3600 官方开发 ZIP、厂商 GPL 包和相关启动/升级源码参考。
-`sources/` 中额外保存 TR3600 上游 PR 及社区硬件修正的固定提交快照。
-TR3600 配方使用主工程锁定版本和独立补丁，从源码编译内核与软件包；其下载缓存
-另行归档至 Release，不复用 TR3000 的 APK 或镜像。
+| 目录 | 内容与使用入口 |
+| --- | --- |
+| `tr1200/` | 原厂及中间固件参考、厂商设备树、上游设备支持与分区修正补丁；见[资料说明](tr1200/README.md) |
+| `passwall/` | sing-box 1.13.21、PassWall 26.10.29-1 完整源码快照，dnsmasq 2.93 原始源码及裁剪配方；见[构建说明](../devices/tr1200/passwall/README.md) |
+| `ui/` | 现代 shadcn 主题及 Argon v3.1.2 的完整上游源码；适配和构建脚本见[现代界面](../devices/tr1200/ui/modern/README.md)及[Argon](../devices/tr1200/ui/argon/README.md) |
+
+源码中的原有许可证随归档保存，本仓库的 MIT 许可证不替代上游许可证。
+灯语源配置和现场验证保存在[设备目录](../devices/tr1200/leds/README.md)。
+
+## 构建输入与备份边界
+
+基础候选使用官方 ImageBuilder 组装；其工具及 APK 缓存保存在 TR1200 的 GitHub Release，
+由设备目录中的锁文件引用。厂商大型历史 GPL 源码也保存在 TR1200 Release，具体位置见设备资料说明。
+
+这些快照不是 Linux、GCC 及每个应用所有原始源码压缩包的合集。OpenWrt 包配方按固定版本获取
+所需原始源码；Go 模块由 `go.mod` 和 `go.sum` 固定，模块缓存没有全部复制到仓库。
+上游仅提供二进制的无线固件也保留其原有分发形式。
+
+构建主机可以按所选固定配方获取依赖；路由器运行时无需启用软件源。
+本仓库不承诺从所有原始源码完全离线重建整套个性化系统。
 
 ## 使用快照
 
-归档脚本与构建脚本会自动检查来源文件的一致性。
-将需要修改的快照解压到独立开发目录，再按 OpenWrt 的完整源码构建流程操作。
-重新获取相同提交的备份可运行 `python3 scripts/archive-sources.py`。
+将需要修改的快照解压到独立开发目录，按相应设备或插件的构建说明操作。
+重新获取相同提交的基础系统源码备份，可从仓库根目录运行：
 
-官方构建说明：https://openwrt.org/docs/guide-developer/toolchain/use-buildsystem
+```sh
+python3 scripts/archive-sources.py
+```
 
-## 可选界面源码
-
-`ui/argon-v3.1.2.tar.gz` 保存 [Argon](https://github.com/jerrykuku/luci-theme-argon)
-v3.1.2 标签对应的完整源码快照，含模板、样式源码、资源、测试和上游许可证。
-固定提交、归档检查及官方依赖包来源见 [界面配方](../devices/tr1200/ui/argon/README.md)。
-主题以外的基础依赖仍按 OpenWrt 官方配方获取原始源码；此归档不代表所有系统组件的源码合集。
-
-`ui/shadcn-9e6dd4439064.tar.gz` 保存现代管理界面使用的完整上游主题源码及许可证。
-小闪存适配样式、轻量资源、模板兼容修正和构建脚本见 [现代界面目录](../devices/tr1200/ui/modern/README.md)。
-
-## PassWall 精简方案源码
-
-`passwall/` 保存 sing-box 1.13.21、PassWall 26.10.29-1 的完整仓库源码快照，
-以及 dnsmasq 2.93 原始源码和裁剪配方。构建参数、工具版本及归档输入见
-[独立方案目录](../devices/tr1200/passwall/README.md)。
-上游许可证随归档保留；Go 的第三方模块继续按固定依赖文件获取，未将整个模块缓存归档。
-
-## 当前 TR1200 维护入口
-
-当前实机采用 [固定版本维护](../devices/tr1200/fixed-release/README.md)，运行时不加载在线软件源。
-精确包版本和设备核对结果保存在该目录；后续升级或个性化由设备所有者发起，使用本目录中的
-固定源码快照和设备配方。构建时获取固定依赖不要求在路由器上启用在线软件源。
+归档工具只处理当前 `sources.json` 列出的 TR1200 基础依赖。
+官方完整源码构建说明：https://openwrt.org/docs/guide-developer/toolchain/use-buildsystem

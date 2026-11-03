@@ -1,0 +1,24 @@
+{
+  "checked_utc": "2026-11-03T15:05:48.749953+00:00",
+  "scope": "current-default-branch",
+  "supported_device": "Cudy TR1200 v1 (AC1200)",
+  "removed_model_specific_files": 76,
+  "retained_base_source_archives": 11,
+  "retained_device_build_workflows": [
+    "build-tr1200.yml"
+  ],
+  "tr1200_historical_build_inputs_unchanged": true,
+  "current_installed_version_inventory_unchanged": true,
+  "retained_source_archives_verified": true,
+  "public_documentation_links_verified": true,
+  "base_candidate_rebuilt_identically": true,
+  "offline_mips_and_corruption_rejection_audit_passed": true,
+  "recovery_material_verification_passed": true,
+  "removed_sources_backed_up_privately": true,
+  "private_backup_published": false,
+  "router_system_modified": false,
+  "git_history_rewritten": false,
+  "historical_releases_removed": false,
+  "retained_python_json_svg_and_workflow_syntax_checked": true,
+  "tr1200_base_shell_scripts_checked": true
+}

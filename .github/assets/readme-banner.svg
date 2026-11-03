@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="380" viewBox="0 0 1400 380" fill="none" role="img" aria-labelledby="title desc">
-  <title id="title">Cudy Personal OpenWrt</title>
-  <desc id="desc">Minimal firmware and reproducible builds for Cudy TR1200, TR3000 and TR3600 routers.</desc>
+  <title id="title">Cudy TR1200 Personal OpenWrt</title>
+  <desc id="desc">Personal OpenWrt firmware and archived source for the Cudy TR1200 v1 AC1200 travel router.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1400" y2="380" gradientUnits="userSpaceOnUse">
       <stop stop-color="#101C30"/>
@@ -28,15 +28,15 @@
     <circle cx="1335" cy="20" r="140" stroke="#5EEAD4" stroke-opacity="0.07"/>
     <rect x="0" y="0" width="6" height="380" fill="url(#accent)"/>
     <g font-family="Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">
-      <text x="68" y="70" fill="#7DD3E8" font-size="15" font-weight="600" letter-spacing="4">CUDY ROUTER FIRMWARE</text>
+      <text x="68" y="70" fill="#7DD3E8" font-size="15" font-weight="600" letter-spacing="4">CUDY TR1200 / AC1200</text>
       <text x="64" y="157" fill="#F4F8FF" font-size="68" font-weight="700" letter-spacing="-2">Personal OpenWrt</text>
-      <text x="68" y="207" fill="#A4B7CD" font-size="23" letter-spacing="0.1">Minimal firmware. Reproducible builds.</text>
+      <text x="68" y="207" fill="#A4B7CD" font-size="23" letter-spacing="0.1">Your router. Your system. Fixed versions.</text>
       <rect x="68" y="263" width="122" height="37" rx="8" fill="#172B40" stroke="#2B465E"/>
       <rect x="202" y="263" width="122" height="37" rx="8" fill="#172B40" stroke="#2B465E"/>
       <rect x="336" y="263" width="122" height="37" rx="8" fill="#12373C" stroke="#24605F"/>
       <text x="129" y="287" text-anchor="middle" fill="#CEE4F4" font-size="15" font-weight="600" letter-spacing="1">TR1200</text>
-      <text x="263" y="287" text-anchor="middle" fill="#CEE4F4" font-size="15" font-weight="600" letter-spacing="1">TR3000</text>
-      <text x="397" y="287" text-anchor="middle" fill="#80E1D0" font-size="15" font-weight="600" letter-spacing="1">TR3600</text>
+      <text x="263" y="287" text-anchor="middle" fill="#CEE4F4" font-size="15" font-weight="600" letter-spacing="1">AC1200</text>
+      <text x="397" y="287" text-anchor="middle" fill="#80E1D0" font-size="15" font-weight="600" letter-spacing="1">FIXED</text>
     </g>
     <g stroke-linecap="round" stroke-linejoin="round">
       <path d="M902 298H1265L1315 334H952Z" fill="#0D2432" stroke="url(#edge)"/>

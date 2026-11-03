@@ -46,7 +46,7 @@ needle = b'--cache-dir $(DL_DIR)\n'
 if original.count(needle) != 1:
     raise SystemExit('Unexpected official Makefile; refusing to patch APK invocation')
 # ImageBuilder recursive make clears MAKEFLAGS. Apply the same temporary
-# host-side APK --no-network override used by our existing TR3000 recipe.
+# host-side APK --no-network override while restoring the pinned package cache.
 with tempfile.TemporaryDirectory(prefix='tr1200-cache-', dir=project / 'work') as temporary:
     saved = Path(temporary)
     cache_backup = saved / 'original-dl'
