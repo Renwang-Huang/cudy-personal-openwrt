@@ -1,7 +1,8 @@
 #!/bin/sh
 # Run manually on the intended TR1200. Prints metadata only; no writes, dumps,
 # network changes, reboots, recovery traffic, or firmware upgrade commands.
-set -eu
+# OpenWrt jshn initializes variables by reading unset values; nounset breaks it.
+set -e
 [ -r /usr/share/libubox/jshn.sh ] || {
   echo 'OpenWrt JSON helper is required; do not run this on another host.' >&2
   exit 1

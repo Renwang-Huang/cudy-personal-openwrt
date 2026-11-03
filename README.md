@@ -21,7 +21,7 @@
 </p>
 
 > [!IMPORTANT]
-> 当前固件均为个人定制候选版，尚未完成实机启动与迁移验证。
+> 当前固件均为个人定制候选版。TR1200 v0.1.1 已完成单台实机迁移、启动与有线管理验证；其他机型尚未完成实机迁移验证。
 > 下载前请核对完整型号和硬件版本，并阅读对应设备的迁移说明。
 
 ## 设备与固件
@@ -48,12 +48,12 @@
 
 | 设备 | 已完成的验证 | 云端记录 |
 | :--- | :--- | :---: |
-| **TR1200** | v0.1.1 云端离线重建逐字节一致，MIPS 用户态与异常检查通过 | [重建](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41443725093) |
+| **TR1200** | v0.1.1 云端重建一致；单台迁移、启动、中文管理与重启验证通过，见[实机记录](devices/tr1200/FIELD-TEST.md) | [重建](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41443725093) |
 | **TR3000** | 本地离线重建与云端镜像逐字节一致 | [重建](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41333664663) |
 | **TR3600** | 本地两次源码构建一致；云端发布镜像静态检查通过 | [检查](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41394843131) |
 
 TR1200 / TR3000 的云端验证使用官方 ImageBuilder 与归档 APK 重建镜像。
-TR3600 尚未完成独立主机的源码重建。上述结果不代表无线、网口、USB 或恢复流程已通过实机验证。
+TR3600 尚未完成独立主机的源码重建。TR1200 的实机覆盖范围见现场记录；无线收发、WAN、USB 和完整恢复仍待验证。
 
 ## 构建与定制
 

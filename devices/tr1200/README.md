@@ -1,10 +1,11 @@
 # Cudy TR1200 1.0 最小定制系统
 
-[返回项目首页](../../README.md) · [刷写前复核](AUDIT.md) · [到货与恢复操作单](RUNBOOK.md)
+[返回项目首页](../../README.md) · [刷写前复核](AUDIT.md) · [到货与恢复操作单](RUNBOOK.md) · [实机记录](FIELD-TEST.md)
 
 对应橙色 **TR1200 1.0 / AC1200 Wi-Fi Travel Router**，使用 OpenWrt 25.12.5 的
 `ramips/mt76x8` / `cudy_tr1200-v1` 官方 ImageBuilder，并采用两项尚未合入的上游
-设备修正：历史 board_name 兼容、backup 分区偏移。它是个人定制候选镜像，尚未通过实机验证。
+设备修正：历史 board_name 兼容、backup 分区偏移。已完成一台 TR1200 V1.0 的首次迁移、
+启动与有线管理验证，仍作为个人定制候选镜像发布。
 
 | 项目 | 配置 |
 | --- | --- |
@@ -37,6 +38,10 @@ sysupgrade 兼容身份，保留原厂至 Cudy 签名中间固件的迁移步骤
 程序执行通过。具体证据、未覆盖范围及交换机串流风险见 [AUDIT.md](AUDIT.md)。
 新版已通过 [GitHub 独立环境重建与强化检查](https://github.com/Renwang-Huang/cudy-personal-openwrt/actions/runs/41443725093)，
 下载云端镜像与本地逐字节比较一致，静态与 MIPS 离线报告也一致。
+
+2026-11-02 的[单台实机检查](FIELD-TEST.md)完成了原厂至中间固件迁移、设备端镜像检查、
+v0.1.1 启动、分区修正核对、关键数据保护、中文 LuCI 登录和软件重启。
+现场部署将 LAN 改为 `192.168.20.1` 以避开现有网络；发布镜像的默认地址仍为 `10.0.0.1`。
 
 [v0.1.0](https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/tag/tr1200-v0.1.0-candidate)
 保留原官方定义和旧镜像证据，供历史复现；当前首次迁移评估使用 v0.1.1。
@@ -91,11 +96,13 @@ python3 devices/tr1200/scripts/prepare-recovery.py
 候选 sysupgrade 不是 Cudy 原厂签名固件。只有确认的新机进入匹配 OpenWrt 中间系统、
 分区/备份与镜像核对通过，且实际 `sysupgrade -T` 成功后，才有条件评审实际迁移。
 TR1200 官方恢复使用 **WAN 口**、电脑 **192.168.1.88**、匹配原厂 **recovery.bin**。
-TFTP 请求不等同于已验证完整恢复；bootloader/Flash 损坏仍可能需要维修。
+本次实机还观察到 WAN 下 `192.168.1.1` 的网页恢复入口，详见现场记录。
+恢复入口可访问不等同于已验证完整恢复；bootloader/Flash 损坏仍可能需要维修。
 
 TR1200 是单系统 NOR/JFFS2 布局，无 TR3600 双槽机制。交换机启动期 LAN/WAN 串流仍是
-待实机确认的问题，本版不套用有争议的端口关闭方案。无线、网口、USB、按键、真实启动
-及恢复均未完成硬件验证。Cudy 对第三方固件的保修声明见操作单引用的官方页面。
+待实机确认的问题，本版不套用有争议的端口关闭方案。LAN 管理与启动已完成单台验证；
+无线收发、WAN、USB 负载、按键、断电与完整恢复仍待验证。
+Cudy 对第三方固件的保修声明见操作单引用的官方页面。
 
 ## 参考与许可
 
