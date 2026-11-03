@@ -1,2 +1,3 @@
 # Preserve upstream reference files byte for byte, including patch context spacing.
 reference/tr1200/*.patch -whitespace
+devices/tr1200/passwall/runtime/patches/*.patch -whitespace
