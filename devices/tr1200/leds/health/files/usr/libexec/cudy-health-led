@@ -1,0 +1,152 @@
+#!/bin/sh
+# shellcheck shell=dash
+# Observe router health without restarting services or changing connectivity.
+PATH=/usr/sbin:/usr/bin:/sbin:/bin
+export PATH
+WHITE=/sys/class/leds/white:status
+RED=/sys/class/leds/red:power
+STATE_DIR=/var/run/cudy-health-led
+INTERVAL=30
+FAILURES=3
+RECOVERIES=2
+BOOT_GRACE=300
+MIN_MEMORY=4096
+MIN_OVERLAY=256
+PROBE_URLS=''
+REASON=''
+
+load_settings() {
+	# shellcheck source=/dev/null
+	. /lib/functions.sh
+	config_load cudy-health-led
+	config_get INTERVAL main interval 30
+	config_get FAILURES main failures 3
+	config_get RECOVERIES main recoveries 2
+	config_get BOOT_GRACE main boot_grace 300
+	config_get MIN_MEMORY main minimum_memory_kib 4096
+	config_get MIN_OVERLAY main minimum_overlay_kib 256
+	config_get PROBE_URLS main probe_url ''
+	case "$INTERVAL:$FAILURES:$RECOVERIES:$BOOT_GRACE:$MIN_MEMORY:$MIN_OVERLAY" in
+		*[!0-9:]*) return 1 ;;
+	esac
+	[ "$INTERVAL" -ge 5 ] && [ "$INTERVAL" -le 3600 ] &&
+		[ "$FAILURES" -ge 1 ] && [ "$FAILURES" -le 20 ] &&
+		[ "$RECOVERIES" -ge 1 ] && [ "$RECOVERIES" -le 20 ] &&
+		[ "$BOOT_GRACE" -ge 0 ] && [ "$BOOT_GRACE" -le 1800 ] &&
+		[ -n "$PROBE_URLS" ]
+}
+
+unhealthy() {
+	REASON=$1
+	return 1
+}
+
+check_health() {
+	local available overlay services service running url code
+	REASON='checks-passed'
+	available=$(awk '/^MemAvailable:/ { print $2 }' /proc/meminfo)
+	if [ -z "$available" ] || [ "$available" -lt "$MIN_MEMORY" ]; then
+		unhealthy low-memory; return 1
+	fi
+	overlay=$(df -k /overlay | awk 'END { print $4 }')
+	if [ -z "$overlay" ] || [ "$overlay" -lt "$MIN_OVERLAY" ]; then
+		unhealthy low-overlay-space; return 1
+	fi
+	services=$(ubus -t 3 call service list 2>/dev/null) || {
+		unhealthy service-manager; return 1
+	}
+	for service in network dnsmasq uhttpd rpcd dropbear; do
+		running=$(jsonfilter -s "$services" -e "@.${service}.instances.*.running" 2>/dev/null)
+		printf '%s\n' "$running" | grep -qx true || {
+			unhealthy "service-$service"; return 1
+		}
+		if printf '%s\n' "$running" | grep -qx false; then
+			unhealthy "service-$service"; return 1
+		fi
+	done
+	ip -4 route show default | grep -q '^default ' || {
+		unhealthy no-ipv4-uplink; return 1
+	}
+	if [ "$(uci -q get 'passwall.@global[0].enabled')" = 1 ]; then
+		pgrep -f '[s]ing-box.*acl/default/global[.]json' >/dev/null || {
+			unhealthy proxy-process; return 1
+		}
+		if ! nft list chain inet passwall PSW_NAT >/dev/null 2>&1 ||
+			! nft list chain inet passwall PSW_MANGLE >/dev/null 2>&1; then
+			unhealthy proxy-rules; return 1
+		fi
+	fi
+	timeout 6 nslookup -type=A example.com 127.0.0.1 >/dev/null 2>&1 || {
+		unhealthy dns-resolution; return 1
+	}
+	for url in $PROBE_URLS; do
+		code=$(curl -q -4 --noproxy '*' --connect-timeout 8 --max-time 15 \
+			--silent --output /dev/null --write-out '%{http_code}' "$url" 2>/dev/null) || continue
+		case "$code" in 2[0-9][0-9]|3[0-9][0-9]) return 0 ;; esac
+	done
+	unhealthy https-connectivity
+}
+
+display_state() {
+	local red=0
+	[ "$1" != fault ] || red=1
+	# The regular LED service can be reloaded independently, so enforce steady
+	# triggers even when the health classification has not changed.
+	grep -q '\[none\]' "$WHITE/trigger" || printf '%s\n' none > "$WHITE/trigger"
+	grep -q '\[none\]' "$RED/trigger" || printf '%s\n' none > "$RED/trigger"
+	if [ "$red" = 1 ]; then
+		printf '0\n' > "$WHITE/brightness"
+		cat "$RED/max_brightness" > "$RED/brightness"
+	else
+		printf '0\n' > "$RED/brightness"
+		cat "$WHITE/max_brightness" > "$WHITE/brightness"
+	fi
+}
+
+save_state() {
+	local state="$1" failures="$2" successes="$3" uptime="$4"
+	printf 'state=%s\nreason=%s\nconsecutive_failures=%s\nconsecutive_successes=%s\nuptime_seconds=%s\n' \
+		"$state" "$REASON" "$failures" "$successes" "$uptime" > "$STATE_DIR/status.new"
+	mv "$STATE_DIR/status.new" "$STATE_DIR/status"
+}
+
+run_observer() {
+	local state=starting previous='' failures=0 successes=0 uptime
+	mkdir -p "$STATE_DIR"
+	chmod 755 "$STATE_DIR"
+	while :; do
+		uptime=$(cut -d. -f1 /proc/uptime)
+		if check_health; then
+			failures=0
+			[ "$successes" -ge "$RECOVERIES" ] || successes=$((successes + 1))
+			[ "$successes" -lt "$RECOVERIES" ] || state=normal
+		else
+			successes=0
+			[ "$failures" -ge "$FAILURES" ] || failures=$((failures + 1))
+			if [ "$state" != starting ] || [ "$uptime" -ge "$BOOT_GRACE" ]; then
+				[ "$failures" -lt "$FAILURES" ] || state=fault
+			fi
+		fi
+		display_state "$state" || exit 1
+		save_state "$state" "$failures" "$successes" "$uptime"
+		if [ "$state" != "$previous" ]; then
+			logger -t cudy-health-led "state=$state reason=$REASON"
+			previous=$state
+		fi
+		sleep "$INTERVAL"
+	done
+}
+
+case "${1:---check}" in
+	--status) cat "$STATE_DIR/status"; exit $? ;;
+	--check|--daemon) ;;
+	*) echo 'Usage: cudy-health-led [--check|--status|--daemon]' >&2; exit 2 ;;
+esac
+load_settings || { echo 'Invalid cudy-health-led configuration.' >&2; exit 2; }
+if [ "${1:---check}" = --check ]; then
+	if check_health; then printf 'healthy: %s\n' "$REASON"; exit 0; fi
+	printf 'unhealthy: %s\n' "$REASON"; exit 1
+fi
+[ "$(cat /tmp/sysinfo/board_name)" = cudy,tr1200-v1 ] || exit 2
+[ -w "$WHITE/brightness" ] && [ -w "$RED/brightness" ] || exit 2
+run_observer

@@ -6,6 +6,7 @@
   "runtime_software_policy": "fixed-versions-no-online-repositories",
   "files_overlays": [
     "devices/tr1200/passwall/runtime/files",
+    "devices/tr1200/leds/health/files",
     "devices/tr1200/fixed-release/files"
   ],
   "packages": [
@@ -35,5 +36,6 @@
   "passwall_source_patches": [
     "devices/tr1200/passwall/runtime/patches/001-cudy-lite-status.patch",
     "devices/tr1200/passwall/runtime/patches/002-cudy-connect-check-budget.patch"
-  ]
+  ],
+  "led_profile": "steady-white-normal-red-fault"
 }

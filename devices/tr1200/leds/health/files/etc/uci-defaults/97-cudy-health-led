@@ -1,0 +1,21 @@
+#!/bin/sh
+# Replace the old traffic animation with two steady, software-controlled LEDs.
+set -eu
+[ "$(cat /tmp/sysinfo/board_name)" = cudy,tr1200-v1 ] || exit 0
+uci -q delete system.cudy_starship_white || true
+uci -q delete system.cudy_starship_red || true
+uci batch <<'UCI'
+set system.cudy_health_white=led
+set system.cudy_health_white.name='正常 · 白灯常亮'
+set system.cudy_health_white.sysfs='white:status'
+set system.cudy_health_white.trigger='none'
+set system.cudy_health_white.default='1'
+set system.cudy_health_red=led
+set system.cudy_health_red.name='异常 · 红灯常亮'
+set system.cudy_health_red.sysfs='red:power'
+set system.cudy_health_red.trigger='none'
+set system.cudy_health_red.default='0'
+commit system
+UCI
+/etc/init.d/cudy-health-led enable
+exit 0

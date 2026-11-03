@@ -1,0 +1,52 @@
+{
+  "checked_utc": "2026-11-03T18:01:40.823852+00:00",
+  "device": "Cudy TR1200 v1",
+  "profile": "steady-white-normal-red-fault",
+  "normal": {
+    "white": 1,
+    "red": 0,
+    "trigger": "none"
+  },
+  "fault": {
+    "white": 0,
+    "red": 1,
+    "trigger": "none"
+  },
+  "check_interval_seconds": 30,
+  "failure_threshold": 3,
+  "recovery_threshold": 2,
+  "boot_grace_seconds": 300,
+  "checks": [
+    "base-service-instances",
+    "ipv4-default-route",
+    "local-dns-resolution",
+    "enabled-passwall-process-and-nftables-chains",
+    "verified-https-response-from-either-probe",
+    "available-memory",
+    "overlay-space"
+  ],
+  "thresholds": {
+    "minimum_memory_kib": 4096,
+    "minimum_overlay_kib": 256
+  },
+  "actual_healthy_check_passed": true,
+  "fault_injection_used_only_unreachable_local_probe": true,
+  "single_failed_sample_kept_white": true,
+  "real_fault_state_and_red_brightness_verified": true,
+  "real_recovery_and_white_brightness_verified": true,
+  "real_internet_access_preserved_during_simulation": true,
+  "production_configuration_restored": true,
+  "standard_led_service_reload_verified": true,
+  "procd_service_running": true,
+  "service_enabled_at_boot": true,
+  "service_resident_memory_kib": 1308,
+  "new_packages": 0,
+  "new_background_observers": 1,
+  "observer_restarts_network_or_proxy": false,
+  "network_wireless_firewall_dns_passwall_and_ui_configuration_unchanged": true,
+  "unrelated_system_sections_unchanged": true,
+  "rollback_restoration_verified_in_isolated_uci_directory": true,
+  "router_rebooted_for_this_change": false,
+  "private_configuration_backups_on_router_and_host": true,
+  "early_boot_failsafe_and_firmware_upgrade_led_behavior_modified": false
+}

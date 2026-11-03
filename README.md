@@ -32,7 +32,7 @@
 | **基础系统** | OpenWrt 25.12.5 · Linux 6.12.94 · `ramips/mt76x8` |
 | **管理界面** | 中文 LuCI，shadcn 主题适配；保留 Argon 和 Bootstrap 回退 |
 | **PassWall** | 26.10.29-r1，搭配 sing-box 1.13.21 精简核心；实机已导入私有节点并启用代理 |
-| **指示灯** | 白灯每 5 秒轻亮一次，红灯舒缓提示 LAN 数据活动 |
+| **指示灯** | 正常时白灯常亮，连续检测异常时红灯常亮，恢复后自动转白 |
 | **软件维护** | 关闭在线软件源，保留固定版本；升级或个性化由设备所有者发起 |
 
 当前 194 个已安装包的精确版本见[现场软件清单](devices/tr1200/fixed-release/installed-packages.json)。
@@ -57,7 +57,8 @@
 两路无线已用闲置客户端接口、独立路由表完成测试，主用网络保持原样；
 验证范围和资源适配见 [实际节点运行说明](devices/tr1200/passwall/runtime/README.md)。
 
-[舒缓灯语](devices/tr1200/leds/README.md)使用现有内核触发器，不增加常驻进程。
+[系统状态灯](devices/tr1200/leds/README.md)使用现有红白 LED 和一个轻量观察服务，
+检查上游、DNS、管理服务、启用中的代理与 HTTPS 访问；有启动宽限和连续失败判断。
 网络、Wi-Fi、节点和灯语等日常设置仍可按需调整。
 
 ## 源码与维护
@@ -103,7 +104,7 @@ devices/tr1200/
 ├── fixed-release/  固定版本策略、现场包清单与关闭源配置
 ├── passwall/       精简代理核心与 DNS 配方
 ├── ui/             现代界面和 Argon 回退方案
-└── leds/           舒缓灯语
+└── leds/           白色正常、红色异常的状态灯
 reference/
 ├── sources/        OpenWrt 与官方 feeds 源码快照
 ├── tr1200/         厂商资料、设备树与上游补丁

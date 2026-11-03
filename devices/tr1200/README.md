@@ -24,7 +24,7 @@ USB 共享、VPN 等插件后续按空间及性能添加；保留拨动开关输
 ## 当前实机维护方式
 
 现场设备已部署 [PassWall 精简方案](passwall/README.md)、[现代管理界面](ui/modern/README.md)
-及 [舒缓灯语](leds/README.md)，与下面保留的 v0.1.1 首版候选镜像有所不同。
+及 [白色正常、红色异常的状态灯](leds/README.md)，与下面保留的 v0.1.1 首版候选镜像有所不同。
 当前采用 [固定版本维护](fixed-release/README.md)：关闭运行时在线软件源，保留现有软件及配置，
 源码、构建配方和 [194 个已安装包的精确版本](fixed-release/installed-packages.json)在仓库留档。
 后续升级或个性化由设备所有者明确发起，不安排软件自动升级。
