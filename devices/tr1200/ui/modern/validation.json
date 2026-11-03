@@ -1,0 +1,80 @@
+{
+  "checked_utc": "2026-11-03T13:57:37.789493+00:00",
+  "device": "Cudy TR1200 v1",
+  "system": "OpenWrt 25.12.5",
+  "package_version": "0.6.1-r3",
+  "upstream": "https://github.com/eamonxg/luci-theme-shadcn",
+  "upstream_template_compile_passed": 3,
+  "upstream_frontend_tests_passed": true,
+  "visual_checks": {
+    "javascript_errors": [],
+    "missing_resources": [],
+    "external_requests": [],
+    "font_requests": [],
+    "desktop": [
+      "wireless",
+      "overview",
+      "passwall"
+    ],
+    "mobile": [
+      "wireless",
+      "system",
+      "passwall"
+    ],
+    "passed": true
+  },
+  "interaction_checks": {
+    "javascript_errors": [],
+    "controls": {
+      "wireless_edit_and_close_without_saving": true,
+      "theme_choice_persists": true,
+      "desktop_sidebar_collapse": true,
+      "navigation_search": true,
+      "mobile_drawer": true
+    },
+    "mobile": [
+      {
+        "page": "wireless",
+        "no_horizontal_overflow": true
+      },
+      {
+        "page": "system",
+        "no_horizontal_overflow": true
+      },
+      {
+        "page": "passwall",
+        "no_horizontal_overflow": true
+      }
+    ],
+    "passed": true
+  },
+  "actual_browser": {
+    "theme": "shadcn-cudy",
+    "wireless_page_loaded": true,
+    "https_secure": true,
+    "browser_js_errors": 0
+  },
+  "configuration_preserved": {
+    "argon": true,
+    "network": true,
+    "wireless": true,
+    "dhcp": true,
+    "firewall": true,
+    "uhttpd": true,
+    "passwall": true
+  },
+  "services_running": {
+    "rpcd": true,
+    "uhttpd": true,
+    "network": true,
+    "dnsmasq": true,
+    "dropbear": true
+  },
+  "overlay_available_kib": 1736,
+  "installed_theme_files_match_build": 55,
+  "rollback_configuration_matches_original": true,
+  "device_reboot_required": false,
+  "new_background_services": 0,
+  "personal_configuration_published": false,
+  "scope_limit": "Single TR1200 and installed LuCI/PassWall; other plugins and long-term use not exhaustively tested."
+}

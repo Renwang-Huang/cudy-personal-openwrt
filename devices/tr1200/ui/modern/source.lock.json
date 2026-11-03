@@ -1,0 +1,15 @@
+{
+  "upstream": "https://github.com/eamonxg/luci-theme-shadcn",
+  "commit": "9e6dd4439064ed111ee1a3d12ed8337dc7b9cd90",
+  "version": "0.6.1",
+  "package_version": "0.6.1-r3",
+  "source_archive": {
+    "path": "reference/ui/shadcn-9e6dd4439064.tar.gz",
+    "bytes": 901560,
+    "content_id": "b8cbec821b0a9895a84b8277aa86031af29c0a9f2cd7b02d9cd32d3c8b275b9a"
+  },
+  "integrity_format": "blake2b-256",
+  "dependencies": [
+    "luci-base"
+  ]
+}

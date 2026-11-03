@@ -1,0 +1,94 @@
+/* Cudy small-flash adaptation of luci-theme-shadcn. */
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+}
+
+html, body, button, input, select, textarea {
+  font-family: var(--font-sans);
+}
+
+/* Keep dense technical labels readable in Chinese without oversized branding. */
+.sidebar-brand-text {
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.topbar-breadcrumb, .cbi-button, .cbi-tabmenu, .cbi-value-title {
+  letter-spacing: 0;
+}
+
+/* Technical columns remain aligned while actions keep their own labels. */
+#cbi-wireless-wifi-device [data-name="_stat"] {
+  text-align: start;
+}
+
+#cbi-wireless-wifi-device [data-name="_stat"] big {
+  font-size: 13px;
+}
+
+#cbi-wireless-wifi-device [data-name="_stat"] > div > div,
+#cbi-wireless-wifi-device [data-name="_stat"] em {
+  color: var(--muted-foreground);
+  font-size: 12px;
+  font-style: normal;
+}
+
+#cbi-wireless-wifi-device .ifacebadge {
+  font-variant-numeric: tabular-nums;
+}
+
+#cbi-wireless-wifi-device .ifacebadge > img:is([src$="/wifi.svg"], [src$="/signal-none.svg"]) {
+  display: none;
+}
+
+#cbi-wireless-wifi-device .ifacebadge:has(> img:is([src$="/wifi.svg"], [src$="/signal-none.svg"]))::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  background: currentColor;
+  mask: url("cudy-wifi.svg") center / contain no-repeat;
+}
+
+#cbi-wireless-wifi-device .ifacebadge:has(> img[src$="/signal-none.svg"])::before {
+  color: var(--muted-foreground);
+  mask-image: url("cudy-wifi-off.svg");
+}
+
+#wifi_assoclist_table .placeholder td {
+  padding-block: 28px;
+  text-align: center;
+}
+
+/* PassWall uses its own legacy status tiles; keep them consistent with the shell. */
+#cbi-passwall .status .block {
+  background: var(--surface) !important;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: none !important;
+}
+
+#cbi-passwall .status .img-con {
+  width: 32px;
+  height: 32px;
+  margin: auto;
+}
+
+#cbi-passwall .status .img-con img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+#cbi-passwall .status h4 {
+  font-size: 12px;
+  line-height: 1.65;
+  font-weight: 550;
+}
+
+@media (max-width: 767px) {
+  .sidebar-brand-text { font-size: 14px; }
+  #cbi-wireless-wifi-device .cbi-section-actions { min-width: 0 !important; }
+}
