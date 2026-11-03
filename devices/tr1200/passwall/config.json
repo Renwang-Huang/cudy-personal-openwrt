@@ -33,6 +33,7 @@
   "dns_package_version": "2.93-r99",
   "minimum_overlay_bytes": 2097152,
   "passwall_source_patches": [
-    "devices/tr1200/passwall/runtime/patches/001-cudy-lite-status.patch"
+    "devices/tr1200/passwall/runtime/patches/001-cudy-lite-status.patch",
+    "devices/tr1200/passwall/runtime/patches/002-cudy-connect-check-budget.patch"
   ]
 }

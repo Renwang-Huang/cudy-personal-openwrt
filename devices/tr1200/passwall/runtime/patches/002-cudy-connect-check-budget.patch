@@ -1,0 +1,12 @@
+--- a/luci-app-passwall/luasrc/controller/passwall.lua
++++ b/luci-app-passwall/luasrc/controller/passwall.lua
+@@ -417,7 +417,8 @@
+ 			curl_args = "-x " .. util.shellquote("socks5h://" .. socks_server) .. " " .. curl_args
+ 		end
+ 	end
+-	local result = luci.sys.exec('curl_result=$(/usr/bin/curl --connect-timeout 3 --max-time 5 -o /dev/null -I -sk ' .. curl_args .. '); [ $? -eq 0 ] && printf "%s" "$curl_result"')
++	-- Include cold DNS and TLS setup in a bounded probe on this IPv4 uplink.
++	local result = luci.sys.exec('curl_result=$(/usr/bin/curl -4 --connect-timeout 8 --max-time 15 -o /dev/null -I -sk ' .. curl_args .. '); [ $? -eq 0 ] && printf "%s" "$curl_result"')
+ 	local code, pretransfer, starttransfer = result:match("^%s*(%d+):([%d%.]+):([%d%.]+)%s*$")
+ 	code, pretransfer, starttransfer = tonumber(code), tonumber(pretransfer), tonumber(starttransfer)
+ 	if code and code > 0 then e.http_code = code end

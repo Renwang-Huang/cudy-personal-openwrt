@@ -20,10 +20,19 @@ TR1200 仅有 128 MiB RAM。现场首次启用完整配置时出现重启，重�
 核心包装脚本会转交给该路径；上游原有检测只匹配临时 `bin/` 路径，会错误显示“未运行”。
 补丁只修改进程检测条件，不改变协议实现、流量规则或核心启动参数。
 
+`patches/002-cudy-connect-check-budget.patch` 修正首页站点检测的超时预算。
+原检测把 DNS、连接及 TLS 建立限制在 3 秒内，总时限仅 5 秒；实机首次查询出现 DNS 超时，
+缓存建立后相同站点正常。另一个未预热站点的 DNS 实测约 3.8 秒，总请求约 7.1 秒。
+补丁按当前 IPv4 上游指定 IPv4，将连接阶段时限设为 8 秒、总时限设为 15 秒。
+原成功响应解析和失败条件不变：不可达地址仍返回失败，不通过固定返回值显示成功。
+阿里、Google、GitHub、YouTube 四张卡片已在浏览器实际触发并显示延迟，
+结果见 [连接检测验证](../connection-check-validation.json)。
+
 在解压后的固定 PassWall 源码根目录应用补丁：
 
 ```sh
 patch --batch --fuzz=0 -p1 < /path/to/cudy-personal-openwrt/devices/tr1200/passwall/runtime/patches/001-cudy-lite-status.patch
+patch --batch --fuzz=0 -p1 < /path/to/cudy-personal-openwrt/devices/tr1200/passwall/runtime/patches/002-cudy-connect-check-budget.patch
 ```
 
 随后按原 OpenWrt 包构建流程生成组件。组装后续镜像时，按 `config.json` 的顺序应用

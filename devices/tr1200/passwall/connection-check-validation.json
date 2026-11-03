@@ -1,0 +1,95 @@
+{
+  "checked_utc": "2026-11-03T17:43:03.933101+00:00",
+  "device": "Cudy TR1200 v1",
+  "passwall_version": "26.10.29-r1",
+  "problem": "Homepage checks timed out during cold DNS and handshake setup",
+  "old_connect_timeout_seconds": 3,
+  "old_total_timeout_seconds": 5,
+  "new_connect_timeout_seconds": 8,
+  "new_total_timeout_seconds": 15,
+  "address_family": "IPv4 matching the deployed uplink",
+  "original_checks": [
+    {
+      "site": "www.aliyun.com",
+      "exit_code": 28,
+      "result": "000:3.000910:3.000914",
+      "stderr": "curl: (28) name lookup timed out",
+      "elapsed_s": 3.089
+    },
+    {
+      "site": "www.google.com",
+      "exit_code": 28,
+      "result": "000:3.000451:3.000454",
+      "stderr": "curl: (28) name lookup timed out",
+      "elapsed_s": 3.068
+    },
+    {
+      "site": "github.com",
+      "exit_code": 28,
+      "result": "000:3.007698:3.007702",
+      "stderr": "curl: (28) name lookup timed out",
+      "elapsed_s": 3.08
+    },
+    {
+      "site": "www.youtube.com",
+      "exit_code": 0,
+      "result": "204:2.397646:2.702504",
+      "stderr": "",
+      "elapsed_s": 2.799
+    }
+  ],
+  "real_browser_cards": [
+    {
+      "site": "aliyun",
+      "displayed_latency_ms": 8.97,
+      "handshake_ms": 400.47
+    },
+    {
+      "site": "google",
+      "displayed_latency_ms": 487.66,
+      "handshake_ms": 7452.65
+    },
+    {
+      "site": "github",
+      "displayed_latency_ms": 381.69,
+      "handshake_ms": 2804.93
+    },
+    {
+      "site": "youtube",
+      "displayed_latency_ms": 320.25,
+      "handshake_ms": 2736.12
+    }
+  ],
+  "fresh_hostname_probes": [
+    {
+      "host": "api.github.com",
+      "exit_code": 0,
+      "http_status": 200,
+      "dns_seconds": 3.809587,
+      "connection_seconds": 3.81093,
+      "total_seconds": 7.086243
+    },
+    {
+      "host": "accounts.google.com",
+      "exit_code": 0,
+      "http_status": 302,
+      "dns_seconds": 0.468192,
+      "connection_seconds": 0.469554,
+      "total_seconds": 2.588164
+    },
+    {
+      "host": "www.kernel.org",
+      "exit_code": 0,
+      "http_status": 200,
+      "dns_seconds": 1.796585,
+      "connection_seconds": 1.798099,
+      "total_seconds": 5.480309
+    }
+  ],
+  "unreachable_endpoint_remains_failure": true,
+  "success_response_parser_unchanged": true,
+  "primary_host_network_preserved": true,
+  "router_network_or_proxy_configuration_changed": false,
+  "services_restarted": false,
+  "private_node_details_published": false
+}
