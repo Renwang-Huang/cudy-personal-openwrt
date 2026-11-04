@@ -31,6 +31,10 @@ VLESS 与 TUIC 已分别进行真实 HTTPS 传输测试；节点服务和证书�
 未新增或测试订阅服务。内存适配与运行状态检测修正见 [实际节点运行适配](runtime/README.md)。
 外置 USB 存储不是本方案的运行条件。
 
+下游 [2.4 GHz 直连、5 GHz 经 PassWall 分流](../network/band-policy/README.md)采用原生访问控制。
+2.4 GHz 拥有独立网段及直连 DNS；5 GHz 使用既有全局节点和规则，命中直连规则的目标仍直连。
+原有有线 LAN 策略及上游无线中继配置保留。
+
 设备已采用 [固定版本维护](../fixed-release/README.md)，没有有效在线软件源；
 当前软件版本见 [现场包清单](../fixed-release/installed-packages.json)。后续升级或个性化由设备所有者发起，
 按仓库源码和配方构建后安装。节点、订阅及分流规则仍可按需设置；这些运行数据不属于软件包源。

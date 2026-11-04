@@ -29,6 +29,10 @@ USB 共享、VPN 等插件后续按空间及性能添加；保留拨动开关输
 源码、构建配方和 [194 个已安装包的精确版本](fixed-release/installed-packages.json)在仓库留档。
 后续升级或个性化由设备所有者明确发起，不安排软件自动升级。
 
+下游无线采用 [双频分流配方](network/band-policy/README.md)：2.4 GHz 独立网段
+`192.168.24.0/24`，数据与 DNS 绕过本机 PassWall；5 GHz 和原有 LAN 保留
+`192.168.20.0/24`，使用现有 PassWall 规则。无线中继上游及无线密码保持不变。
+
 ## 当前候选与验证
 
 当前版本：[tr1200-v0.1.1-candidate](https://github.com/Renwang-Huang/cudy-personal-openwrt/releases/tag/tr1200-v0.1.1-candidate)。

@@ -32,6 +32,7 @@
 | **基础系统** | OpenWrt 25.12.5 · Linux 6.12.94 · `ramips/mt76x8` |
 | **管理界面** | 中文 LuCI，shadcn 主题适配；保留 Argon 和 Bootstrap 回退 |
 | **PassWall** | 26.10.29-r1，搭配 sing-box 1.13.21 精简核心；实机已导入私有节点并启用代理 |
+| **双频策略** | 2.4G 数据与 DNS 直连；5G 使用现有 PassWall 节点与分流规则 |
 | **指示灯** | 正常时白灯常亮，连续检测异常时红灯常亮，恢复后自动转白 |
 | **软件维护** | 关闭在线软件源，保留固定版本；升级或个性化由设备所有者发起 |
 
@@ -54,6 +55,8 @@
 不依赖外置存储。VLESS、VMess、Trojan、Hysteria2 已通过本地加密传输测试；
 之后已完成真实 VLESS Reality、TUIC 节点和自动测速组合的公网传输测试；订阅服务未测试。
 当前使用 2.4G 接收上游，同时提供 2.4G、5G 下游 Wi-Fi 和有线 LAN。
+下游 [2.4G 直连、5G 经 PassWall 分流](devices/tr1200/network/band-policy/README.md)，
+两路使用独立网段和 DNS，原有无线名称、密码及中继上游保留。
 两路无线已用闲置客户端接口、独立路由表完成测试，主用网络保持原样；
 验证范围和资源适配见 [实际节点运行说明](devices/tr1200/passwall/runtime/README.md)。
 
@@ -68,6 +71,7 @@
 | **维护策略与精确版本** | [固定版本规则](devices/tr1200/fixed-release/README.md) |
 | **系统源码与厂商资料** | [上游源码、feeds、设备树与补丁](reference/README.md) |
 | **代理核心与 DNS** | [固定源码及裁剪配方](devices/tr1200/passwall/README.md) |
+| **双频网络策略** | [2.4G 直连、5G 经 PassWall 分流](devices/tr1200/network/band-policy/README.md) |
 | **界面与灯语** | [现代界面](devices/tr1200/ui/modern/README.md) · [灯语配置](devices/tr1200/leds/README.md) |
 | **设备操作与验证** | [到货及恢复操作单](devices/tr1200/RUNBOOK.md) · [实机记录](devices/tr1200/FIELD-TEST.md) |
 
@@ -103,6 +107,7 @@ devices/tr1200/
 ├── scripts/        基础镜像构建、复现与检查
 ├── fixed-release/  固定版本策略、现场包清单与关闭源配置
 ├── passwall/       精简代理核心与 DNS 配方
+├── network/        双频网络与原生访问控制配方
 ├── ui/             现代界面和 Argon 回退方案
 └── leds/           白色正常、红色异常的状态灯
 reference/
