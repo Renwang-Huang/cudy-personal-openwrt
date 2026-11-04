@@ -1,0 +1,53 @@
+#!/bin/sh
+# Complete PassWall's native ifup handling for DHCP DNS updates and WAN removal.
+PATH=/usr/sbin:/usr/bin:/sbin:/bin
+export PATH
+# shellcheck source=/dev/null
+. /usr/share/passwall/utils.sh
+
+current_device() {
+	ip -4 route show default | awk '{ for (i = 1; i < NF; i++) if ($i == "dev") { print $(i + 1); break } exit }'
+}
+
+dns_changed() {
+	[ "$(uci -q get 'passwall.@global[0].direct_dns_mode')" = auto ] || return 1
+	resolver=$(awk '$1 == "nameserver" && $2 ~ /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/ && $2 !~ /^127\./ { print $2; exit }' \
+		/tmp/resolv.conf.d/resolv.conf.auto)
+	[ -n "$resolver" ] || return 1
+	cached=$(get_cache_var LOCAL_DNS)
+	cached=${cached%%,*}
+	cached=${cached%%#*}
+	cached=${cached%%:*}
+	[ "$resolver" != "$cached" ]
+}
+
+case "${1:---event}" in
+	--check)
+		printf 'default_device=%s\n' "$(current_device)"
+		if dns_changed; then echo 'direct_dns=stale'; else echo 'direct_dns=current'; fi
+		exit 0 ;;
+	--event) ;;
+	*) echo 'Usage: cudy-uplink-sync [--check|--event]' >&2; exit 2 ;;
+esac
+case "${INTERFACE:-}:${ACTION:-}" in
+	wan:ifdown|wwan:ifdown|wan:ifupdate|wwan:ifupdate) ;;
+	*) exit 0 ;;
+esac
+[ "$(uci -q get 'passwall.@global[0].enabled')" = 1 ] || exit 0
+[ -f "${LOCK_PATH}/passwall_ready.lock" ] || exit 0
+[ "${ACTION:-}" != ifupdate ] || dns_changed || exit 0
+(
+	# Share the upstream ifup lock, including its lifetime and child-FD handling.
+	exec 9>"${LOCK_PATH}/passwall_ifup.lock" || exit 1
+	flock -xn 9 || exit 0
+	sleep 5
+	device=$(current_device)
+	[ -n "$device" ] || exit 0
+	case "$ACTION" in
+		ifdown) [ "$device" != "${DEVICE:-}" ] || exit 0 ;;
+		ifupdate) [ "$device" = "${DEVICE:-}" ] && dns_changed || exit 0 ;;
+	esac
+	logger -t cudy-uplink-sync "Refreshing PassWall after $INTERFACE $ACTION" 9>&-
+	/etc/init.d/passwall restart 9>&-
+) </dev/null >/dev/null 2>&1 &
+exit 0

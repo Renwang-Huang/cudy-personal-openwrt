@@ -26,12 +26,15 @@ USB 共享、VPN 等插件后续按空间及性能添加；保留拨动开关输
 现场设备已部署 [PassWall 精简方案](passwall/README.md)、[现代管理界面](ui/modern/README.md)
 及 [白色正常、红色异常的状态灯](leds/README.md)，与下面保留的 v0.1.1 首版候选镜像有所不同。
 当前采用 [固定版本维护](fixed-release/README.md)：关闭运行时在线软件源，保留现有软件及配置，
-源码、构建配方和 [194 个已安装包的精确版本](fixed-release/installed-packages.json)在仓库留档。
+源码、构建配方和 [199 个已安装包的精确版本](fixed-release/installed-packages.json)在仓库留档。
 后续升级或个性化由设备所有者明确发起，不安排软件自动升级。
 
 下游无线采用 [双频分流配方](network/band-policy/README.md)：2.4 GHz 独立网段
 `192.168.24.0/24`，数据与 DNS 绕过本机 PassWall；5 GHz 和原有 LAN 保留
 `192.168.20.0/24`，使用现有 PassWall 规则。无线中继上游及无线密码保持不变。
+
+外出使用已部署 [酒店网络准备](network/travel-mode/README.md)：固定版 Travelmate 管理上游，
+直连 DNS 跟随 DHCP，保留酒店认证入口，并为有线优先和上游变化同步提供配方及恢复材料。
 
 ## 当前候选与验证
 

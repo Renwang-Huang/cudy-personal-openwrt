@@ -1,0 +1,44 @@
+{
+  "openwrt": "25.12.5",
+  "architecture": "mipsel_24kc",
+  "source_transport": "official downloads.openwrt.org HTTPS",
+  "existing_package_upgrades": 0,
+  "packages": [
+    {
+      "package": "travelmate",
+      "filename": "travelmate-2.4.9-r6.apk",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/packages/mipsel_24kc/packages/travelmate-2.4.9-r6.apk",
+      "bytes": 21786
+    },
+    {
+      "package": "luci-app-travelmate",
+      "filename": "luci-app-travelmate-2.4.9-r6.apk",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/packages/mipsel_24kc/luci/luci-app-travelmate-2.4.9-r6.apk",
+      "bytes": 17274
+    },
+    {
+      "package": "luci-i18n-travelmate-zh-cn",
+      "filename": "luci-i18n-travelmate-zh-cn-26.304.26398~e969939.apk",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/packages/mipsel_24kc/luci/luci-i18n-travelmate-zh-cn-26.304.26398~e969939.apk",
+      "bytes": 5752
+    },
+    {
+      "package": "iwinfo",
+      "filename": "iwinfo-2026.05.26~66bdd1a0-r1.apk",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/packages/mipsel_24kc/base/iwinfo-2026.05.26~66bdd1a0-r1.apk",
+      "bytes": 665
+    },
+    {
+      "package": "rpcd-mod-rpcsys",
+      "filename": "rpcd-mod-rpcsys-2026.10.04~d99f703e-r1.apk",
+      "url": "https://downloads.openwrt.org/releases/25.12.5/packages/mipsel_24kc/base/rpcd-mod-rpcsys-2026.10.04~d99f703e-r1.apk",
+      "bytes": 4471
+    }
+  ],
+  "validation": {
+    "signature_verified": false,
+    "signature_note": "The device keys and fetched upstream keyring did not validate these package signatures. Only these five fixed local packages were allowed for this installation; persistent trust settings were preserved.",
+    "exact_backend_source_match": true,
+    "uploaded_files_equal_downloaded_files": true
+  }
+}

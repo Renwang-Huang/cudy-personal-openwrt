@@ -1,0 +1,21 @@
+{
+  "software": "Travelmate",
+  "version": "2.4.9-r6",
+  "release": "OpenWrt 25.12.5",
+  "sources": [
+    {
+      "repository": "https://github.com/openwrt/packages",
+      "branch": "openwrt-25.12",
+      "commit": "aea49e65a439f73fbc0e4b8c60ced1f1839f64fd",
+      "component": "net/travelmate",
+      "local_copy": "packages"
+    },
+    {
+      "repository": "https://github.com/openwrt/luci",
+      "branch": "openwrt-25.12",
+      "commit": "e969939b49167516e219d465df8030d98d443d67",
+      "component": "applications/luci-app-travelmate",
+      "local_copy": "luci"
+    }
+  ]
+}

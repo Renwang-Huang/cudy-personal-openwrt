@@ -25,6 +25,7 @@ OpenWrt 构建版本和发布时的各 feed 提交取自官方 `version.buildinf
 | `tr1200/` | 原厂及中间固件参考、厂商设备树、上游设备支持与分区修正补丁；见[资料说明](tr1200/README.md) |
 | `passwall/` | sing-box 1.13.21、PassWall 26.10.29-1 完整源码快照，dnsmasq 2.93 原始源码及裁剪配方；见[构建说明](../devices/tr1200/passwall/README.md) |
 | `ui/` | 现代 shadcn 主题及 Argon v3.1.2 的完整上游源码；适配和构建脚本见[现代界面](../devices/tr1200/ui/modern/README.md)及[Argon](../devices/tr1200/ui/argon/README.md) |
+| `travelmate/` | 酒店网络准备使用的固定版后端、LuCI、相关新增依赖源码与本地包；见[参考说明](travelmate/README.md) |
 
 源码中的原有许可证随归档保存，本仓库的 MIT 许可证不替代上游许可证。
 灯语源配置和现场验证保存在[设备目录](../devices/tr1200/leds/README.md)。

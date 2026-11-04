@@ -1,0 +1,25 @@
+--- a/files/travelmate-functions.sh
++++ b/files/travelmate-functions.sh
+@@ -952,0 +953,13 @@
++# Allow only the detected portal host in both downstream DNS instances.
++# Cudy adaptation: the upstream implementation handles the first instance only.
++f_cudy_allow_portal_domain() {
++	local instance domain="${1}"
++	for instance in '@dnsmasq[0]' direct24dns; do
++		[ "$(uci_get dhcp "${instance}")" = "dnsmasq" ] || continue
++		case " $(uci_get dhcp "${instance}" rebind_domain) " in
++		*" ${domain} "*) ;;
++		*) uci_add_list dhcp "${instance}" rebind_domain "${domain}" ;;
++		esac
++	done
++}
++
+@@ -1070,5 +1083,3 @@
+-									case " $(uci_get "dhcp" "@dnsmasq[0]" "rebind_domain") " in
+-									*" ${cp_domain} "*) break ;;
+-									esac
+-									uci_add_list "dhcp" "@dnsmasq[0]" "rebind_domain" "${cp_domain}"
+-									[ -n "$(uci -q changes "dhcp")" ] && uci_commit "dhcp"
++									f_cudy_allow_portal_domain "${cp_domain}"
++									[ -n "$(uci -q changes "dhcp")" ] || break
++									uci_commit "dhcp"

@@ -1,0 +1,12 @@
+[
+  {
+    "repository": "https://github.com/openwrt/rpcd",
+    "commit": "d99f703e4035d03fbcfbada3cb697db346c2b984",
+    "archive": "rpcd-source.tar.gz"
+  },
+  {
+    "repository": "https://github.com/openwrt/iwinfo",
+    "commit": "66bdd1a071895d91babc9b9228bb84626bbce226",
+    "archive": "iwinfo-source.tar.gz"
+  }
+]

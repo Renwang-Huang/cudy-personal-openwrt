@@ -33,10 +33,11 @@
 | **管理界面** | 中文 LuCI，shadcn 主题适配；保留 Argon 和 Bootstrap 回退 |
 | **PassWall** | 26.10.29-r1，搭配 sing-box 1.13.21 精简核心；实机已导入私有节点并启用代理 |
 | **双频策略** | 2.4G 数据与 DNS 直连；5G 使用现有 PassWall 节点与分流规则 |
+| **酒店接入** | 固定版 Travelmate、上游 DHCP DNS、认证探测及有线优先；保留原双频策略 |
 | **指示灯** | 正常时白灯常亮，连续检测异常时红灯常亮，恢复后自动转白 |
 | **软件维护** | 关闭在线软件源，保留固定版本；升级或个性化由设备所有者发起 |
 
-当前 194 个已安装包的精确版本见[现场软件清单](devices/tr1200/fixed-release/installed-packages.json)。
+当前 199 个已安装包的精确版本见[现场软件清单](devices/tr1200/fixed-release/installed-packages.json)。
 现场管理地址为 `192.168.20.1`；历史基础候选镜像的默认地址为 `10.0.0.1`。
 密码、私钥、节点订阅及设备备份均不进入仓库。
 
@@ -72,6 +73,7 @@
 | **系统源码与厂商资料** | [上游源码、feeds、设备树与补丁](reference/README.md) |
 | **代理核心与 DNS** | [固定源码及裁剪配方](devices/tr1200/passwall/README.md) |
 | **双频网络策略** | [2.4G 直连、5G 经 PassWall 分流](devices/tr1200/network/band-policy/README.md) |
+| **外出使用** | [酒店 Wi-Fi 与网线接入、认证及恢复](devices/tr1200/network/travel-mode/README.md) |
 | **界面与灯语** | [现代界面](devices/tr1200/ui/modern/README.md) · [灯语配置](devices/tr1200/leds/README.md) |
 | **设备操作与验证** | [到货及恢复操作单](devices/tr1200/RUNBOOK.md) · [实机记录](devices/tr1200/FIELD-TEST.md) |
 

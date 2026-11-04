@@ -1,0 +1,3 @@
+# Router HTTP must reach the uplink portal before the proxy is usable.
+# PassWall honors the low-byte bypass mark; forwarded Wi-Fi traffic is unaffected.
+tcp dport 80 meta mark set meta mark | 0x000000ff comment "Cudy captive portal - router HTTP direct"
